@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Bank Details for DBT - Krishi Sahayak</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700&amp;family=Noto+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700&amp;family=Noto+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -109,13 +107,16 @@
   </style>
   </head>
 <body class="bg-background text-on-background min-h-screen flex flex-col md:max-w-md md:mx-auto">
-<header class="bg-surface border-b border-outline-variant w-full top-0 flex items-center px-margin-mobile h-touch-target-min">
-<button aria-label="Go back" class="p-2 mr-4 text-primary">
+<header class="border-b border-outline-variant w-full top-0 flex items-center px-margin-mobile py-2 fixed z-40 bg-surface-container-lowest"><button aria-label="Go back" class="p-2 mr-4 text-primary flex items-center justify-center h-10 w-10 rounded-full hover:bg-surface-variant transition-colors">
 <span aria-hidden="true" class="material-symbols-outlined">arrow_back</span>
 </button>
-<h1 class="font-headline-md text-headline-md font-bold text-primary">Bank Details</h1>
-</header>
-<main class="flex-grow p-margin-mobile flex flex-col gap-stack-gap-lg overflow-y-auto">
+<h1 class="font-headline-md text-headline-md font-bold text-primary flex-1">Kisan Setu | किसान सेतु</h1>
+<button aria-label="Profile" class="flex items-center justify-center h-10 w-10 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed transition-colors active:scale-95 mr-2 shadow-sm"><span class="material-symbols-outlined">account_circle</span></button>
+<button aria-label="Select Language" class="flex items-center gap-2 px-3 py-1 rounded-full border border-outline text-primary hover:bg-surface-container-low transition-colors active:scale-95">
+<span class="material-symbols-outlined text-body-md" data-icon="language">language</span>
+<span class="font-label-md text-xs">EN/हिन्दी</span>
+</button></header>
+<main class="flex-grow p-margin-mobile flex flex-col gap-stack-gap-lg overflow-y-auto pt-[72px] pb-20">
 <section class="bg-tertiary-fixed border-l-4 border-primary p-4 rounded-lg flex items-start gap-4">
 <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mt-1">check_circle</span>
 <div>
@@ -128,13 +129,13 @@
 <form class="flex flex-col gap-stack-gap-md">
 <div class="flex flex-col gap-1">
 <label class="font-label-lg text-label-lg text-on-surface" for="bankName">Bank Name</label>
-<input class="w-full h-touch-target-min px-4 border border-outline rounded-lg bg-surface-container-low font-body-lg text-body-lg text-on-surface-variant cursor-not-allowed" id="bankName" name="bankName" readonly="" type="text" value="State Bank of India"/>
+<input class="w-full h-touch-target-min px-4 border border-outline rounded-lg bg-surface-container-low font-body-lg text-body-lg text-on-surface-variant cursor-not-allowed" id="bankName" name="bankName" readonly="" type="text" value="State Bank of India">
 <p class="font-label-md text-label-md text-on-surface-variant">Fetched automatically</p>
 </div>
 <div class="flex flex-col gap-1">
 <label class="font-label-lg text-label-lg text-on-surface" for="accountNumber">Account Number</label>
 <div class="relative">
-<input class="w-full h-touch-target-min px-4 border border-outline rounded-lg bg-surface-container-lowest font-body-lg text-body-lg text-on-surface focus:border-primary focus:ring-2 focus:ring-primary-fixed" id="accountNumber" name="accountNumber" type="password" value="341256789012"/>
+<input class="w-full h-touch-target-min px-4 border border-outline rounded-lg bg-surface-container-lowest font-body-lg text-body-lg text-on-surface focus:border-primary focus:ring-2 focus:ring-primary-fixed" id="accountNumber" name="accountNumber" type="password" value="341256789012">
 <button aria-label="Toggle account number visibility" class="absolute right-4 top-1/2 -translate-y-1/2 text-outline" type="button">
 <span class="material-symbols-outlined">visibility_off</span>
 </button>
@@ -143,7 +144,7 @@
 </div>
 <div class="flex flex-col gap-1">
 <label class="font-label-lg text-label-lg text-on-surface" for="ifscCode">IFSC Code</label>
-<input class="w-full h-touch-target-min px-4 border border-outline rounded-lg bg-surface-container-lowest font-body-lg text-body-lg text-on-surface uppercase focus:border-primary focus:ring-2 focus:ring-primary-fixed" id="ifscCode" name="ifscCode" type="text" value="SBIN0001234"/>
+<input class="w-full h-touch-target-min px-4 border border-outline rounded-lg bg-surface-container-lowest font-body-lg text-body-lg text-on-surface uppercase focus:border-primary focus:ring-2 focus:ring-primary-fixed" id="ifscCode" name="ifscCode" type="text" value="SBIN0001234">
 </div>
 </form>
 </section>
@@ -151,17 +152,35 @@
 <div class="flex items-center justify-between mb-2">
 <h3 class="font-headline-sm text-headline-sm text-on-surface">Enable DBT Link</h3>
 <label class="relative inline-flex items-center cursor-pointer">
-<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<input checked="" class="sr-only peer" type="checkbox" value="">
 <div class="w-14 h-7 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
 </label>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant">I consent to receiving government subsidies directly to this bank account via Aadhaar linkage.</p>
 </section>
-</main>
-<div class="p-margin-mobile border-t border-outline-variant bg-surface">
-<button class="w-full h-touch-target-min bg-primary text-on-primary font-label-lg text-label-lg rounded-full flex items-center justify-center gap-2 hover:bg-primary-container transition-colors active:scale-95">
-<span aria-hidden="true" class="material-symbols-outlined">verified_user</span>
-            Complete Setup
-        </button>
+
+<!-- Bottom Sticky Action Button -->
+<div class="mt-6 mb-12">
+  <button onclick="window.location.href='../dashboard_bilingual/code.html'" class="w-full h-14 bg-primary hover:bg-primary-container text-on-primary font-bold text-base rounded-xl shadow-md flex items-center justify-center gap-2 active:scale-95 transition-all cursor-pointer">
+    <span>Save Bank & Continue to Dashboard →</span>
+  </button>
 </div>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body></html>

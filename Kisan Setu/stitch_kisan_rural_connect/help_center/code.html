@@ -108,24 +108,11 @@
   </head>
 <body class="bg-background text-on-background min-h-screen flex flex-col md:hidden">
 <!-- TopAppBar -->
-<header class="bg-surface border-b border-outline-variant w-full top-0 flex items-center px-margin-mobile h-touch-target-min z-50 sticky">
-<button class="mr-4 h-touch-target-min w-touch-target-min flex items-center justify-center text-on-surface-variant hover:bg-surface-variant rounded-full transition-colors duration-200">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
-</button>
-<h1 class="font-headline-md text-headline-md-mobile font-bold text-primary">Kisan Setu / किसान सेतु</h1>
-</header>
+<header class="bg-surface border-b border-outline-variant w-full top-0 flex items-center px-margin-mobile z-50 sticky py-2"><button onclick="window.location.href='../dashboard_bilingual/code.html'" class="mr-4 text-primary hover:bg-surface-variant p-2 rounded-full transition-colors duration-200 flex items-center justify-center h-10 w-10 cursor-pointer"><span class="material-symbols-outlined">arrow_back</span></button><h1 class="font-headline-md text-headline-md-mobile font-bold text-primary flex-1">Kisan Setu | किसान सेतु</h1><button onclick="window.location.href='../dashboard_bilingual/code.html'" aria-label="Profile" class="flex items-center justify-center h-10 w-10 rounded-full text-primary hover:bg-surface-variant transition-colors active:scale-95 mr-2 cursor-pointer"><span class="material-symbols-outlined">home</span></button><button onclick="window.location.href='../dashboard_bilingual/code.html'" aria-label="Select Language" class="flex items-center gap-2 px-3 py-1 rounded-full border border-outline text-primary hover:bg-surface-container-low transition-colors active:scale-95 cursor-pointer"><span class="material-symbols-outlined text-body-md-mobile">language</span><span class="font-label-md text-xs">EN/हिन्दी</span></button></header>
 <!-- Main Content Canvas -->
 <main class="flex-1 p-margin-mobile flex flex-col gap-stack-gap-lg overflow-y-auto">
 <!-- Voice Guide Toggle -->
-<section>
-<button class="w-full min-h-[80px] bg-primary-container text-on-primary-container rounded-xl flex items-center justify-center gap-4 px-4 py-4 shadow-sm active:scale-95 transition-transform">
-<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">volume_up</span>
-<div class="text-left">
-<div class="font-headline-sm text-headline-sm font-bold">Start Voice Guide</div>
-<div class="font-label-lg text-label-lg opacity-90">वॉइस गाइड शुरू करें</div>
-</div>
-</button>
-</section>
+
 <!-- Language Selection -->
 <section class="flex flex-col gap-stack-gap-md">
 <h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Change Language / भाषा बदलें</h2>
@@ -150,7 +137,7 @@
 <div class="grid grid-cols-1 gap-4">
 <button class="bg-[#E8F5E9] border border-primary/20 rounded-xl p-4 flex items-center gap-4 active:border-secondary-container active:border-2 transition-all min-h-[80px]">
 <div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: &quot;FILL&quot; 1;">home</span>
 </div>
 <div class="text-left text-on-surface">
 <div class="font-label-lg text-label-lg font-bold">Booking Help</div>
@@ -168,7 +155,7 @@
 </button>
 <button class="bg-[#E8F5E9] border border-primary/20 rounded-xl p-4 flex items-center gap-4 active:border-secondary-container active:border-2 transition-all min-h-[80px]">
 <div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">queue</span>
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: &quot;FILL&quot; 1;">local_shipping</span>
 </div>
 <div class="text-left text-on-surface">
 <div class="font-label-lg text-label-lg font-bold">Queue Status</div>
@@ -196,6 +183,18 @@
 </section>
 </main>
 <!-- BottomNavBar Suppressed as this is a sub-page/help center (linear/transactional/support flow with back button) -->
+
+
+
+
+
+
+
+
+
+
+<nav class="fixed bottom-0 left-0 right-0 bg-surface border-t border-outline-variant flex items-center justify-around py-2 px-2 z-50"><a href="../dashboard_bilingual/code.html" class="flex flex-col items-center justify-center flex-1 gap-1"><div class="bg-secondary-container text-on-secondary-container px-6 py-1 rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">home</span></div><span class="text-xs font-bold text-on-surface font-label-md">Home</span></a><a href="../live_tracker/code.html" class="flex flex-col items-center justify-center flex-1 gap-1"><span class="material-symbols-outlined text-[28px] text-on-surface-variant">local_shipping</span><span class="text-xs text-on-surface-variant font-label-md">Track</span></a><a href="../nearby_mandis_updated_icons/code.html" class="flex flex-col items-center justify-center flex-1 gap-1"><span class="material-symbols-outlined text-[28px] text-on-surface-variant">location_on</span><span class="text-xs text-on-surface-variant font-label-md">Mandis</span></a><a href="../procurement_details_quality_weighing_fixed/code.html" class="flex flex-col items-center justify-center flex-1 gap-1"><span class="material-symbols-outlined text-[28px] text-on-surface-variant">high_quality</span><span class="text-xs text-on-surface-variant font-label-md">Quality</span></a><a href="../my_payments/code.html" class="flex flex-col items-center justify-center flex-1 gap-1"><span class="material-symbols-outlined text-[28px] text-on-surface-variant">payments</span><span class="text-xs text-on-surface-variant font-label-md">Payments</span></a></nav>
+
 
 
 </body></html>

@@ -116,27 +116,19 @@
   </head>
 <body class="h-full w-full font-body-md antialiased flex flex-col justify-center items-center bg-surface px-margin-mobile">
 <!-- Top Navigation for Language Selection (Not using the full top app bar as this is a transactional screen, but keeping a header element) -->
-<header class="w-full absolute top-0 left-0 p-4 flex justify-between items-center z-10"><div class="flex flex-col w-full gap-2">
-  <div class="flex justify-between items-center">
-    <div class="font-headline-sm text-headline-sm font-bold text-primary">Kisan Setu</div>
+<header class="bg-surface border-b border-outline-variant w-full top-0 flex items-center px-margin-mobile fixed z-40 transition-colors duration-200 py-2"><div class="flex items-center justify-between w-full h-14">
+  <div class="flex items-center gap-2">
+    <span class="material-symbols-outlined text-primary" data-icon="agriculture">agriculture</span>
+    <h1 class="font-headline-md text-primary">Kisan Setu | किसान सेतु</h1>
   </div>
-  <div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
-    <button class="flex-shrink-0 flex items-center gap-1 px-4 py-2 font-label-md text-label-md rounded-full bg-primary-container text-on-primary-container border border-primary-container transition-colors duration-200">
-      <span class="material-symbols-outlined text-[18px]">check</span>
-      English
-    </button>
-    <button class="flex-shrink-0 flex items-center px-4 py-2 font-label-md text-label-md rounded-full bg-surface-container-low text-on-surface-variant border border-outline-variant hover:bg-surface-variant transition-colors duration-200">
-      हिंदी
-    </button>
-    <button class="flex-shrink-0 flex items-center px-4 py-2 font-label-md text-label-md rounded-full bg-surface-container-low text-on-surface-variant border border-outline-variant hover:bg-surface-variant transition-colors duration-200">
-      ਪੰਜਾਬੀ
-    </button>
-    <button class="flex-shrink-0 flex items-center px-4 py-2 font-label-md text-label-md rounded-full bg-surface-container-low text-on-surface-variant border border-outline-variant hover:bg-surface-variant transition-colors duration-200">
-      ગુજરાતી
+  <div class="flex items-center gap-2">
+    <button aria-label="Select Language" class="flex items-center gap-1 px-3 py-1 rounded-full border border-outline text-primary hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-body-md" data-icon="language">language</span><span class="font-label-md text-xs">EN/हि</span></button>
+    <button class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+      <span class="material-symbols-outlined" data-icon="person">person</span>
     </button>
   </div>
 </div></header>
-<main class="w-full max-w-md bg-surface-container-lowest p-stack-gap-lg rounded-xl border border-outline-variant shadow-sm mt-24">
+<main class="w-full max-w-md bg-surface-container-lowest p-stack-gap-lg rounded-xl border border-outline-variant shadow-sm mt-8">
 <!-- Branding / Hero Graphic -->
 <div class="flex justify-center mb-stack-gap-lg">
 <div class="w-24 h-24 bg-tertiary-fixed rounded-full flex items-center justify-center border-4 border-primary-container">
@@ -147,24 +139,32 @@
 <h1 class="font-headline-lg text-headline-lg text-primary mb-2">Welcome Back / स्वागत है</h1>
 <p class="font-body-md text-body-md text-on-surface-variant">Enter your 10-digit mobile number to login.<br class="">लॉगिन करने के लिए अपना 10 अंकों का मोबाइल नंबर दर्ज करें।</p>
 </div>
-<form class="flex flex-col gap-stack-gap-md" onsubmit="event.preventDefault();">
+<form class="flex flex-col gap-stack-gap-md" onsubmit="window.location.href='../verify_otp/code.html'; return false;">
 <div class="flex flex-col gap-1">
 <label class="font-label-lg text-label-lg text-on-surface" for="mobile-number">Mobile Number</label>
 <div class="relative flex items-center">
 <span class="absolute left-4 font-body-lg text-body-lg text-on-surface-variant">+91</span>
-<input class="w-full h-touch-target-min pl-14 pr-4 bg-surface-bright border-2 border-outline rounded-lg font-body-lg text-body-lg text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors duration-200" id="mobile-number" name="mobile-number" pattern="[0-9]{10}" placeholder="00000 00000" required="" type="tel">
+<input class="w-full h-touch-target-min pl-14 pr-4 bg-surface-bright border-2 border-outline rounded-lg font-body-lg text-body-lg text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors duration-200" id="mobile-number" name="mobile-number" pattern="[0-9]{10}" placeholder="98765 43210" value="9876543210" required="" type="tel">
 </div>
 <span class="font-label-md text-label-md text-on-surface-variant mt-1">We will send an OTP for verification.</span>
 </div>
-<button class="w-full h-touch-target-min mt-4 bg-primary-container hover:bg-on-primary-fixed-variant text-on-primary-container font-label-lg text-label-lg rounded-lg flex items-center justify-center gap-2 transition-colors duration-200 active:scale-95" type="submit">
-                Send OTP
+<button class="w-full h-touch-target-min mt-4 bg-primary-container hover:bg-on-primary-fixed-variant text-on-primary-container font-label-lg text-label-lg rounded-lg flex items-center justify-center gap-2 transition-colors duration-200 active:scale-95 cursor-pointer" type="submit">
+                Send OTP / ओटीपी भेजें
                 <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
 </button>
 </form>
-<div class="mt-8 text-center border-t border-outline-variant pt-6">
-<p class="font-body-md text-body-md text-on-surface-variant">Enter your 10-digit mobile number to login.<br class="">लॉगिन करने के लिए अपना 10 अंकों का मोबाइल नंबर दर्ज करें।</p>
-</div>
+
 </main>
+
+
+
+
+
+
+
+
+
+
 
 
 

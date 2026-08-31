@@ -1,447 +1,301 @@
 import 'package:flutter/material.dart';
-import '../theme/app_colors.dart';
-import '../theme/app_typography.dart';
-import '../widgets/custom_app_bar.dart';
-import '../state/app_state.dart';
 
-class HelpCenterScreen extends StatelessWidget {
-  final bool isEmbeddedInNav;
+class AppColors {
+  static const Color primaryEmerald = Color(0xFF2E7D32);
+  static const Color darkEmerald = Color(0xFF1B5E20);
+  static const Color lightEmerald = Color(0xFFE8F5E9);
+  static const Color accentAmber = Color(0xFFF57F17);
+  static const Color amberGold = Color(0xFFFDD400);
+  static const Color amberLight = Color(0xFFFFF9C4);
+  static const Color background = Color(0xFFF9FBF9);
+  static const Color cardSurface = Colors.white;
+  static const Color textDark = Color(0xFF1C1B1B);
+  static const Color textMuted = Color(0xFF55605A);
+  static const Color borderSubtle = Color(0xFFCFD8DC);
+  static const Color errorRed = Color(0xFFC62828);
+}
 
-  const HelpCenterScreen({
-    super.key,
-    this.isEmbeddedInNav = false,
-  });
+/// ---------------------------------------------------------------------------
+/// SCREEN 13: HELP CENTER & KRISHI SAHAYAK CHAT SCREEN
+/// ---------------------------------------------------------------------------
+class HelpCenterScreen extends StatefulWidget {
+  final VoidCallback? onGoToDashboard;
+  final VoidCallback? onBack;
+
+  const HelpCenterScreen({super.key, this.onGoToDashboard, this.onBack});
+
+  @override
+  State<HelpCenterScreen> createState() => _HelpCenterScreenState();
+}
+
+class _HelpCenterScreenState extends State<HelpCenterScreen> {
+  final _chatController = TextEditingController();
+  final List<Map<String, String>> _messages = [
+    {
+      'sender': 'bot',
+      'text': 'नमस्ते राम सिंह जी! मैं आपका कृषि सहायक हूँ। आप मंडी स्लॉट, न्यूनतम समर्थन मूल्य (MSP) या भुगतान के बारे में कुछ भी पूछ सकते हैं।',
+    },
+  ];
+
+  String _selectedLang = 'Hindi';
+  bool _isHindi = true;
+
+  void _sendMessage() {
+    final text = _chatController.text.trim();
+    if (text.isEmpty) return;
+
+    setState(() {
+      _messages.add({'sender': 'user', 'text': text});
+      _chatController.clear();
+    });
+
+    // Simulated Smart Assistant Response
+    Future.delayed(const Duration(milliseconds: 600), () {
+      if (!mounted) return;
+      setState(() {
+        String reply = 'आपकी गेहूं खरीद का टोकन #42 मान्य है। मंडी गेट 2 पर 12 वाहन आगे हैं।';
+        if (text.toLowerCase().contains('payment') || text.contains('भुगतान') || text.contains('रुपया')) {
+          reply = 'आपका ₹45,000 का डीबीटी भुगतान एसबीआई खाते में सफलतापूर्वक जमा कर दिया गया है।';
+        } else if (text.toLowerCase().contains('msp') || text.contains('भाव') || text.contains('रेट')) {
+          reply = 'इस रबी मौसम के लिए गेहूं का न्यूनतम समर्थन मूल्य (MSP) ₹2,425/क्विंटल है।';
+        }
+        _messages.add({'sender': 'bot', 'text': reply});
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
-      appBar: isEmbeddedInNav
-          ? null
-          : const CustomAppBar(
-              title: 'Kisan Setu / किसान सेतु',
-              showBackButton: true,
-            ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-        physics: const BouncingScrollPhysics(),
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 600),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Voice Guide Banner
-                AnimatedBuilder(
-                  animation: AppState(),
-                  builder: (context, _) {
-                    final isVoiceActive = AppState().isVoiceGuideActive;
-                    return InkWell(
-                      onTap: () {
-                        AppState().toggleVoiceGuide();
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(
-                              isVoiceActive
-                                  ? 'Voice Guide Paused / आवाज गाइड बंद'
-                                  : 'Voice Guide Active: Speaking English/Hindi / आवाज गाइड चालू',
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: AppColors.darkEmerald),
+          onPressed: widget.onBack ?? () => Navigator.of(context).maybePop(),
+        ),
+        title: Text(
+          _isHindi ? 'सहायता केंद्र एवं सहायक' : 'Help Center & Sahayak',
+          style: const TextStyle(
+            color: AppColors.darkEmerald,
+            fontWeight: FontWeight.w800,
+            fontSize: 18,
+          ),
+        ),
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(20.0),
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // 1. Multilingual Support Box
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: AppColors.cardSurface,
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: AppColors.borderSubtle),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text('Select App Language / भाषा चुनें:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
+                    const SizedBox(height: 10),
+                    Row(
+                      children: ['हिन्दी', 'English', 'ਪੰਜਾਬੀ', 'मराठी'].map((lang) {
+                        final isSel = _selectedLang == lang;
+                        return Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 3.0),
+                            child: ElevatedButton(
+                              onPressed: () {
+                                setState(() {
+                                  _selectedLang = lang;
+                                  _isHindi = lang == 'हिन्दी';
+                                });
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: isSel ? AppColors.primaryEmerald : Colors.white,
+                                foregroundColor: isSel ? Colors.white : AppColors.textDark,
+                                elevation: 0,
+                                side: BorderSide(color: isSel ? AppColors.primaryEmerald : AppColors.borderSubtle),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                                padding: const EdgeInsets.symmetric(vertical: 8),
+                              ),
+                              child: Text(lang, style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold)),
                             ),
                           ),
                         );
-                      },
-                      borderRadius: BorderRadius.circular(16),
-                      child: Container(
-                        width: double.infinity,
-                        padding: const EdgeInsets.all(18),
-                        decoration: BoxDecoration(
-                          color: isVoiceActive
-                              ? AppColors.secondaryFixed
-                              : AppColors.primaryContainer,
-                          borderRadius: BorderRadius.circular(16),
-                          border: Border.all(
-                            color: isVoiceActive ? AppColors.secondary : AppColors.primary,
-                            width: 2,
-                          ),
-                        ),
-                        child: Row(
+                      }).toList(),
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: 16),
+
+              // 2. Toll-Free Helpline Direct Call
+              InkWell(
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Dialing Kisan Call Center 1800-180-1551...')),
+                  );
+                },
+                borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  padding: const EdgeInsets.all(18),
+                  decoration: BoxDecoration(
+                    color: AppColors.amberGold,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: AppColors.accentAmber, width: 2),
+                    boxShadow: [
+                      BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10, offset: const Offset(0, 4)),
+                    ],
+                  ),
+                  child: const Row(
+                    children: [
+                      Icon(Icons.call, color: AppColors.textDark, size: 30),
+                      SizedBox(width: 14),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Icon(
-                              isVoiceActive ? Icons.record_voice_over : Icons.volume_up,
-                              size: 38,
-                              color: isVoiceActive
-                                  ? AppColors.onSecondaryContainer
-                                  : AppColors.onPrimaryContainer,
+                            Text(
+                              '24/7 Farmer Helpline (Toll-Free)',
+                              style: TextStyle(fontWeight: FontWeight.w900, fontSize: 14, color: AppColors.textDark),
                             ),
-                            const SizedBox(width: 16),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    isVoiceActive ? 'Voice Guide Active' : 'Start Voice Guide',
-                                    style: AppTypography.headlineSmall(
-                                      color: isVoiceActive
-                                          ? AppColors.onSecondaryContainer
-                                          : AppColors.onPrimaryContainer,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 2),
-                                  Text(
-                                    isVoiceActive
-                                        ? 'टैप करके बंद करें'
-                                        : 'वॉइस गाइड शुरू करें',
-                                    style: AppTypography.labelMedium(
-                                      color: isVoiceActive
-                                          ? AppColors.onSecondaryContainer
-                                          : AppColors.onPrimaryContainer.withOpacity(0.9),
-                                    ),
-                                  ),
-                                ],
-                              ),
+                            Text(
+                              '1800-180-1551 (टोल फ्री सहायता नंबर)',
+                              style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Color(0xFF5D4037)),
                             ),
                           ],
                         ),
                       ),
-                    );
-                  },
-                ),
-                const SizedBox(height: 24),
-
-                // Language Selection Grid
-                Text(
-                  'Change Language / भाषा बदलें',
-                  style: AppTypography.headlineSmall(color: AppColors.onSurface),
-                ),
-                const SizedBox(height: 12),
-                AnimatedBuilder(
-                  animation: AppState(),
-                  builder: (context, _) {
-                    final currentLang = AppState().currentLanguage;
-                    return GridView.count(
-                      crossAxisCount: 2,
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      mainAxisSpacing: 10,
-                      crossAxisSpacing: 10,
-                      childAspectRatio: 2.8,
-                      children: [
-                        _buildLangButton(AppLanguage.english, currentLang),
-                        _buildLangButton(AppLanguage.hindi, currentLang),
-                        _buildLangButton(AppLanguage.punjabi, currentLang),
-                        _buildLangButton(AppLanguage.marathi, currentLang),
-                      ],
-                    );
-                  },
-                ),
-                const SizedBox(height: 24),
-
-                // Common Issues (Pictorial Cards)
-                Text(
-                  'Common Issues / सामान्य समस्याएं',
-                  style: AppTypography.headlineSmall(color: AppColors.onSurface),
-                ),
-                const SizedBox(height: 12),
-                _buildFaqCard(
-                  context,
-                  icon: Icons.calendar_month,
-                  titleEn: 'Booking Help',
-                  titleHi: 'बुकिंग सहायता',
-                  description: 'How to reschedule or cancel a slot at Mandi',
-                ),
-                const SizedBox(height: 10),
-                _buildFaqCard(
-                  context,
-                  icon: Icons.payments,
-                  titleEn: 'Payment Issues',
-                  titleHi: 'भुगतान समस्याएं',
-                  description: 'Direct Benefit Transfer (DBT) verification & timing',
-                ),
-                const SizedBox(height: 10),
-                _buildFaqCard(
-                  context,
-                  icon: Icons.queue,
-                  titleEn: 'Queue Status',
-                  titleHi: 'कतार स्थिति',
-                  description: 'Understand live token numbers and estimated wait',
-                ),
-                const SizedBox(height: 24),
-
-                // Contact Support Buttons
-                Text(
-                  'Contact Support / संपर्क करें',
-                  style: AppTypography.headlineSmall(color: AppColors.onSurface),
-                ),
-                const SizedBox(height: 12),
-
-                // Call Helpline
-                InkWell(
-                  onTap: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Calling Toll-Free Helpline: 1800-180-1551...')),
-                    );
-                  },
-                  borderRadius: BorderRadius.circular(16),
-                  child: Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: AppColors.secondaryContainer,
-                      borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: AppColors.secondary, width: 2),
-                    ),
-                    child: Row(
-                      children: [
-                        const Icon(Icons.call, size: 32, color: AppColors.onSecondaryContainer),
-                        const SizedBox(width: 14),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Call Helpline (1800-180-1551)',
-                                style: AppTypography.headlineSmall(color: AppColors.onSecondaryContainer),
-                              ),
-                              Text(
-                                'हेल्पलाइन को कॉल करें (टोल-फ्री)',
-                                style: AppTypography.labelMedium(color: AppColors.onSecondaryContainer),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                      Icon(Icons.phone_forwarded, color: AppColors.textDark),
+                    ],
                   ),
                 ),
-                const SizedBox(height: 12),
+              ),
 
-                // Chat with Sahayak
-                InkWell(
-                  onTap: () {
-                    _showChatDialog(context);
-                  },
-                  borderRadius: BorderRadius.circular(16),
-                  child: Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: AppColors.surfaceContainerHigh,
-                      borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: AppColors.outlineVariant, width: 2),
-                    ),
-                    child: Row(
-                      children: [
-                        const Icon(Icons.chat, size: 32, color: AppColors.primary),
-                        const SizedBox(width: 14),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Chat with Sahayak',
-                                style: AppTypography.headlineSmall(color: AppColors.onSurface),
-                              ),
-                              Text(
-                                'सहायक से चैट करें (AI Assistant)',
-                                style: AppTypography.labelMedium(color: AppColors.onSurfaceVariant),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 30),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+              const SizedBox(height: 20),
 
-  Widget _buildLangButton(AppLanguage lang, AppLanguage currentLang) {
-    final isSelected = lang == currentLang;
+              // 3. AI Krishi Sahayak Interactive Chat Box
+              Text(
+                _isHindi ? 'कृषि सहायक AI चैट' : 'Chat with Krishi Sahayak AI',
+                style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800, color: AppColors.darkEmerald),
+              ),
+              const SizedBox(height: 8),
 
-    return InkWell(
-      onTap: () => AppState().setLanguage(lang),
-      borderRadius: BorderRadius.circular(10),
-      child: Container(
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: isSelected ? AppColors.secondaryContainer : AppColors.surface,
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            color: isSelected ? AppColors.secondary : AppColors.outlineVariant,
-            width: isSelected ? 2 : 1.5,
-          ),
-        ),
-        child: Text(
-          lang.nativeLabel,
-          style: AppTypography.labelLarge(
-            color: isSelected ? AppColors.onSecondaryContainer : AppColors.onSurface,
-          ).copyWith(
-            fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildFaqCard(
-    BuildContext context, {
-    required IconData icon,
-    required String titleEn,
-    required String titleHi,
-    required String description,
-  }) {
-    return Card(
-      color: AppColors.mintCardSurface,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(14),
-        side: const BorderSide(color: AppColors.mintCardBorder),
-      ),
-      child: InkWell(
-        onTap: () {
-          showDialog(
-            context: context,
-            builder: (ctx) => AlertDialog(
-              backgroundColor: AppColors.surfaceContainerLowest,
-              title: Text('$titleEn / $titleHi'),
-              content: Text(description),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(ctx),
-                  child: const Text('OK'),
-                ),
-              ],
-            ),
-          );
-        },
-        borderRadius: BorderRadius.circular(14),
-        child: Padding(
-          padding: const EdgeInsets.all(14),
-          child: Row(
-            children: [
               Container(
-                width: 52,
-                height: 52,
                 decoration: BoxDecoration(
-                  color: AppColors.primaryContainer,
-                  borderRadius: BorderRadius.circular(10),
+                  color: AppColors.cardSurface,
+                  borderRadius: BorderRadius.circular(22),
+                  border: Border.all(color: AppColors.borderSubtle),
+                  boxShadow: [
+                    BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 12, offset: const Offset(0, 4)),
+                  ],
                 ),
-                child: Icon(icon, color: AppColors.onPrimaryContainer, size: 28),
-              ),
-              const SizedBox(width: 14),
-              Expanded(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      '$titleEn / $titleHi',
-                      style: AppTypography.labelLarge(color: AppColors.onSurface).copyWith(
-                        fontWeight: FontWeight.bold,
+                    // Chat Messages Scroll Container
+                    Container(
+                      height: 220,
+                      padding: const EdgeInsets.all(14),
+                      child: ListView.builder(
+                        physics: const BouncingScrollPhysics(),
+                        itemCount: _messages.length,
+                        itemBuilder: (context, index) {
+                          final msg = _messages[index];
+                          final isBot = msg['sender'] == 'bot';
+                          return Align(
+                            alignment: isBot ? Alignment.centerLeft : Alignment.centerRight,
+                            child: Container(
+                              margin: const EdgeInsets.only(bottom: 10),
+                              padding: const EdgeInsets.all(12),
+                              constraints: const BoxConstraints(maxWidth: 280),
+                              decoration: BoxDecoration(
+                                color: isBot ? AppColors.lightEmerald : AppColors.darkEmerald,
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: Text(
+                                msg['text']!,
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600,
+                                  color: isBot ? AppColors.textDark : Colors.white,
+                                ),
+                              ),
+                            ),
+                          );
+                        },
                       ),
                     ),
-                    const SizedBox(height: 2),
-                    Text(
-                      description,
-                      style: AppTypography.bodySmall(color: AppColors.onSurfaceVariant),
+
+                    // Chat Input Bar
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: const BoxDecoration(
+                        border: Border(top: BorderSide(color: AppColors.borderSubtle)),
+                      ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: TextField(
+                              controller: _chatController,
+                              onSubmitted: (_) => _sendMessage(),
+                              decoration: InputDecoration(
+                                hintText: _isHindi ? 'अपना सवाल यहाँ टाइप करें...' : 'Ask your query in English/Hindi...',
+                                hintStyle: const TextStyle(fontSize: 12),
+                                border: InputBorder.none,
+                                contentPadding: const EdgeInsets.symmetric(horizontal: 12),
+                              ),
+                            ),
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.send, color: AppColors.primaryEmerald),
+                            onPressed: _sendMessage,
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
               ),
-              const Icon(Icons.arrow_forward_ios, size: 14, color: AppColors.outline),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
 
-  void _showChatDialog(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: AppColors.surfaceContainerLowest,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (context) {
-        return Padding(
-          padding: EdgeInsets.only(
-            bottom: MediaQuery.of(context).viewInsets.bottom,
-            top: 20,
-            left: 20,
-            right: 20,
-          ),
-          child: SizedBox(
-            height: 380,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Krishi Sahayak Assistant', style: AppTypography.headlineSmall(color: AppColors.primary)),
-                    IconButton(
-                      icon: const Icon(Icons.close),
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                  ],
-                ),
-                const Divider(),
-                Expanded(
-                  child: ListView(
-                    children: [
-                      _buildChatBubble('Namaste Ram Singh ji! How can I help you today with your Mandi slot booking or DBT payment?', isUser: false),
-                      _buildChatBubble('Can I reschedule my slot to tomorrow morning?', isUser: true),
-                      _buildChatBubble('Yes, Sonipat Main Mandi has 42 available morning slots for tomorrow. Would you like me to book it for you?', isUser: false),
-                    ],
+              const SizedBox(height: 20),
+
+              // Return to Dashboard Button
+              SizedBox(
+                width: double.infinity,
+                height: 54,
+                child: ElevatedButton(
+                  onPressed: () {
+                    if (widget.onGoToDashboard != null) {
+                      widget.onGoToDashboard!();
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.primaryEmerald,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 16),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Expanded(
-                        child: TextField(
-                          decoration: InputDecoration(
-                            hintText: 'Type your question / अपना प्रश्न लिखें...',
-                            fillColor: AppColors.surface,
-                          ),
-                        ),
-                      ),
+                      const Icon(Icons.home, size: 20),
                       const SizedBox(width: 8),
-                      IconButton.filled(
-                        style: IconButton.styleFrom(backgroundColor: AppColors.primary),
-                        onPressed: () {},
-                        icon: const Icon(Icons.send),
+                      Text(
+                        _isHindi ? 'मुख्य डैशबोर्ड पर लौटें' : 'Return to Main Dashboard',
+                        style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800),
                       ),
                     ],
                   ),
                 ),
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
-
-  Widget _buildChatBubble(String text, {required bool isUser}) {
-    return Align(
-      alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
-      child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 4),
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-        decoration: BoxDecoration(
-          color: isUser ? AppColors.primary : AppColors.surfaceContainer,
-          borderRadius: BorderRadius.circular(12),
-        ),
-        constraints: const BoxConstraints(maxWidth: 280),
-        child: Text(
-          text,
-          style: AppTypography.bodySmall(
-            color: isUser ? AppColors.onPrimary : AppColors.onSurface,
+              ),
+            ],
           ),
         ),
       ),

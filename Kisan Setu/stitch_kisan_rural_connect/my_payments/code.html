@@ -179,12 +179,7 @@
 <!-- Main Content Area -->
 <div class="flex-1 flex flex-col md:ml-80 pb-[80px] md:pb-0">
 <!-- TopAppBar -->
-<header class="bg-surface text-primary font-headline-md text-headline-md-mobile w-full top-0 border-b border-outline-variant flat no shadows flex items-center px-margin-mobile h-touch-target-min sticky z-30">
-<button aria-label="Menu" class="mr-4 md:hidden text-primary">
-<span class="material-symbols-outlined">menu</span>
-</button>
-<div class="flex-1 font-headline-md text-headline-md-mobile font-bold text-primary">Kisan Setu</div>
-</header>
+<header class="bg-surface border-b border-outline-variant w-full top-0 flex items-center px-margin-mobile fixed z-40 transition-colors duration-200 py-2"><h1 class="font-headline-md text-headline-md-mobile font-bold text-primary flex-1">Kisan Setu | किसान सेतु</h1><div class="flex items-center gap-2"><button aria-label="Profile" class="flex items-center justify-center h-10 w-10 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed transition-colors active:scale-95 shadow-sm"><span class="material-symbols-outlined">person</span></button><button aria-label="Select Language" class="flex items-center gap-2 px-3 py-1 rounded-full border border-outline text-primary hover:bg-surface-container-low transition-colors active:scale-95"><span class="material-symbols-outlined text-body-md-mobile">language</span><span class="font-label-md text-xs">EN/हिन्दी</span></button></div></header>
 <!-- Page Content -->
 <main class="flex-1 p-margin-mobile max-w-4xl w-full mx-auto">
 <div class="mb-stack-gap-lg">
@@ -292,7 +287,7 @@
 <span class="inline-flex items-center px-3 py-1 rounded-full bg-error text-on-error font-label-md text-label-md font-bold">
 <span class="material-symbols-outlined text-[16px] mr-1">error</span> Action Required
                         </span>
-<button class="bg-error text-on-error px-4 py-2 rounded font-label-md text-label-md h-touch-target-min flex items-center justify-center w-full sm:w-auto mt-2">Update Bank Details</button>
+<button onclick="window.location.href='../dbt_setup/code.html'" class="bg-error text-on-error px-4 py-2 rounded font-label-md text-label-md h-touch-target-min flex items-center justify-center w-full sm:w-auto mt-2 cursor-pointer active:scale-95 transition-transform">Update Bank Details</button>
 </div>
 </div>
 <!-- Transaction Card: Completed -->
@@ -322,33 +317,37 @@
 </div>
 </div>
 </div>
-<!-- Load More Button -->
-<div class="mt-stack-gap-lg flex justify-center">
-<button class="border-2 border-primary text-primary font-label-lg text-label-lg px-8 py-3 rounded-xl hover:bg-surface-variant transition-colors h-touch-target-min w-full md:w-auto flex items-center justify-center">
-                    Load More Transactions
-                </button>
+<!-- Explore Kisan Suvidha Government Schemes CTA -->
+<div class="mt-stack-gap-lg mb-16 flex flex-col sm:flex-row gap-3 justify-center">
+  <button onclick="window.location.href='../kisan_suvidha/code.html'" class="bg-primary hover:bg-primary-container text-on-primary font-bold text-sm px-6 py-3.5 rounded-xl shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-95 transition-all">
+    <span class="material-symbols-outlined">eco</span>
+    <span>Explore Kisan Suvidha Schemes / योजनाएं →</span>
+  </button>
+  <button onclick="window.location.href='../help_center/code.html'" class="border-2 border-primary text-primary font-bold text-sm px-6 py-3.5 rounded-xl hover:bg-surface-variant flex items-center justify-center gap-2 cursor-pointer active:scale-95 transition-all">
+    <span class="material-symbols-outlined">support_agent</span>
+    <span>Toll-Free Support (1800-180-1551)</span>
+  </button>
 </div>
 </main>
 </div>
 <!-- BottomNavBar (Mobile Only) -->
-<nav class="md:hidden bg-surface text-primary font-label-lg text-label-lg-mobile font-headline-sm text-headline-sm text-primary fixed bottom-0 w-full z-50 border-t-2 border-primary-container flat no shadows flex justify-around items-center h-[80px] px-2 pb-2">
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest active:scale-95 transition-transform w-1/4 h-full pt-2" href="#">
-<span class="material-symbols-outlined mb-1 text-2xl">home</span>
-<span class="">Home</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest active:scale-95 transition-transform w-1/4 h-full pt-2" href="#">
-<span class="material-symbols-outlined mb-1 text-2xl">analytics</span>
-<span class="">Track</span>
-</a>
-<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1 active:scale-95 transition-transform w-1/4 h-full pt-2 mt-1" href="#">
-<span class="material-symbols-outlined fill mb-1 text-2xl">payments</span>
-<span class="font-bold">Payments</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest active:scale-95 transition-transform w-1/4 h-full pt-2" href="#">
-<span class="material-symbols-outlined mb-1 text-2xl">person</span>
-<span class="">Profile</span>
-</a>
-</nav>
+<nav class="md:hidden bg-surface text-primary font-label-lg text-label-lg-mobile font-headline-sm text-headline-sm text-primary fixed bottom-0 w-full z-50 border-t-2 border-primary-container flat no shadows flex justify-around items-center h-[80px] px-2 pb-2"><a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-95 transition-transform flex-1 h-full pt-2" href="../dashboard_bilingual/code.html"><span class="material-symbols-outlined mb-1 text-2xl">home</span><span class="text-xs font-label-md font-['Be_Vietnam_Pro']">Home</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-95 transition-transform flex-1 h-full pt-2" href="../live_tracker/code.html"><span class="material-symbols-outlined mb-1 text-2xl">local_shipping</span><span class="text-xs font-label-md font-['Be_Vietnam_Pro']">Track</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-95 transition-transform flex-1 h-full pt-2" href="../nearby_mandis_updated_icons/code.html"><span class="material-symbols-outlined mb-1 text-2xl">location_on</span><span class="text-xs font-label-md font-['Be_Vietnam_Pro']">Mandis</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-95 transition-transform flex-1 h-full pt-2" href="../procurement_details_quality_weighing_fixed/code.html"><span class="material-symbols-outlined mb-1 text-2xl">high_quality</span><span class="text-xs font-label-md font-['Be_Vietnam_Pro']">Quality</span></a><a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-2 active:scale-95 transition-transform flex-1 h-[70%] mt-1" href="../my_payments/code.html"><span class="material-symbols-outlined fill mb-1 text-[28px]">payments</span><span class="text-xs font-bold font-label-md font-['Be_Vietnam_Pro']">Payments</span></a></nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </body></html>
