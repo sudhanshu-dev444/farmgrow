@@ -118,16 +118,7 @@
 </head>
 <body class="bg-background text-on-background min-h-screen pb-[100px] md:pb-0 font-body-md">
 <!-- TopAppBar -->
-<header class="w-full top-0 border-b border-outline-variant bg-surface text-primary font-headline-md text-headline-md-mobile flex items-center justify-between px-margin-mobile fixed z-50 shadow-sm md:shadow-none h-[72px]">
-<div class="flex items-center gap-4">
-<button class="text-primary hover:bg-surface-variant p-2 rounded-full transition-colors duration-200 flex items-center justify-center h-10 w-10"><span class="material-symbols-outlined">menu</span></button>
-<h1 class="font-headline-md text-headline-md-mobile font-bold text-primary">Kisan Setu | किसान सेतु</h1>
-</div>
-<div class="flex items-center gap-3">
-<button aria-label="Select Language" class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-outline text-primary hover:bg-surface-container-low transition-colors active:scale-95"><span class="material-symbols-outlined text-[18px]">language</span><span class="font-label-md text-[12px] whitespace-nowrap">EN/हिन्दी</span></button>
-<button aria-label="Profile" class="flex items-center justify-center h-[40px] w-[40px] rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed transition-colors active:scale-95 flex-shrink-0"><span class="material-symbols-outlined">person</span></button>
-</div>
-</header>
+<header class="bg-surface border-b border-outline-variant w-full top-0 flex items-center px-margin-mobile fixed z-40 transition-colors duration-200 py-2 bg-surface-container-lowest"><button class="mr-4 text-primary hover:bg-surface-variant p-2 rounded-full transition-colors duration-200 flex items-center justify-center h-10 w-10"><span class="material-symbols-outlined">menu</span></button><h1 class="font-headline-md text-headline-md-mobile font-bold text-primary flex-1 leading-tight"><span class="material-symbols-outlined mr-2 align-middle">agriculture</span>Kisan Setu | किसान सेतु</h1><div class="flex items-center gap-2"><button aria-label="Profile" class="flex items-center justify-center h-10 w-10 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed transition-colors active:scale-95 shadow-sm"><span class="material-symbols-outlined">person</span></button><button aria-label="Select Language" class="flex items-center gap-2 px-3 py-1 rounded-full border border-outline text-primary hover:bg-surface-container-low transition-colors active:scale-95"><span class="material-symbols-outlined text-body-md-mobile">language</span><span class="font-label-md text-xs">EN/हऱनुदी</span></button></div></header>
 <!-- Main Content Canvas -->
 <main class="pt-[72px] px-margin-mobile max-w-4xl mx-auto md:flex md:gap-stack-gap-lg">
 <!-- Navigation Drawer (Hidden on Mobile) -->
@@ -334,38 +325,22 @@
 </div>
 </div>
 <!-- Action Area -->
-<div class="mt-6 mb-16 space-y-3">
-  <button onclick="window.location.href='../my_payments/code.html'" class="w-full h-14 bg-primary hover:bg-primary-container text-on-primary font-bold text-base rounded-xl shadow-lg flex items-center justify-center gap-2 active:scale-95 transition-all cursor-pointer">
-    <span class="material-symbols-outlined">receipt_long</span>
-    <span>View Payment Slip & DBT Status / भुगतान देखें →</span>
-  </button>
-  <button onclick="window.location.href='../help_center/code.html'" class="w-full h-12 bg-surface text-primary border-2 border-outline-variant hover:bg-surface-variant hover:border-primary active:scale-[0.98] transition-all rounded-xl font-label-lg font-bold flex items-center justify-center gap-2 cursor-pointer">
-    <span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
-    <span>Call Center & AI Sahayak / सहायता केंद्र</span>
-  </button>
+<div class="mt-8 mb-12">
+<button class="w-full h-touch-target-min bg-surface text-primary border-2 border-outline-variant hover:bg-surface-variant hover:border-primary active:scale-[0.98] transition-all rounded-xl font-label-lg font-bold flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+                    Call Center Support
+                </button>
 </div>
 </div>
 </main>
 <!-- BottomNavBar (Mobile Only) -->
-<nav class="md:hidden fixed bottom-0 w-full z-50 border-t-2 border-outline-variant bg-surface flex justify-around items-center h-[80px] px-2 pb-2">
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest active:scale-95 transition-transform flex-1 h-full rounded-xl" href="../dashboard_bilingual/code.html">
-<span class="material-symbols-outlined">home</span>
-<span class="font-label-md text-label-md-mobile mt-1 font-medium">Home</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest active:scale-95 transition-transform flex-1 h-full rounded-xl" href="../live_tracker/code.html">
-<span class="material-symbols-outlined text-[28px]">local_shipping</span>
-<span class="font-label-md text-label-md-mobile mt-1 font-medium">Track</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest active:scale-95 transition-transform flex-1 h-full rounded-xl" href="../nearby_mandis_updated_icons/code.html">
-<span class="material-symbols-outlined">location_on</span>
-<span class="font-label-md text-label-md-mobile mt-1 font-medium">Mandis</span>
-</a>
-<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-2 py-1.5 active:scale-95 transition-transform flex-1 h-[90%]" href="../procurement_details_quality_weighing_fixed/code.html"><span class="material-symbols-outlined icon-fill text-[28px]">high_quality</span><span class="font-label-md text-label-md-mobile mt-1 font-bold">Quality</span></a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-highest active:scale-95 transition-transform flex-1 h-full rounded-xl" href="../my_payments/code.html">
-<span class="material-symbols-outlined">payments</span>
-<span class="font-label-md text-label-md-mobile mt-1 font-medium">Payments</span>
-</a>
-</nav>
+<nav class="bg-surface border-t-2 border-primary-container fixed bottom-0 w-full z-50 flex justify-around items-center h-[90px] px-2 pb-2 md:hidden bg-surface-container-lowest"><button class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] active:scale-95 transition-transform hover:bg-surface-container-highest px-2 py-1"><span class="material-symbols-outlined text-[24px]">home</span><span class="font-label-lg text-[10px] leading-tight mt-1 text-center">Home<br>होम</span></button><button class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] active:scale-95 transition-transform hover:bg-surface-container-highest px-2 py-1"><span class="material-symbols-outlined text-[24px]">local_shipping</span><span class="font-label-lg text-[10px] leading-tight mt-1 text-center">Track<br>ट्रैक</span></button><button class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] active:scale-95 transition-transform hover:bg-surface-container-highest px-2 py-1"><span class="material-symbols-outlined text-[24px]">location_on</span><span class="font-label-lg text-[10px] leading-tight mt-1 text-center">Mandis<br>मंडियां</span></button><button class="flex flex-col items-center justify-center text-on-secondary-container rounded-xl px-2 py-1 flex-1 max-w-[80px] active:scale-95 transition-transform text-primary"><span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">high_quality</span><span class="font-label-lg text-[10px] leading-tight mt-1 text-center">Quality<br>गुणवत्ता</span></button><button class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] active:scale-95 transition-transform hover:bg-surface-container-highest px-2 py-1"><span class="material-symbols-outlined text-[24px]">payments</span><span class="font-label-lg text-[10px] leading-tight mt-1 text-center">Payments<br>भुगतान</span></button></nav>
+
+
+
+
+
+
 
 
 

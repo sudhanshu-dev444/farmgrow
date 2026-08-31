@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="en" style=""><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Krishi Sahayak - My Payments</title>
@@ -179,7 +179,21 @@
 <!-- Main Content Area -->
 <div class="flex-1 flex flex-col md:ml-80 pb-[80px] md:pb-0">
 <!-- TopAppBar -->
-<header class="bg-surface border-b border-outline-variant w-full top-0 flex items-center px-margin-mobile fixed z-40 transition-colors duration-200 py-2"><h1 class="font-headline-md text-headline-md-mobile font-bold text-primary flex-1">Kisan Setu | किसान सेतु</h1><div class="flex items-center gap-2"><button aria-label="Profile" class="flex items-center justify-center h-10 w-10 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed transition-colors active:scale-95 shadow-sm"><span class="material-symbols-outlined">person</span></button><button aria-label="Select Language" class="flex items-center gap-2 px-3 py-1 rounded-full border border-outline text-primary hover:bg-surface-container-low transition-colors active:scale-95"><span class="material-symbols-outlined text-body-md-mobile">language</span><span class="font-label-md text-xs">EN/हिन्दी</span></button></div></header>
+<header class="bg-surface-container-lowest border-b border-outline-variant w-full top-0 flex items-center px-margin-mobile fixed z-40 py-2">
+  <div class="flex items-center gap-2 flex-1">
+    <span class="material-symbols-outlined text-primary">agriculture</span>
+    <h1 class="font-headline-md text-headline-md-mobile font-bold text-primary">Kisan Setu | किसान सेतु</h1>
+  </div>
+  <div class="flex items-center gap-2">
+    <button aria-label="Profile" class="flex items-center justify-center h-10 w-10 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed transition-colors active:scale-95 shadow-sm">
+      <span class="material-symbols-outlined">person</span>
+    </button>
+    <button aria-label="Select Language" class="flex items-center gap-2 px-3 py-1 rounded-full border border-outline text-primary hover:bg-surface-container-low transition-colors active:scale-95">
+      <span class="material-symbols-outlined text-body-md-mobile">language</span>
+      <span class="font-label-md text-xs">EN/हिन्दी</span>
+    </button>
+  </div>
+</header>
 <!-- Page Content -->
 <main class="flex-1 p-margin-mobile max-w-4xl w-full mx-auto">
 <div class="mb-stack-gap-lg">
@@ -188,20 +202,19 @@
 </div>
 <!-- Summary Cards (Bento style) -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-gap-md mb-stack-gap-lg">
-<div class="bg-primary-container text-on-primary-container p-6 rounded-xl relative overflow-hidden">
-<!-- Subtle background pattern for high-contrast visibility -->
+<div class="bg-primary-container text-on-primary-container p-4 rounded-xl relative overflow-hidden">
 <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, #ffffff 10px, #ffffff 20px);"></div>
 <div class="relative z-10">
-<p class="font-label-md text-label-md mb-1 uppercase tracking-wider">Total Received (This Season)</p>
-<h2 class="font-headline-lg text-headline-lg font-bold">₹ 1,45,000</h2>
-<p class="font-body-md text-body-md mt-2 opacity-90">कुल प्राप्त राशि (इस मौसम में)</p>
+<p class="font-label-md text-xs mb-1 uppercase tracking-wider">Total Received (This Season)</p>
+<h2 class="font-headline-md text-headline-md font-bold truncate min-w-0">₹ 1,45,000</h2>
+<p class="font-body-md text-sm mt-1 opacity-90">कुल प्राप्त राशि (इस मौसम में)</p>
 </div>
 </div>
-<div class="bg-secondary-container text-on-secondary-container p-6 rounded-xl border-2 border-secondary shadow-[4px_4px_0px_#705d00] relative overflow-hidden">
+<div class="bg-secondary-container text-on-secondary-container p-4 rounded-xl border-2 border-secondary shadow-[4px_4px_0px_#705d00] relative overflow-hidden">
 <div class="relative z-10">
-<p class="font-label-md text-label-md mb-1 uppercase tracking-wider text-secondary">Pending Processing</p>
-<h2 class="font-headline-lg text-headline-lg font-bold">₹ 32,500</h2>
-<p class="font-body-md text-body-md mt-2 text-secondary">प्रक्रिया में (लंबित)</p>
+<p class="font-label-md text-xs mb-1 uppercase tracking-wider text-secondary">Pending Processing</p>
+<h2 class="font-headline-md text-headline-md font-bold truncate min-w-0">₹ 32,500</h2>
+<p class="font-body-md text-sm mt-1 text-secondary">प्रक्रिया में (लंबित)</p>
 </div>
 </div>
 </div>
@@ -216,10 +229,8 @@
 <span class="material-symbols-outlined fill">grass</span>
 </div>
 <div class="flex-1 min-w-0">
-<div class="flex justify-between items-start mb-1">
-<h4 class="font-label-lg text-label-lg truncate">Wheat Sale (Mandi) / गेहूं की बिक्री</h4>
-<span class="font-headline-sm text-headline-sm font-bold text-primary whitespace-nowrap ml-2">₹ 45,000</span>
-</div>
+<div class="flex justify-between items-start mb-1"><h4 class="font-label-lg text-label-lg truncate mr-2">Wheat Sale (Mandi) / गेहूं की बिक्री</h4>
+<span class="font-headline-sm text-[18px] font-bold text-primary flex-shrink-0">₹ 45,000</span></div>
 <div class="flex flex-wrap gap-2 text-sm text-on-surface-variant font-body-md text-body-md">
 <span class="">12 May 2024</span>
 <span class="hidden sm:inline">•</span>
@@ -245,10 +256,8 @@
 <span class="material-symbols-outlined fill">inventory_2</span>
 </div>
 <div class="flex-1 min-w-0">
-<div class="flex justify-between items-start mb-1">
-<h4 class="font-label-lg text-label-lg truncate">Paddy Procurement / धान की खरीद</h4>
-<span class="font-headline-sm text-headline-sm font-bold text-on-background whitespace-nowrap ml-2">₹ 32,500</span>
-</div>
+<div class="flex justify-between items-start mb-1"><h4 class="font-label-lg text-label-lg truncate mr-2">Paddy Procurement / धान की खरीद</h4>
+<span class="font-headline-sm text-[18px] font-bold text-on-background flex-shrink-0">₹ 32,500</span></div>
 <div class="flex flex-wrap gap-2 text-sm text-on-surface-variant font-body-md text-body-md">
 <span class="">10 May 2024</span>
 <span class="hidden sm:inline">•</span>
@@ -272,10 +281,8 @@
 <span class="material-symbols-outlined fill">account_balance</span>
 </div>
 <div class="flex-1 min-w-0">
-<div class="flex justify-between items-start mb-1">
-<h4 class="font-label-lg text-label-lg truncate text-on-error-container">Subsidy Deposit / सब्सिडी जमा</h4>
-<span class="font-headline-sm text-headline-sm font-bold text-error whitespace-nowrap ml-2">₹ 5,000</span>
-</div>
+<div class="flex justify-between items-start mb-1"><h4 class="font-label-lg text-label-lg truncate text-on-error-container mr-2">Subsidy Deposit / सब्सिडी जमा</h4>
+<span class="font-headline-sm text-[18px] font-bold text-error flex-shrink-0">₹ 5,000</span></div>
 <div class="flex flex-wrap gap-2 text-sm text-on-error-container font-body-md text-body-md">
 <span class="">05 May 2024</span>
 <span class="hidden sm:inline">•</span>
@@ -287,7 +294,7 @@
 <span class="inline-flex items-center px-3 py-1 rounded-full bg-error text-on-error font-label-md text-label-md font-bold">
 <span class="material-symbols-outlined text-[16px] mr-1">error</span> Action Required
                         </span>
-<button onclick="window.location.href='../dbt_setup/code.html'" class="bg-error text-on-error px-4 py-2 rounded font-label-md text-label-md h-touch-target-min flex items-center justify-center w-full sm:w-auto mt-2 cursor-pointer active:scale-95 transition-transform">Update Bank Details</button>
+<button class="bg-[#004d40] text-on-primary px-4 py-2 rounded font-label-md text-label-md h-touch-target-min flex items-center justify-center w-full sm:w-auto mt-2 active:scale-95 transition-transform">Update Bank Details</button>
 </div>
 </div>
 <!-- Transaction Card: Completed -->
@@ -297,10 +304,8 @@
 <span class="material-symbols-outlined fill">compost</span>
 </div>
 <div class="flex-1 min-w-0">
-<div class="flex justify-between items-start mb-1">
-<h4 class="font-label-lg text-label-lg truncate">Fertilizer Subsidy / उर्वरक सब्सिडी</h4>
-<span class="font-headline-sm text-headline-sm font-bold text-primary whitespace-nowrap ml-2">₹ 12,500</span>
-</div>
+<div class="flex justify-between items-start mb-1"><h4 class="font-label-lg text-label-lg truncate mr-2">Fertilizer Subsidy / उर्वरक सब्सिडी</h4>
+<span class="font-headline-sm text-[18px] font-bold text-primary flex-shrink-0">₹ 12,500</span></div>
 <div class="flex flex-wrap gap-2 text-sm text-on-surface-variant font-body-md text-body-md">
 <span class="">20 Apr 2024</span>
 <span class="hidden sm:inline">•</span>
@@ -317,21 +322,41 @@
 </div>
 </div>
 </div>
-<!-- Explore Kisan Suvidha Government Schemes CTA -->
-<div class="mt-stack-gap-lg mb-16 flex flex-col sm:flex-row gap-3 justify-center">
-  <button onclick="window.location.href='../kisan_suvidha/code.html'" class="bg-primary hover:bg-primary-container text-on-primary font-bold text-sm px-6 py-3.5 rounded-xl shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-95 transition-all">
-    <span class="material-symbols-outlined">eco</span>
-    <span>Explore Kisan Suvidha Schemes / योजनाएं →</span>
-  </button>
-  <button onclick="window.location.href='../help_center/code.html'" class="border-2 border-primary text-primary font-bold text-sm px-6 py-3.5 rounded-xl hover:bg-surface-variant flex items-center justify-center gap-2 cursor-pointer active:scale-95 transition-all">
-    <span class="material-symbols-outlined">support_agent</span>
-    <span>Toll-Free Support (1800-180-1551)</span>
-  </button>
+<!-- Load More Button -->
+<div class="mt-stack-gap-lg flex justify-center">
+<button class="border-2 border-primary text-primary font-label-lg text-label-lg px-8 py-3 rounded-xl hover:bg-surface-variant transition-colors h-touch-target-min w-full md:w-auto flex items-center justify-center">
+                    Load More Transactions
+                </button>
 </div>
 </main>
 </div>
 <!-- BottomNavBar (Mobile Only) -->
-<nav class="md:hidden bg-surface text-primary font-label-lg text-label-lg-mobile font-headline-sm text-headline-sm text-primary fixed bottom-0 w-full z-50 border-t-2 border-primary-container flat no shadows flex justify-around items-center h-[80px] px-2 pb-2"><a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-95 transition-transform flex-1 h-full pt-2" href="../dashboard_bilingual/code.html"><span class="material-symbols-outlined mb-1 text-2xl">home</span><span class="text-xs font-label-md font-['Be_Vietnam_Pro']">Home</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-95 transition-transform flex-1 h-full pt-2" href="../live_tracker/code.html"><span class="material-symbols-outlined mb-1 text-2xl">local_shipping</span><span class="text-xs font-label-md font-['Be_Vietnam_Pro']">Track</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-95 transition-transform flex-1 h-full pt-2" href="../nearby_mandis_updated_icons/code.html"><span class="material-symbols-outlined mb-1 text-2xl">location_on</span><span class="text-xs font-label-md font-['Be_Vietnam_Pro']">Mandis</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-95 transition-transform flex-1 h-full pt-2" href="../procurement_details_quality_weighing_fixed/code.html"><span class="material-symbols-outlined mb-1 text-2xl">high_quality</span><span class="text-xs font-label-md font-['Be_Vietnam_Pro']">Quality</span></a><a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-2 active:scale-95 transition-transform flex-1 h-[70%] mt-1" href="../my_payments/code.html"><span class="material-symbols-outlined fill mb-1 text-[28px]">payments</span><span class="text-xs font-bold font-label-md font-['Be_Vietnam_Pro']">Payments</span></a></nav>
+<nav class="md:hidden bg-surface-container-lowest fixed bottom-0 w-full z-50 border-t border-outline-variant flex justify-around items-center h-[80px] px-2 pb-2">
+  <a class="flex flex-col items-center justify-center text-on-surface-variant flex-1 h-full pt-2" href="#">
+    <span class="material-symbols-outlined mb-1 text-2xl">home</span>
+    <span class="text-xs font-label-md font-['Be_Vietnam_Pro']">Home</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant flex-1 h-full pt-2" href="#">
+    <span class="material-symbols-outlined mb-1 text-2xl">local_shipping</span>
+    <span class="text-xs font-label-md font-['Be_Vietnam_Pro']">Track</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant flex-1 h-full pt-2" href="#">
+    <span class="material-symbols-outlined mb-1 text-2xl">location_on</span>
+    <span class="text-xs font-label-md font-['Be_Vietnam_Pro']">Mandis</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant flex-1 h-full pt-2" href="#">
+    <span class="material-symbols-outlined mb-1 text-2xl">high_quality</span>
+    <span class="text-xs font-label-md font-['Be_Vietnam_Pro']">Quality</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-primary flex-1 h-full pt-2" href="#">
+    <span class="material-symbols-outlined fill mb-1 text-2xl">payments</span>
+    <span class="text-xs font-bold font-label-md font-['Be_Vietnam_Pro']">Payments</span>
+  </a>
+</nav>
+
+
+
+
 
 
 

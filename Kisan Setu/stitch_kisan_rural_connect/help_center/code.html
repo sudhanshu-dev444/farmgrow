@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="light" lang="en"><head>
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Kisan Setu - Help Center</title>
@@ -108,7 +108,18 @@
   </head>
 <body class="bg-background text-on-background min-h-screen flex flex-col md:hidden">
 <!-- TopAppBar -->
-<header class="bg-surface border-b border-outline-variant w-full top-0 flex items-center px-margin-mobile z-50 sticky py-2"><button onclick="window.location.href='../dashboard_bilingual/code.html'" class="mr-4 text-primary hover:bg-surface-variant p-2 rounded-full transition-colors duration-200 flex items-center justify-center h-10 w-10 cursor-pointer"><span class="material-symbols-outlined">arrow_back</span></button><h1 class="font-headline-md text-headline-md-mobile font-bold text-primary flex-1">Kisan Setu | किसान सेतु</h1><button onclick="window.location.href='../dashboard_bilingual/code.html'" aria-label="Profile" class="flex items-center justify-center h-10 w-10 rounded-full text-primary hover:bg-surface-variant transition-colors active:scale-95 mr-2 cursor-pointer"><span class="material-symbols-outlined">home</span></button><button onclick="window.location.href='../dashboard_bilingual/code.html'" aria-label="Select Language" class="flex items-center gap-2 px-3 py-1 rounded-full border border-outline text-primary hover:bg-surface-container-low transition-colors active:scale-95 cursor-pointer"><span class="material-symbols-outlined text-body-md-mobile">language</span><span class="font-label-md text-xs">EN/हिन्दी</span></button></header>
+<header class="bg-white border-b border-outline-variant w-full top-0 flex items-center px-margin-mobile z-50 sticky py-2"><button class="text-primary hover:bg-surface-variant p-2 rounded-full transition-colors duration-200 flex items-center justify-center h-10 w-10">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex-1 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">agriculture</span>
+<h1 class="font-headline-sm text-primary font-bold">Kisan Setu | किसान सेतु</h1>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Profile" class="flex items-center justify-center h-10 w-10 rounded-full text-primary hover:bg-surface-variant transition-colors active:scale-95">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div></header>
 <!-- Main Content Canvas -->
 <main class="flex-1 p-margin-mobile flex flex-col gap-stack-gap-lg overflow-y-auto">
 <!-- Voice Guide Toggle -->
@@ -116,71 +127,28 @@
 <!-- Language Selection -->
 <section class="flex flex-col gap-stack-gap-md">
 <h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Change Language / भाषा बदलें</h2>
-<div class="grid grid-cols-2 gap-4">
-<button class="h-touch-target-min bg-surface border-2 border-primary-container text-primary font-label-lg text-label-lg rounded-lg flex items-center justify-center active:bg-surface-variant transition-colors">
-                    English
-                </button>
-<button class="h-touch-target-min bg-secondary-container border-2 border-secondary-container text-on-secondary-container font-label-lg text-label-lg rounded-lg flex items-center justify-center font-bold shadow-sm">
-                    हिंदी
-                </button>
-<button class="h-touch-target-min bg-surface border-2 border-outline-variant text-on-surface-variant font-label-lg text-label-lg rounded-lg flex items-center justify-center active:bg-surface-variant transition-colors">
-                    ਪੰਜਾਬੀ
-                </button>
-<button class="h-touch-target-min bg-surface border-2 border-outline-variant text-on-surface-variant font-label-lg text-label-lg rounded-lg flex items-center justify-center active:bg-surface-variant transition-colors">
-                    मराठी
-                </button>
-</div>
+<div class="grid grid-cols-2 gap-4"><button class="h-touch-target-min bg-surface border-2 border-outline-variant text-on-surface font-label-lg text-label-lg rounded-lg flex items-center justify-center active:bg-surface-variant transition-colors">English</button><button class="h-touch-target-min bg-primary-container border-2 border-primary-container text-on-primary-container font-label-lg text-label-lg rounded-lg flex items-center justify-center font-bold shadow-sm">हिंदी</button><button class="h-touch-target-min bg-surface border-2 border-outline-variant text-on-surface font-label-lg text-label-lg rounded-lg flex items-center justify-center active:bg-surface-variant transition-colors">ਪੰਜਾਬी</button><button class="h-touch-target-min bg-surface border-2 border-outline-variant text-on-surface font-label-lg text-label-lg rounded-lg flex items-center justify-center active:bg-surface-variant transition-colors">मराठी</button></div>
 </section>
 <!-- FAQ Categories (Pictorial Cards) -->
 <section class="flex flex-col gap-stack-gap-md">
 <h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Common Issues / सामान्य समस्याएं</h2>
-<div class="grid grid-cols-1 gap-4">
-<button class="bg-[#E8F5E9] border border-primary/20 rounded-xl p-4 flex items-center gap-4 active:border-secondary-container active:border-2 transition-all min-h-[80px]">
-<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-3xl" style="font-variation-settings: &quot;FILL&quot; 1;">home</span>
-</div>
-<div class="text-left text-on-surface">
-<div class="font-label-lg text-label-lg font-bold">Booking Help</div>
-<div class="font-body-md text-body-md text-on-surface-variant">बुकिंग सहायता</div>
-</div>
-</button>
-<button class="bg-[#E8F5E9] border border-primary/20 rounded-xl p-4 flex items-center gap-4 active:border-secondary-container active:border-2 transition-all min-h-[80px]">
-<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">payments</span>
-</div>
-<div class="text-left text-on-surface">
-<div class="font-label-lg text-label-lg font-bold">Payment Issues</div>
-<div class="font-body-md text-body-md text-on-surface-variant">भुगतान समस्याएं</div>
-</div>
-</button>
-<button class="bg-[#E8F5E9] border border-primary/20 rounded-xl p-4 flex items-center gap-4 active:border-secondary-container active:border-2 transition-all min-h-[80px]">
-<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-3xl" style="font-variation-settings: &quot;FILL&quot; 1;">local_shipping</span>
-</div>
-<div class="text-left text-on-surface">
-<div class="font-label-lg text-label-lg font-bold">Queue Status</div>
-<div class="font-body-md text-body-md text-on-surface-variant">कतार स्थिति</div>
-</div>
-</button>
-</div>
+<div class="grid grid-cols-1 gap-4"><button class="bg-surface border border-outline-variant rounded-lg p-4 flex items-center gap-4 active:border-primary-container active:border-2 transition-all min-h-[80px] hover:shadow-md active:scale-95 transition-transform"><div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">home</span></div><div class="text-left text-on-surface"><div class="font-label-lg text-label-lg font-bold">Booking Help</div><div class="font-body-md text-body-md text-on-surface-variant">बुकिंग सहायता</div></div></button><button class="bg-surface border border-outline-variant rounded-lg p-4 flex items-center gap-4 active:border-primary-container active:border-2 transition-all min-h-[80px] hover:shadow-md active:scale-95 transition-transform"><div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">payments</span></div><div class="text-left text-on-surface"><div class="font-label-lg text-label-lg font-bold">Payment Issues</div><div class="font-body-md text-body-md text-on-surface-variant">भुगतान समस्याएं</div></div></button><button class="bg-surface border border-outline-variant rounded-lg p-4 flex items-center gap-4 active:border-primary-container active:border-2 transition-all min-h-[80px] hover:shadow-md active:scale-95 transition-transform"><div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">local_shipping</span></div><div class="text-left text-on-surface"><div class="font-label-lg text-label-lg font-bold">Queue Status</div><div class="font-body-md text-body-md text-on-surface-variant">कतार स्थिति</div></div></button></div>
 </section>
 <!-- Contact Support -->
-<section class="flex flex-col gap-4 mt-4 pb-20">
-<button class="w-full min-h-[80px] bg-secondary-container text-on-secondary-container rounded-xl flex items-center justify-center gap-4 px-4 py-4 shadow-sm active:scale-95 transition-transform border-2 border-secondary-container">
-<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">call</span>
+<section class="flex flex-col gap-4 mt-4"><button class="w-full min-h-[80px] bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center gap-4 px-4 py-4 shadow-sm active:scale-95 transition-transform border-2 border-primary-container">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: &quot;FILL&quot; 1;">call</span>
 <div class="text-left">
 <div class="font-headline-sm text-headline-sm font-bold">Call Helpline</div>
 <div class="font-label-lg text-label-lg opacity-90">हेल्पलाइन को कॉल करें</div>
 </div>
 </button>
-<button class="w-full min-h-[80px] bg-surface-container-high border-2 border-outline-variant text-on-surface rounded-xl flex items-center justify-center gap-4 px-4 py-4 active:bg-surface-variant transition-colors">
-<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+<button class="w-full min-h-[80px] bg-secondary-container text-on-secondary-container border-2 border-secondary-container rounded-lg flex items-center justify-center gap-4 px-4 py-4 active:scale-95 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: &quot;FILL&quot; 1;">chat</span>
 <div class="text-left">
 <div class="font-headline-sm text-headline-sm font-bold">Chat with Sahayak</div>
 <div class="font-label-lg text-label-lg text-on-surface-variant">सहायक से चैट करें</div>
 </div>
-</button>
-</section>
+</button></section>
 </main>
 <!-- BottomNavBar Suppressed as this is a sub-page/help center (linear/transactional/support flow with back button) -->
 
@@ -193,7 +161,17 @@
 
 
 
-<nav class="fixed bottom-0 left-0 right-0 bg-surface border-t border-outline-variant flex items-center justify-around py-2 px-2 z-50"><a href="../dashboard_bilingual/code.html" class="flex flex-col items-center justify-center flex-1 gap-1"><div class="bg-secondary-container text-on-secondary-container px-6 py-1 rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">home</span></div><span class="text-xs font-bold text-on-surface font-label-md">Home</span></a><a href="../live_tracker/code.html" class="flex flex-col items-center justify-center flex-1 gap-1"><span class="material-symbols-outlined text-[28px] text-on-surface-variant">local_shipping</span><span class="text-xs text-on-surface-variant font-label-md">Track</span></a><a href="../nearby_mandis_updated_icons/code.html" class="flex flex-col items-center justify-center flex-1 gap-1"><span class="material-symbols-outlined text-[28px] text-on-surface-variant">location_on</span><span class="text-xs text-on-surface-variant font-label-md">Mandis</span></a><a href="../procurement_details_quality_weighing_fixed/code.html" class="flex flex-col items-center justify-center flex-1 gap-1"><span class="material-symbols-outlined text-[28px] text-on-surface-variant">high_quality</span><span class="text-xs text-on-surface-variant font-label-md">Quality</span></a><a href="../my_payments/code.html" class="flex flex-col items-center justify-center flex-1 gap-1"><span class="material-symbols-outlined text-[28px] text-on-surface-variant">payments</span><span class="text-xs text-on-surface-variant font-label-md">Payments</span></a></nav>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

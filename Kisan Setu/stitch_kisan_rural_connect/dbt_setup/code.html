@@ -106,45 +106,34 @@
     }
   </style>
   </head>
-<body class="bg-background text-on-background min-h-screen flex flex-col md:max-w-md md:mx-auto">
-<header class="border-b border-outline-variant w-full top-0 flex items-center px-margin-mobile py-2 fixed z-40 bg-surface-container-lowest"><button aria-label="Go back" class="p-2 mr-4 text-primary flex items-center justify-center h-10 w-10 rounded-full hover:bg-surface-variant transition-colors">
-<span aria-hidden="true" class="material-symbols-outlined">arrow_back</span>
-</button>
-<h1 class="font-headline-md text-headline-md font-bold text-primary flex-1">Kisan Setu | किसान सेतु</h1>
-<button aria-label="Profile" class="flex items-center justify-center h-10 w-10 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed transition-colors active:scale-95 mr-2 shadow-sm"><span class="material-symbols-outlined">account_circle</span></button>
-<button aria-label="Select Language" class="flex items-center gap-2 px-3 py-1 rounded-full border border-outline text-primary hover:bg-surface-container-low transition-colors active:scale-95">
-<span class="material-symbols-outlined text-body-md" data-icon="language">language</span>
-<span class="font-label-md text-xs">EN/हिन्दी</span>
-</button></header>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:max-w-md md:mx-auto font-headline-lg">
+<header class="border-b border-outline-variant w-full top-0 flex items-center px-margin-mobile py-2 fixed z-40 bg-white"><button aria-label="Go back" class="p-2 mr-4 text-primary flex items-center justify-center h-10 w-10 rounded-full hover:bg-surface-variant transition-colors"><span aria-hidden="true" class="material-symbols-outlined">arrow_back</span></button><div class="flex items-center gap-2 flex-1"><span class="material-symbols-outlined text-primary">grass</span><h1 class="font-headline-md text-headline-md font-bold text-primary">Kisan Setu | किसान सेतु</h1></div><button aria-label="Profile" class="flex items-center justify-center h-10 w-10 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed transition-colors active:scale-95 mr-2 shadow-sm"><span class="material-symbols-outlined">account_circle</span></button><button aria-label="Select Language" class="flex items-center gap-2 px-3 py-1 rounded-full border border-outline text-primary hover:bg-surface-container-low transition-colors active:scale-95"><span class="material-symbols-outlined text-body-md">language</span><span class="font-label-md text-xs font-headline-sm">EN/हिन्दी</span></button></header>
 <main class="flex-grow p-margin-mobile flex flex-col gap-stack-gap-lg overflow-y-auto pt-[72px] pb-20">
-<section class="bg-tertiary-fixed border-l-4 border-primary p-4 rounded-lg flex items-start gap-4">
-<span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mt-1">check_circle</span>
-<div>
-<h2 class="font-headline-sm text-headline-sm text-primary mb-1">Aadhaar Verified</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">Your Aadhaar ending in **3942 has been successfully linked. Please confirm your bank details below for Direct Benefit Transfer (DBT).</p>
-</div>
+<section class="bg-primary-container border-l-4 border-primary-fixed p-4 rounded-lg flex items-start gap-4">
+<span aria-hidden="true" class="material-symbols-outlined text-primary-fixed text-3xl mt-1">check_circle</span>
+<div><h2 class="font-headline-sm text-headline-sm text-primary-fixed mb-1">Aadhaar Verified</h2><p class="font-body-md text-body-md text-on-primary-container font-headline-sm" style="opacity: 0;">Your Aadhaar ending in **3942 has been successfully linked. Please confirm your bank details below for Direct Benefit Transfer (DBT).</p></div>
 </section>
 <section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 shadow-sm">
 <h2 class="font-headline-sm text-headline-sm text-on-surface mb-stack-gap-md border-b border-surface-variant pb-2">Primary Account Details</h2>
 <form class="flex flex-col gap-stack-gap-md">
 <div class="flex flex-col gap-1">
-<label class="font-label-lg text-label-lg text-on-surface" for="bankName">Bank Name</label>
-<input class="w-full h-touch-target-min px-4 border border-outline rounded-lg bg-surface-container-low font-body-lg text-body-lg text-on-surface-variant cursor-not-allowed" id="bankName" name="bankName" readonly="" type="text" value="State Bank of India">
-<p class="font-label-md text-label-md text-on-surface-variant">Fetched automatically</p>
+<label class="font-label-lg text-label-lg text-on-surface font-headline-sm" for="bankName">Bank Name</label>
+<input class="w-full h-touch-target-min px-4 border border-outline rounded-lg bg-surface-container-low font-body-lg text-body-lg text-on-surface-variant cursor-not-allowed font-headline-sm" id="bankName" name="bankName" readonly="" type="text" value="State Bank of India">
+<p class="font-label-md text-label-md text-on-surface-variant font-headline-sm">Fetched automatically</p>
 </div>
 <div class="flex flex-col gap-1">
-<label class="font-label-lg text-label-lg text-on-surface" for="accountNumber">Account Number</label>
+<label class="font-label-lg text-label-lg text-on-surface font-headline-sm" for="accountNumber">Account Number</label>
 <div class="relative">
-<input class="w-full h-touch-target-min px-4 border border-outline rounded-lg bg-surface-container-lowest font-body-lg text-body-lg text-on-surface focus:border-primary focus:ring-2 focus:ring-primary-fixed" id="accountNumber" name="accountNumber" type="password" value="341256789012">
+<input class="w-full h-touch-target-min px-4 border border-outline rounded-lg bg-surface-container-lowest font-body-lg text-body-lg text-on-surface focus:border-primary focus:ring-2 focus:ring-primary-fixed font-headline-sm" id="accountNumber" name="accountNumber" type="password" value="341256789012">
 <button aria-label="Toggle account number visibility" class="absolute right-4 top-1/2 -translate-y-1/2 text-outline" type="button">
 <span class="material-symbols-outlined">visibility_off</span>
 </button>
 </div>
-<p class="font-label-md text-label-md text-on-surface-variant">Ensure this matches your passbook</p>
+<p class="font-label-md text-label-md text-on-surface-variant font-headline-sm">Ensure this matches your passbook</p>
 </div>
 <div class="flex flex-col gap-1">
-<label class="font-label-lg text-label-lg text-on-surface" for="ifscCode">IFSC Code</label>
-<input class="w-full h-touch-target-min px-4 border border-outline rounded-lg bg-surface-container-lowest font-body-lg text-body-lg text-on-surface uppercase focus:border-primary focus:ring-2 focus:ring-primary-fixed" id="ifscCode" name="ifscCode" type="text" value="SBIN0001234">
+<label class="font-label-lg text-label-lg text-on-surface font-headline-sm" for="ifscCode">IFSC Code</label>
+<input class="w-full h-touch-target-min px-4 border border-outline rounded-lg bg-surface-container-lowest font-body-lg text-body-lg text-on-surface uppercase focus:border-primary focus:ring-2 focus:ring-primary-fixed font-headline-sm" id="ifscCode" name="ifscCode" type="text" value="SBIN0001234">
 </div>
 </form>
 </section>
@@ -156,16 +145,15 @@
 <div class="w-14 h-7 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
 </label>
 </div>
-<p class="font-body-md text-body-md text-on-surface-variant">I consent to receiving government subsidies directly to this bank account via Aadhaar linkage.</p>
+<p class="font-body-md text-body-md text-on-surface-variant font-headline-sm">I consent to receiving government subsidies directly to this bank account via Aadhaar linkage.</p>
 </section>
-
-<!-- Bottom Sticky Action Button -->
-<div class="mt-6 mb-12">
-  <button onclick="window.location.href='../dashboard_bilingual/code.html'" class="w-full h-14 bg-primary hover:bg-primary-container text-on-primary font-bold text-base rounded-xl shadow-md flex items-center justify-center gap-2 active:scale-95 transition-all cursor-pointer">
-    <span>Save Bank & Continue to Dashboard →</span>
-  </button>
-</div>
 </main>
+
+
+
+
+
+
 
 
 

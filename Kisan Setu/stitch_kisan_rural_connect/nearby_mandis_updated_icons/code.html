@@ -104,12 +104,12 @@
 </head>
 <body class="bg-background text-on-background min-h-screen flex flex-col pt-touch-target-min pb-24 md:pb-8">
 <!-- Top App Bar -->
-<header class="bg-surface border-b border-outline-variant w-full top-0 flex items-center px-margin-mobile fixed z-40 transition-colors duration-200 py-2"><div class="flex items-center justify-between w-full max-w-4xl mx-auto">
+<header class="border-b border-outline-variant w-full top-0 flex items-center px-margin-mobile fixed z-40 transition-colors duration-200 py-2 bg-surface-container-lowest"><div class="flex items-center justify-between w-full max-w-4xl mx-auto">
   <div class="flex items-center gap-4">
     <button class="text-primary p-2 rounded-full hover:bg-surface-variant transition-colors">
       <span class="material-symbols-outlined text-2xl">menu</span>
     </button>
-    <h1 class="font-headline-md text-headline-md text-primary">Kisan Setu | किसान सेतु</h1>
+    <h1 class="font-headline-md text-headline-md text-primary flex items-center gap-2"><span class="material-symbols-outlined">agriculture</span>Kisan Setu | किसान सेतु</h1>
   </div>
   <div class="flex items-center gap-3">
     <button aria-label="Select Language" class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-outline-variant bg-surface text-on-surface hover:bg-surface-container-low transition-colors active:scale-95">
@@ -127,33 +127,6 @@
 <section class="flex flex-col gap-unit">
 <h1 class="font-headline-lg text-headline-lg text-primary">Nearby Mandis | नज़दीकी मंडियां</h1>
 <p class="font-body-md text-body-md text-on-surface-variant">Find the nearest procurement centers and their current wait times.</p>
-</section>
-
-<!-- Weather & Today's Mandi MSP Rates Banner -->
-<section class="grid grid-cols-1 md:grid-cols-2 gap-3">
-  <!-- Weather Summary -->
-  <div class="bg-surface border-2 border-secondary-container/80 rounded-xl p-3.5 shadow-xs flex items-center justify-between">
-    <div class="flex items-center gap-2.5">
-      <span class="material-symbols-outlined text-secondary text-2xl">wb_sunny</span>
-      <div>
-        <h3 class="font-bold text-xs text-primary leading-tight">District Weather: Sonipat</h3>
-        <p class="text-[10px] text-on-surface-variant">31°C Sunny • 42% Humidity • No Rain</p>
-      </div>
-    </div>
-    <span class="text-[9px] bg-primary/10 text-primary font-bold px-2 py-0.5 rounded-full">Clear Skies</span>
-  </div>
-
-  <!-- Live Mandi Rates -->
-  <div class="bg-surface border-2 border-primary/30 rounded-xl p-3.5 shadow-xs flex items-center justify-between">
-    <div class="flex items-center gap-2.5">
-      <span class="material-symbols-outlined text-primary text-2xl">trending_up</span>
-      <div>
-        <h3 class="font-bold text-xs text-primary leading-tight">Mandi MSP: Wheat (गेहूँ)</h3>
-        <p class="text-[10px] text-primary font-bold">₹2,425/Qtl • Paddy: ₹2,320/Qtl</p>
-      </div>
-    </div>
-    <span class="text-[9px] bg-secondary-container text-on-secondary-container font-bold px-2 py-0.5 rounded-full">TODAY'S RATES</span>
-  </div>
 </section>
 <!-- Search & Filter Bar -->
 <div class="flex gap-stack-gap-md items-center w-full">
@@ -178,7 +151,7 @@
 <div class="w-full sm:w-1/3 aspect-video sm:aspect-square relative rounded-lg overflow-hidden border border-outline-variant/30 flex-shrink-0 bg-surface-container flex items-center justify-center">
 <!-- Placeholder for map visualization -->
 <div class="bg-cover bg-center w-full h-full absolute inset-0" data-alt="A detailed map visualization showing the route to a rural agricultural market in India. The map should have a clear, high-contrast style with prominent route lines and location pins, suitable for a mobile app interface used outdoors." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAbocS7cFi-jyWwp2OymvvkNOPZ9RgozNBpsBO9hP60J5OSpoV3wf_Xes4N69a7dvy3SkfWcTg1xkVRKzEiSves4_lTd07BkDelsDkMPLECrwAyQlzuQ5-JXNCldi6j6HTp65-FnC9UQp-ldArRivZlpPhh0TknRGRse9JbbPjSy_Wz01LpNAWWUpjjobVqcmUqi-Dq60U6Uaz3DeS9uqfjVWMvxNVSbL25VwnC1rn6SAzj1aR8JdmG&quot;);"></div>
-<button aria-label="Open in Maps" class="absolute bottom-2 right-2 bg-primary text-on-primary p-2 rounded-full shadow-md z-10 active:scale-95 transition-transform">
+<button aria-label="Open in Maps" class="w-full mt-2 bg-primary-container text-on-primary-container font-label-lg text-label-lg py-3 rounded-lg min-h-[56px] flex items-center justify-center gap-2 active:scale-95 transition-all">
 <span class="material-symbols-outlined" data-icon="directions">directions</span>
 </button>
 </div>
@@ -208,7 +181,7 @@
 </div>
 </div>
 </div>
-<button onclick="window.location.href='../book_slot_fixed_clean/code.html'" class="cursor-pointer w-full mt-2 bg-primary text-on-primary font-label-lg text-label-lg py-3 rounded-lg min-h-[56px] flex items-center justify-center gap-2 hover:bg-primary-container active:scale-95 transition-all">
+<button class="w-full mt-2 bg-primary-container text-on-primary-container font-label-lg text-label-lg py-3 rounded-lg min-h-[56px] flex items-center justify-center gap-2 active:scale-95 transition-all">
                             Book Slot | स्लॉट बुक करें
                             <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
 </button>
@@ -278,26 +251,25 @@
 </div>
 </main>
 <!-- Bottom Navigation Bar (Mobile Only) -->
-<nav class="md:hidden fixed bottom-0 w-full z-50 h-20 bg-surface dark:bg-surface-container-highest flex justify-around items-center px-2"><a href="../dashboard_bilingual/code.html" class="flex flex-col items-center justify-center text-on-surface-variant h-full w-1/5 hover:bg-surface-container-high transition-all">
+<nav class="md:hidden fixed bottom-0 w-full z-50 h-20 bg-surface dark:bg-surface-container-highest flex justify-around items-center px-2"><button class="flex flex-col items-center justify-center text-on-surface-variant h-full w-1/5 hover:bg-surface-container-high transition-all">
   <span class="material-symbols-outlined text-2xl mb-1">home</span>
   <span class="font-label-md text-[10px]">Home</span>
-</a>
-<a href="../live_tracker/code.html" class="flex flex-col items-center justify-center text-on-surface-variant h-full w-1/5 hover:bg-surface-container-high transition-all">
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant h-full w-1/5 hover:bg-surface-container-high transition-all">
   <span class="material-symbols-outlined text-2xl mb-1">local_shipping</span>
   <span class="font-label-md text-[10px]">Track</span>
-</a>
-<a href="../nearby_mandis_updated_icons/code.html" class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl h-[70%] w-[18%] mx-1 border-2 border-secondary shadow-sm active:scale-95 transition-all">
-  <span class="material-symbols-outlined text-[28px] mb-0.5">location_on</span>
-  <span class="font-label-md text-[10px] font-bold">Mandis</span>
-</a>
-<a href="../procurement_details_quality_weighing_fixed/code.html" class="flex flex-col items-center justify-center text-on-surface-variant h-full w-1/5 hover:bg-surface-container-high transition-all">
+</button>
+<button class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-xl h-[70%] w-[18%] mx-1 border-2 border-primary shadow-sm active:scale-95 transition-all"><span class="material-symbols-outlined text-[28px] mb-0.5">location_on</span><span class="font-label-md text-[10px] font-bold">Mandis</span></button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant h-full w-1/5 hover:bg-surface-container-high transition-all">
   <span class="material-symbols-outlined text-2xl mb-1">high_quality</span>
   <span class="font-label-md text-[10px]">Quality</span>
-</a>
-<a href="../my_payments/code.html" class="flex flex-col items-center justify-center text-on-surface-variant h-full w-1/5 hover:bg-surface-container-high transition-all">
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant h-full w-1/5 hover:bg-surface-container-high transition-all">
   <span class="material-symbols-outlined text-2xl mb-1">payments</span>
   <span class="font-label-md text-[10px]">Payments</span>
-</a></nav>
+</button></nav>
+
+
 
 
 
