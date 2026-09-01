@@ -81,11 +81,11 @@
       </div>
       <h2 class="text-headline-lg font-bold text-primary text-center mb-2">Welcome / स्वागत है</h2>
       <p class="text-body-md text-on-surface-variant text-center mb-6">Enter your 10-digit mobile number to login.</p>
-      <form onsubmit="event.preventDefault();nav('screen-otp')">
+      <form onsubmit="event.preventDefault();handleLoginSubmit()">
         <label class="block text-label-lg text-on-surface mb-1">Mobile Number</label>
         <div class="relative flex items-center mb-4">
           <span class="absolute left-4 text-body-lg text-on-surface-variant">+91</span>
-          <input class="w-full h-[56px] pl-14 pr-4 bg-surface-bright border-2 border-outline rounded-lg text-body-lg text-on-surface focus:border-primary outline-none transition-colors" placeholder="00000 00000" type="tel" maxlength="10">
+          <input id="login-mobile-input" class="w-full h-[56px] pl-14 pr-4 bg-surface-bright border-2 border-outline rounded-lg text-body-lg text-on-surface focus:border-primary outline-none transition-colors" placeholder="00000 00000" type="tel" maxlength="10">
         </div>
         <button type="submit" class="w-full h-[56px] bg-primary-container text-on-primary-container text-label-lg font-bold rounded-lg flex items-center justify-center gap-2 active:scale-95 transition-transform">
           Send OTP <span class="material-symbols-outlined">arrow_forward</span>
@@ -117,8 +117,8 @@
       </div>
       <h2 class="text-headline-lg font-bold text-primary mb-2">Verify OTP</h2>
       <p class="text-body-lg text-on-surface-variant mb-1">6-digit code sent to</p>
-      <p class="text-body-lg font-bold text-on-surface mb-8">+91 98765 43210</p>
-      <form onsubmit="event.preventDefault();nav('screen-registration')">
+      <p id="otp-phone-display" class="text-body-lg font-bold text-on-surface mb-8">+91 98765 43210</p>
+      <form onsubmit="event.preventDefault();nav('screen-dashboard')">
         <div class="flex justify-center gap-2 mb-6" id="otp-inputs">
           <input aria-label="OTP digit 1" class="w-12 h-14 text-center text-[28px] font-bold bg-surface border-2 border-outline rounded-lg focus:border-secondary-container outline-none transition-colors" inputmode="numeric" maxlength="1" type="number">
           <input aria-label="OTP digit 2" class="w-12 h-14 text-center text-[28px] font-bold bg-surface border-2 border-outline rounded-lg focus:border-secondary-container outline-none transition-colors" inputmode="numeric" maxlength="1" type="number">
@@ -154,10 +154,10 @@
     <h2 class="text-headline-md font-bold text-on-surface mb-1">Farmer Registration</h2>
     <p class="text-headline-sm text-on-surface mb-1">किसान पंजीकरण</p>
     <p class="text-body-md text-on-surface-variant mb-6">Enter your basic details to start.</p>
-    <form class="space-y-4 max-w-lg" onsubmit="event.preventDefault();nav('screen-link-aadhaar')">
+    <form class="space-y-4 max-w-lg" onsubmit="event.preventDefault();handleRegistrationSubmit()">
       <div>
         <label class="block text-label-lg text-on-surface mb-1">Full Name / पूरा नाम <span class="text-error">*</span></label>
-        <input class="w-full h-[56px] px-4 bg-surface-container-low border-2 border-outline-variant rounded-lg text-body-lg text-on-surface focus:border-secondary-container outline-none transition-colors" placeholder="e.g., Ramesh Singh" required type="text">
+        <input id="reg-fullname" class="w-full h-[56px] px-4 bg-surface-container-low border-2 border-outline-variant rounded-lg text-body-lg text-on-surface focus:border-secondary-container outline-none transition-colors" placeholder="e.g., Ramesh Singh" required type="text">
       </div>
       <div>
         <label class="block text-label-lg text-on-surface mb-1">Farmer ID / किसान आईडी</label>
@@ -446,32 +446,38 @@
             <div class="w-full h-1.5 bg-surface-variant rounded-full mt-1 overflow-hidden"><div class="h-full bg-primary" style="width:45%"></div></div>
           </div>
         </div>
-        <button onclick="nav('screen-book-slot')" class="w-full bg-primary-container text-on-primary-container text-label-lg font-bold py-3 rounded-lg min-h-[56px] flex items-center justify-center gap-2 active:scale-95 transition-all">
+        <button onclick="openBookingForMandi('Karnal Grain Market (Shortest Queue)')" class="w-full bg-primary-container text-on-primary-container text-label-lg font-bold py-3 rounded-lg min-h-[56px] flex items-center justify-center gap-2 active:scale-95 transition-all hover:bg-primary hover:text-on-primary">
           Book Slot | स्लॉट बुक करें <span class="material-symbols-outlined">arrow_forward</span>
         </button>
       </div>
     </article>
     <!-- Card 2 -->
-    <article class="bg-surface border border-outline-variant rounded-xl p-4">
+    <article class="bg-surface border border-outline-variant rounded-xl p-4 shadow-sm">
       <div class="flex justify-between items-start">
         <div><h3 class="text-headline-sm font-bold text-on-surface">Nilokheri Mandi | नीलोखेड़ी मंडी</h3><div class="flex items-center gap-2 text-on-surface-variant mt-1"><span class="material-symbols-outlined text-lg icon-fill">location_on</span><span class="text-body-md">12.8 km away</span></div></div>
         <button class="text-primary p-2 bg-surface-container rounded-full"><span class="material-symbols-outlined icon-fill">directions</span></button>
       </div>
-      <div class="flex gap-4 mt-3">
+      <div class="flex gap-4 mt-3 mb-3">
         <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-secondary-container"></div><span class="text-label-lg font-bold">45 mins wait</span></div>
         <div class="flex items-center gap-2"><span class="material-symbols-outlined text-on-surface-variant icon-fill">storefront</span><span class="text-label-lg font-bold">78% full</span></div>
       </div>
+      <button onclick="openBookingForMandi('Nilokheri Mandi')" class="w-full bg-surface-container border-2 border-outline-variant text-primary font-bold py-2.5 rounded-lg flex items-center justify-center gap-2 active:scale-95 transition-all hover:bg-primary-container hover:text-on-primary-container">
+        Book Slot | स्लॉट बुक करें <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </button>
     </article>
     <!-- Card 3 -->
-    <article class="bg-surface border border-outline-variant rounded-xl p-4 opacity-80">
+    <article class="bg-surface border border-outline-variant rounded-xl p-4 shadow-sm opacity-90">
       <div class="flex justify-between items-start">
         <div><h3 class="text-headline-sm font-bold text-on-surface">Gharaunda Center | घरौंडा केंद्र</h3><div class="flex items-center gap-2 text-on-surface-variant mt-1"><span class="material-symbols-outlined text-lg icon-fill">location_on</span><span class="text-body-md">18.4 km away</span></div></div>
         <button class="text-primary p-2 bg-surface-container rounded-full"><span class="material-symbols-outlined icon-fill">directions</span></button>
       </div>
-      <div class="flex gap-4 mt-3">
+      <div class="flex gap-4 mt-3 mb-3">
         <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-error"></div><span class="text-label-lg font-bold text-error">&gt;2 hrs wait</span></div>
         <div class="flex items-center gap-2"><span class="material-symbols-outlined text-error icon-fill">storefront</span><span class="text-label-lg font-bold text-error">95% full</span></div>
       </div>
+      <button onclick="openBookingForMandi('Gharaunda Center')" class="w-full bg-surface-container border-2 border-outline-variant text-primary font-bold py-2.5 rounded-lg flex items-center justify-center gap-2 active:scale-95 transition-all hover:bg-primary-container hover:text-on-primary-container">
+        Book Slot | स्लॉट बुक करें <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </button>
     </article>
   </main>
   <nav class="fixed bottom-0 w-full z-50 h-20 bg-surface border-t border-outline-variant flex justify-around items-center px-2">
@@ -493,143 +499,144 @@
   <main class="flex-grow px-5 pt-6 pb-40">
     <!-- Center -->
     <section class="mb-6">
-      <label class="block text-label-lg font-bold text-primary-container mb-1">1. Select Center / केंद्र चुनें</label>
-      <div class="flex items-center gap-2 mb-2 bg-primary-container/10 w-fit px-3 py-1 rounded-full border border-primary-container/20">
-        <span class="material-symbols-outlined text-primary-container text-sm">timer</span>
-        <span class="text-label-md text-primary-container">Recommended (Shortest Queue)</span>
+      <label class="block text-label-lg font-bold text-primary mb-1">1. Select Center / केंद्र चुनें</label>
+      <div class="flex items-center gap-2 mb-2 bg-primary/10 w-fit px-3 py-1 rounded-full border border-primary/20">
+        <span class="material-symbols-outlined text-primary text-sm">timer</span>
+        <span class="text-label-md text-primary font-medium">Recommended (Shortest Queue)</span>
       </div>
       <div class="relative">
-        <select class="w-full h-[56px] bg-surface-container-lowest border-2 border-outline-variant rounded-lg px-4 appearance-none text-body-lg text-on-surface focus:border-primary-container outline-none shadow-sm cursor-pointer">
-          <option disabled selected value="">Choose nearest center...</option>
-          <option>Sonipat Main Mandi (Shortest Queue)</option>
-          <option>Panipat North Hub</option>
-          <option>Rohtak Central</option>
+        <select id="booking-center-select" onchange="handleCenterChange(this.value)" class="w-full h-[56px] bg-surface-container-lowest border-2 border-outline-variant rounded-lg px-4 appearance-none text-body-lg text-on-surface focus:border-primary outline-none shadow-sm cursor-pointer font-medium">
+          <option value="Karnal Grain Market (Shortest Queue)" selected>Karnal Grain Market (Shortest Queue) - 5.2 km</option>
+          <option value="Sonipat Main Mandi">Sonipat Main Mandi - 8.1 km</option>
+          <option value="Nilokheri Mandi">Nilokheri Mandi - 12.8 km</option>
+          <option value="Panipat North Hub">Panipat North Hub - 14.5 km</option>
+          <option value="Gharaunda Center">Gharaunda Center - 18.4 km</option>
+          <option value="Rohtak Central">Rohtak Central - 22.0 km</option>
         </select>
         <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
       </div>
     </section>
     <!-- Date -->
     <section class="mb-6">
-      <label class="block text-label-lg font-bold text-primary-container mb-3">2. Select Date / तिथि चुनें</label>
-      <div class="bg-surface-container-lowest border-2 border-outline-variant rounded-lg p-4 shadow-sm">
+      <div class="flex justify-between items-center mb-3">
+        <label class="text-label-lg font-bold text-primary">2. Select Date / तिथि चुनें</label>
+        <span id="selected-date-badge" class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full border border-primary/20">Selected: Today</span>
+      </div>
+      <div class="bg-surface-container-lowest border-2 border-outline-variant rounded-xl p-4 shadow-sm">
         <div class="flex justify-between items-center mb-4">
-          <button class="p-2 rounded-full hover:bg-surface-variant"><span class="material-symbols-outlined">chevron_left</span></button>
-          <span class="text-label-lg font-bold">October 2023 / अक्टूबर</span>
-          <button class="p-2 rounded-full hover:bg-surface-variant"><span class="material-symbols-outlined">chevron_right</span></button>
+          <button type="button" onclick="prevMonth()" class="p-2 rounded-full hover:bg-surface-variant text-primary transition-colors active:scale-95 flex items-center justify-center"><span class="material-symbols-outlined text-2xl">chevron_left</span></button>
+          <span id="cal-month-year" class="text-label-lg font-bold text-primary">October 2026 / अक्टूबर 2026</span>
+          <button type="button" onclick="nextMonth()" class="p-2 rounded-full hover:bg-surface-variant text-primary transition-colors active:scale-95 flex items-center justify-center"><span class="material-symbols-outlined text-2xl">chevron_right</span></button>
         </div>
-        <div class="grid grid-cols-7 gap-1 text-center text-label-md text-on-surface-variant mb-2">
+        <div class="grid grid-cols-7 gap-1 text-center text-label-md text-on-surface-variant mb-2 font-bold">
           <div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div>
         </div>
-        <div class="grid grid-cols-7 gap-1 text-center text-body-md" id="calendar-grid">
-          <div class="text-outline-variant py-2">28</div><div class="text-outline-variant py-2">29</div><div class="text-outline-variant py-2">30</div>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">1<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">2<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">3<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">4<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">5<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">6<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">7<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">8<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">9<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">10<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">11<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full bg-primary text-on-primary font-bold flex flex-col items-center">12<div class="w-1.5 h-1.5 rounded-full bg-green-300 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">13<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">14<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">15<div class="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">16<div class="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">17<div class="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">18<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full text-error font-medium flex flex-col items-center">19<div class="w-1.5 h-1.5 rounded-full bg-red-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full text-error font-medium flex flex-col items-center">20<div class="w-1.5 h-1.5 rounded-full bg-red-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">21<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">22<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">23<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">24<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
-          <button class="py-2 rounded-full hover:bg-surface-variant flex flex-col items-center">25<div class="w-1.5 h-1.5 rounded-full bg-green-500 mt-0.5"></div></button>
+        <div class="grid grid-cols-7 gap-1.5 text-center text-body-md" id="calendar-grid">
+          <!-- Populated dynamically via renderCalendar() -->
         </div>
       </div>
       <div class="flex items-center gap-4 mt-3 text-label-md text-on-surface-variant">
-        <div class="flex items-center gap-1"><div class="w-3 h-3 rounded-full bg-green-500"></div><span>Available</span></div>
-        <div class="flex items-center gap-1"><div class="w-3 h-3 rounded-full bg-red-500"></div><span>Full</span></div>
-        <div class="flex items-center gap-1"><div class="w-3 h-3 rounded-full bg-yellow-400"></div><span>Filling Fast</span></div>
+        <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-green-500"></div><span class="text-xs font-medium">Available</span></div>
+        <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-yellow-400"></div><span class="text-xs font-medium">Filling Fast</span></div>
+        <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded-full bg-red-500"></div><span class="text-xs font-medium">Full</span></div>
       </div>
     </section>
     <!-- Crop -->
     <section class="mb-6">
-      <label class="block text-label-lg font-bold text-primary-container mb-3">3. Select Crop &amp; Quantity</label>
-      <div class="flex overflow-x-auto no-scrollbar gap-4 pb-2 mb-5">
-        <button class="flex-none w-36 flex flex-col items-center justify-center p-4 rounded-xl border-2 border-secondary bg-secondary-container shadow-sm active:scale-95">
-          <span class="material-symbols-outlined text-4xl text-on-secondary-container mb-2 icon-fill">grass</span>
-          <span class="text-label-lg text-on-secondary-container text-center font-bold">Wheat (गेहूँ)</span>
-          <span class="text-label-md text-on-secondary-container mt-1">₹2,425/Qtl</span>
+      <div class="flex justify-between items-center mb-3">
+        <label class="text-label-lg font-bold text-primary">3. Select Crop &amp; Quantity / फसल और मात्रा</label>
+        <span id="selected-crop-badge" class="bg-secondary-container text-on-secondary-container text-xs font-bold px-3 py-1 rounded-full border border-secondary">Wheat (गेहूँ)</span>
+      </div>
+      <div class="flex overflow-x-auto no-scrollbar gap-3 pb-2 mb-5" id="crops-container">
+        <button type="button" onclick="selectCrop('Wheat (गेहूँ)', 2425, this)" data-crop="Wheat (गेहूँ)" data-rate="2425" class="crop-choice-btn flex-none w-36 flex flex-col items-center justify-center p-4 rounded-xl border-2 border-secondary bg-secondary-container text-on-secondary-container shadow-md active:scale-95 transition-all">
+          <span class="material-symbols-outlined text-4xl mb-2 icon-fill">grass</span>
+          <span class="text-label-lg font-bold text-center crop-name text-on-secondary-container">Wheat (गेहूँ)</span>
+          <span class="text-label-md font-bold mt-1 crop-rate-label text-on-secondary-container">₹2,425/Qtl</span>
         </button>
-        <button class="flex-none w-36 flex flex-col items-center justify-center p-4 rounded-xl border border-outline-variant bg-surface-container-lowest shadow-sm active:scale-95 hover:bg-surface-variant">
+        <button type="button" onclick="selectCrop('Paddy (धान)', 2320, this)" data-crop="Paddy (धान)" data-rate="2320" class="crop-choice-btn flex-none w-36 flex flex-col items-center justify-center p-4 rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 hover:bg-surface-variant transition-all">
           <span class="material-symbols-outlined text-4xl text-primary mb-2 icon-fill">eco</span>
-          <span class="text-label-lg text-on-surface text-center">Paddy (धान)</span>
-          <span class="text-label-md text-primary mt-1">₹2,320/Qtl</span>
+          <span class="text-label-lg font-bold text-center crop-name text-on-surface">Paddy (धान)</span>
+          <span class="text-label-md text-primary mt-1 crop-rate-label">₹2,320/Qtl</span>
         </button>
-        <button class="flex-none w-36 flex flex-col items-center justify-center p-4 rounded-xl border border-outline-variant bg-surface-container-lowest shadow-sm active:scale-95 hover:bg-surface-variant">
+        <button type="button" onclick="selectCrop('Mustard (सरसों)', 5950, this)" data-crop="Mustard (सरसों)" data-rate="5950" class="crop-choice-btn flex-none w-36 flex flex-col items-center justify-center p-4 rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 hover:bg-surface-variant transition-all">
           <span class="material-symbols-outlined text-4xl text-primary mb-2 icon-fill">spa</span>
-          <span class="text-label-lg text-on-surface text-center">Mustard (सरसों)</span>
-          <span class="text-label-md text-primary mt-1">₹5,950/Qtl</span>
+          <span class="text-label-lg font-bold text-center crop-name text-on-surface">Mustard (सरसों)</span>
+          <span class="text-label-md text-primary mt-1 crop-rate-label">₹5,950/Qtl</span>
         </button>
-        <button class="flex-none w-36 flex flex-col items-center justify-center p-4 rounded-xl border border-outline-variant bg-surface-container-lowest shadow-sm active:scale-95 hover:bg-surface-variant">
+        <button type="button" onclick="selectCrop('Gram (चना)', 5650, this)" data-crop="Gram (चना)" data-rate="5650" class="crop-choice-btn flex-none w-36 flex flex-col items-center justify-center p-4 rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 hover:bg-surface-variant transition-all">
           <span class="material-symbols-outlined text-4xl text-primary mb-2 icon-fill">hive</span>
-          <span class="text-label-lg text-on-surface text-center">Gram (चना)</span>
-          <span class="text-label-md text-primary mt-1">₹5,650/Qtl</span>
+          <span class="text-label-lg font-bold text-center crop-name text-on-surface">Gram (चना)</span>
+          <span class="text-label-md text-primary mt-1 crop-rate-label">₹5,650/Qtl</span>
         </button>
-        <button class="flex-none w-36 flex flex-col items-center justify-center p-4 rounded-xl border border-outline-variant bg-surface-container-lowest shadow-sm active:scale-95 hover:bg-surface-variant">
+        <button type="button" onclick="selectCrop('Cotton (कपास)', 6620, this)" data-crop="Cotton (कपास)" data-rate="6620" class="crop-choice-btn flex-none w-36 flex flex-col items-center justify-center p-4 rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 hover:bg-surface-variant transition-all">
           <span class="material-symbols-outlined text-4xl text-primary mb-2 icon-fill">agriculture</span>
-          <span class="text-label-lg text-on-surface text-center">Cotton (कपास)</span>
-          <span class="text-label-md text-primary mt-1">₹6,620/Qtl</span>
+          <span class="text-label-lg font-bold text-center crop-name text-on-surface">Cotton (कपास)</span>
+          <span class="text-label-md text-primary mt-1 crop-rate-label">₹6,620/Qtl</span>
+        </button>
+        <button type="button" onclick="selectCrop('Maize (मक्का)', 2090, this)" data-crop="Maize (मक्का)" data-rate="2090" class="crop-choice-btn flex-none w-36 flex flex-col items-center justify-center p-4 rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 hover:bg-surface-variant transition-all">
+          <span class="material-symbols-outlined text-4xl text-primary mb-2 icon-fill">grain</span>
+          <span class="text-label-lg font-bold text-center crop-name text-on-surface">Maize (मक्का)</span>
+          <span class="text-label-md text-primary mt-1 crop-rate-label">₹2,090/Qtl</span>
+        </button>
+        <button type="button" onclick="selectCrop('Sugarcane (गन्ना)', 3600, this)" data-crop="Sugarcane (गन्ना)" data-rate="3600" class="crop-choice-btn flex-none w-36 flex flex-col items-center justify-center p-4 rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 hover:bg-surface-variant transition-all">
+          <span class="material-symbols-outlined text-4xl text-primary mb-2 icon-fill">forest</span>
+          <span class="text-label-lg font-bold text-center crop-name text-on-surface">Sugarcane (गन्ना)</span>
+          <span class="text-label-md text-primary mt-1 crop-rate-label">₹3,600/Qtl</span>
         </button>
       </div>
       <div class="grid grid-cols-1 gap-4">
         <div>
-          <label class="block text-label-lg text-on-surface mb-2">Quantity (Quintals) <span class="text-error">*</span></label>
-          <div class="flex rounded-lg border-2 border-outline-variant overflow-hidden bg-surface-container-lowest">
-            <input class="flex-grow px-4 py-3 border-none focus:ring-0 text-on-surface text-body-lg" type="number" value="50">
-            <div class="bg-surface-container px-4 py-3 border-l-2 border-outline-variant flex items-center"><span class="text-label-md text-on-surface-variant">Quintals</span></div>
+          <label class="block text-label-lg font-bold text-on-surface mb-2">Quantity (Quintals / क्विंटल) <span class="text-error">*</span></label>
+          <div class="flex items-center rounded-xl border-2 border-outline-variant overflow-hidden bg-surface-container-lowest shadow-sm">
+            <button type="button" onclick="adjustQuantity(-5)" class="w-14 h-14 flex items-center justify-center text-primary hover:bg-surface-container text-2xl font-bold active:scale-90 transition-all">-</button>
+            <input id="crop-qty-input" oninput="handleQuantityInput(this.value)" class="flex-grow px-3 py-3 border-none focus:ring-0 text-center font-bold text-on-surface text-xl outline-none bg-transparent" type="number" min="1" max="5000" value="50">
+            <button type="button" onclick="adjustQuantity(5)" class="w-14 h-14 flex items-center justify-center text-primary hover:bg-surface-container text-2xl font-bold active:scale-90 transition-all">+</button>
+            <div class="bg-surface-container px-4 py-3 border-l-2 border-outline-variant flex items-center h-14"><span class="text-label-md text-on-surface-variant font-bold">Quintals</span></div>
           </div>
         </div>
-        <div class="bg-[#E8F5E9] border border-[#C8E6C9] rounded-lg p-4 flex items-center justify-between">
-          <div><p class="text-label-md text-on-surface-variant mb-1">Estimated MSP Payout</p><span class="text-headline-md font-bold text-primary">₹ 1,21,250.00</span></div>
-          <span class="bg-primary text-on-primary px-3 py-1 rounded-full text-label-md">100% DBT</span>
+        <div class="bg-[#E8F5E9] border-2 border-[#C8E6C9] rounded-xl p-4 flex items-center justify-between shadow-sm">
+          <div>
+            <p class="text-label-md text-on-surface-variant mb-1">Estimated MSP Payout / अनुमानित भुगतान</p>
+            <span id="estimated-payout-display" class="text-headline-md font-bold text-primary">₹ 1,21,250.00</span>
+          </div>
+          <span class="bg-primary text-on-primary px-3 py-1.5 rounded-full text-label-md font-bold shadow-sm">100% DBT</span>
         </div>
       </div>
     </section>
     <!-- Time Slot -->
     <section class="mb-6">
-      <label class="block text-label-lg font-bold text-primary-container mb-3">4. Select Time / समय चुनें</label>
-      <div class="grid grid-cols-2 gap-4">
-        <button class="flex flex-col items-center justify-center p-4 min-h-[100px] rounded-xl border-2 border-secondary bg-secondary-container shadow-sm active:scale-95 relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-secondary text-on-secondary px-2 py-1 rounded-bl-lg text-[10px] font-bold">FAST</div>
-          <span class="material-symbols-outlined text-4xl text-on-secondary-container mb-2 icon-fill">wb_sunny</span>
-          <span class="text-label-lg text-on-secondary-container font-bold">Morning</span>
-          <span class="text-label-md text-on-secondary-container opacity-80">08:00–10:00 AM</span>
+      <div class="flex justify-between items-center mb-3">
+        <label class="text-label-lg font-bold text-primary">4. Select Time Slot / समय चुनें</label>
+        <span id="selected-slot-badge" class="bg-secondary-container text-on-secondary-container text-xs font-bold px-3 py-1 rounded-full border border-secondary">Morning (08:00–10:00 AM)</span>
+      </div>
+      <div class="grid grid-cols-2 gap-3" id="time-slots-container">
+        <button type="button" onclick="selectTimeSlot('Morning (08:00 AM – 10:00 AM)', this)" data-slot="Morning (08:00 AM – 10:00 AM)" class="time-slot-btn flex flex-col items-center justify-center p-4 min-h-[105px] rounded-xl border-2 border-secondary bg-secondary-container text-on-secondary-container shadow-md active:scale-95 relative overflow-hidden transition-all">
+          <div class="absolute top-0 right-0 bg-secondary text-on-secondary px-2 py-0.5 rounded-bl-lg text-[10px] font-bold">FAST</div>
+          <span class="material-symbols-outlined text-4xl mb-1 icon-fill">wb_sunny</span>
+          <span class="text-label-lg font-bold slot-name text-on-secondary-container">Morning</span>
+          <span class="text-label-md slot-time text-on-secondary-container opacity-90">08:00–10:00 AM</span>
         </button>
-        <button class="flex flex-col items-center justify-center p-4 min-h-[100px] rounded-xl border border-outline-variant bg-surface-container-lowest shadow-sm active:scale-95 hover:bg-surface-variant">
-          <span class="material-symbols-outlined text-4xl text-primary mb-2 opacity-60">wb_sunny</span>
-          <span class="text-label-lg text-on-surface">Mid-Morning</span>
-          <span class="text-label-md text-on-surface-variant">10:00 AM–12 PM</span>
+        <button type="button" onclick="selectTimeSlot('Mid-Morning (10:00 AM – 12:00 PM)', this)" data-slot="Mid-Morning (10:00 AM – 12:00 PM)" class="time-slot-btn flex flex-col items-center justify-center p-4 min-h-[105px] rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 hover:bg-surface-variant transition-all">
+          <span class="material-symbols-outlined text-4xl text-primary mb-1 opacity-70">wb_sunny</span>
+          <span class="text-label-lg font-bold slot-name text-on-surface">Mid-Morning</span>
+          <span class="text-label-md slot-time text-on-surface-variant">10:00 AM–12 PM</span>
         </button>
-        <button class="flex flex-col items-center justify-center p-4 min-h-[100px] rounded-xl border-2 border-secondary bg-secondary-container shadow-sm active:scale-95 relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-secondary text-on-secondary px-2 py-1 rounded-bl-lg text-[10px] font-bold">FAST</div>
-          <span class="material-symbols-outlined text-4xl text-on-secondary-container mb-2 icon-fill">light_mode</span>
-          <span class="text-label-lg text-on-secondary-container font-bold">Afternoon</span>
-          <span class="text-label-md text-on-secondary-container opacity-80">12 PM–02 PM</span>
+        <button type="button" onclick="selectTimeSlot('Afternoon (12:00 PM – 02:00 PM)', this)" data-slot="Afternoon (12:00 PM – 02:00 PM)" class="time-slot-btn flex flex-col items-center justify-center p-4 min-h-[105px] rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 hover:bg-surface-variant relative overflow-hidden transition-all">
+          <div class="absolute top-0 right-0 bg-secondary text-on-secondary px-2 py-0.5 rounded-bl-lg text-[10px] font-bold">FAST</div>
+          <span class="material-symbols-outlined text-4xl text-primary mb-1 opacity-70">light_mode</span>
+          <span class="text-label-lg font-bold slot-name text-on-surface">Afternoon</span>
+          <span class="text-label-md slot-time text-on-surface-variant">12 PM–02 PM</span>
         </button>
-        <button class="flex flex-col items-center justify-center p-4 min-h-[100px] rounded-xl border border-outline-variant bg-surface-container-lowest shadow-sm active:scale-95 hover:bg-surface-variant">
-          <span class="material-symbols-outlined text-4xl text-outline-variant mb-2">dark_mode</span>
-          <span class="text-label-lg text-on-surface">Evening</span>
-          <span class="text-label-md text-on-surface-variant">02 PM–04 PM</span>
+        <button type="button" onclick="selectTimeSlot('Evening (02:00 PM – 04:00 PM)', this)" data-slot="Evening (02:00 PM – 04:00 PM)" class="time-slot-btn flex flex-col items-center justify-center p-4 min-h-[105px] rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 hover:bg-surface-variant transition-all">
+          <span class="material-symbols-outlined text-4xl text-outline-variant mb-1">dark_mode</span>
+          <span class="text-label-lg font-bold slot-name text-on-surface">Evening</span>
+          <span class="text-label-md slot-time text-on-surface-variant">02 PM–04 PM</span>
         </button>
       </div>
     </section>
   </main>
-  <div class="fixed w-full backdrop-blur-sm border-t-2 p-5 z-50 bottom-[60px] bg-surface">
-    <button onclick="nav('screen-mandi-token')" class="w-full h-[56px] bg-primary text-on-primary rounded-xl text-label-lg font-bold flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform">
+  <div class="fixed w-full backdrop-blur-sm border-t-2 p-4 z-50 bottom-[60px] bg-surface/95 shadow-lg">
+    <button type="button" onclick="confirmSlotBooking()" class="w-full h-[56px] bg-primary text-on-primary rounded-xl text-label-lg font-bold flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform hover:brightness-110">
       <span class="material-symbols-outlined icon-fill">check_circle</span>Confirm Booking / बुकिंग की पुष्टि करें
     </button>
   </div>
@@ -656,13 +663,13 @@
       <p class="text-body-lg text-on-surface-variant mt-1">बुकिंग पक्की हो गई</p>
     </div>
     <!-- Token Card -->
-    <div class="bg-tertiary-fixed rounded-xl border border-primary/20 overflow-hidden">
+    <div class="bg-tertiary-fixed rounded-xl border border-primary/20 overflow-hidden shadow-sm">
       <div class="bg-primary p-4 text-center text-on-primary">
-        <p class="text-label-lg uppercase tracking-widest opacity-80">Token Number / टोकन नंबर</p>
-        <div class="text-[64px] font-bold leading-tight">#42</div>
+        <p class="text-label-lg uppercase tracking-widest opacity-80 font-bold">Token Number / टोकन नंबर</p>
+        <div id="token-num-display" class="text-[64px] font-bold leading-tight">#48</div>
       </div>
       <div class="p-6 flex flex-col items-center bg-surface-container-lowest">
-        <div class="w-44 h-44 bg-surface-variant rounded-lg border-2 border-outline-variant flex items-center justify-center mb-4 p-3">
+        <div class="w-44 h-44 bg-surface-variant rounded-xl border-2 border-outline-variant flex items-center justify-center mb-4 p-3 shadow-inner">
           <svg viewBox="0 0 200 200" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="200" height="200" fill="white"/>
             <rect x="10" y="10" width="70" height="70" fill="#00342b"/>
@@ -691,22 +698,24 @@
             <rect x="150" y="160" width="20" height="10" fill="#00342b"/>
           </svg>
         </div>
-        <p class="text-label-md text-on-surface-variant text-center mb-5">Scan at Mandi Gate | मंडी गेट पर स्कैन करें</p>
+        <p class="text-label-md text-on-surface-variant text-center mb-5 font-semibold">Scan at Mandi Gate | मंडी गेट पर स्कैन करें</p>
         <div class="w-full space-y-3">
-          <div class="flex flex-col border-b border-outline-variant pb-2"><span class="text-label-md text-on-surface-variant">Farmer Name / किसान का नाम</span><span class="text-headline-sm font-bold text-primary">Ram Singh</span></div>
-          <div class="flex flex-col border-b border-outline-variant pb-2"><span class="text-label-md text-on-surface-variant">Mandi / मंडी</span><span class="text-headline-sm font-bold text-primary">Khanna Main Mandi</span></div>
-          <div class="flex flex-col border-b border-outline-variant pb-2"><span class="text-label-md text-on-surface-variant">Date / तारीख</span><span class="text-headline-sm font-bold text-primary">12 Oct 2023</span></div>
-          <div class="flex flex-col"><span class="text-label-md text-on-surface-variant">Time Slot / समय</span><span class="text-headline-sm font-bold text-primary">08:00 AM – 12:00 PM</span></div>
+          <div class="flex flex-col border-b border-outline-variant pb-2"><span class="text-label-md text-on-surface-variant">Farmer Name / किसान का नाम</span><span id="token-farmer-display" class="text-headline-sm font-bold text-primary">Ram Singh</span></div>
+          <div class="flex flex-col border-b border-outline-variant pb-2"><span class="text-label-md text-on-surface-variant">Mandi / मंडी</span><span id="token-mandi-display" class="text-headline-sm font-bold text-primary">Karnal Grain Market (Shortest Queue)</span></div>
+          <div class="flex flex-col border-b border-outline-variant pb-2"><span class="text-label-md text-on-surface-variant">Date / तारीख</span><span id="token-date-display" class="text-headline-sm font-bold text-primary">Today</span></div>
+          <div class="flex flex-col border-b border-outline-variant pb-2"><span class="text-label-md text-on-surface-variant">Time Slot / समय</span><span id="token-slot-display" class="text-headline-sm font-bold text-primary">Morning (08:00 AM – 10:00 AM)</span></div>
+          <div class="flex flex-col border-b border-outline-variant pb-2"><span class="text-label-md text-on-surface-variant">Crop &amp; Quantity / फसल और मात्रा</span><span id="token-crop-display" class="text-headline-sm font-bold text-primary">Wheat (गेहूँ) • 50 Quintals</span></div>
+          <div class="flex flex-col"><span class="text-label-md text-on-surface-variant">Estimated MSP Payout / अनुमानित भुगतान</span><span id="token-payout-display" class="text-headline-sm font-bold text-primary">₹ 1,21,250.00</span></div>
         </div>
       </div>
     </div>
-    <button class="w-full bg-primary-container text-on-primary-container flex items-center justify-center gap-3 py-4 rounded-xl text-headline-sm font-bold shadow-sm active:scale-95">
-      <span class="material-symbols-outlined">download</span>
-      <div class="flex flex-col items-center"><span>Download Token</span><span class="text-sm font-normal opacity-90">टोकन डाउनलोड करें</span></div>
+    <button onclick="downloadTokenReceipt()" class="w-full bg-primary-container text-on-primary-container flex items-center justify-center gap-3 py-4 rounded-xl text-headline-sm font-bold shadow-sm active:scale-95 transition-transform hover:bg-primary hover:text-on-primary">
+      <span class="material-symbols-outlined text-2xl">download</span>
+      <div class="flex flex-col items-center"><span>Download Token</span><span class="text-xs font-normal opacity-90">टोकन डाउनलोड करें (PDF/Receipt)</span></div>
     </button>
-    <div class="bg-secondary-container text-on-secondary-container rounded-lg p-4 flex items-start gap-3 border-2 border-secondary-fixed">
-      <span class="material-symbols-outlined mt-1">wifi_off</span>
-      <div><p class="text-label-lg font-bold">This token works without internet.</p><p class="text-body-md">यह टोकन बिना इंटरनेट के भी काम करेगा।</p></div>
+    <div class="bg-secondary-container text-on-secondary-container rounded-xl p-4 flex items-start gap-3 border-2 border-secondary-fixed shadow-sm">
+      <span class="material-symbols-outlined mt-1 text-2xl">wifi_off</span>
+      <div><p class="text-label-lg font-bold">This token works without internet.</p><p class="text-body-md text-sm">यह टोकन बिना इंटरनेट के भी काम करेगा।</p></div>
     </div>
   </main>
   <nav class="fixed bottom-0 left-0 right-0 bg-surface border-t border-outline-variant flex items-center justify-around px-2 py-2 z-40">
@@ -1028,11 +1037,373 @@
 </div>
 
 <script>
+// Global Booking & Profile State
+const bookingState = {
+  farmerName: 'Ram Singh',
+  center: 'Karnal Grain Market (Shortest Queue)',
+  date: new Date(),
+  crop: 'Wheat (गेहूँ)',
+  cropRate: 2425,
+  quantity: 50,
+  timeSlot: 'Morning (08:00 AM – 10:00 AM)',
+  tokenNumber: '#48'
+};
+
+// Global Toast Notification
+function showToast(msg, icon = 'check_circle') {
+  let toast = document.getElementById('global-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'global-toast';
+    toast.className = 'fixed top-5 left-1/2 -translate-x-1/2 z-[9999] bg-[#00342b] text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 transition-all duration-300 pointer-events-none opacity-0 -translate-y-6 max-w-[90%] border border-[#7ebdac]';
+    document.body.appendChild(toast);
+  }
+  toast.innerHTML = `<span class="material-symbols-outlined text-[#8bf7db] icon-fill text-2xl">${icon}</span><span class="text-sm font-bold tracking-wide">${msg}</span>`;
+  toast.classList.remove('opacity-0', '-translate-y-6');
+  toast.classList.add('opacity-100', 'translate-y-0');
+  clearTimeout(window._toastTimeout);
+  window._toastTimeout = setTimeout(() => {
+    toast.classList.remove('opacity-100', 'translate-y-0');
+    toast.classList.add('opacity-0', '-translate-y-6');
+  }, 2800);
+}
+
 // Navigation
 function nav(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   const t=document.getElementById(id);
-  if(t){t.classList.add('active');window.scrollTo(0,0);}
+  if(t){
+    t.classList.add('active');
+    window.scrollTo(0,0);
+    if (id === 'screen-book-slot') {
+      renderCalendar();
+      updatePayoutCalculation();
+    }
+  }
+}
+
+// Handle Login submit
+function handleLoginSubmit(){
+  const mob = document.getElementById('login-mobile-input')?.value?.trim();
+  const phoneDisplay = document.getElementById('otp-phone-display');
+  if (mob && phoneDisplay) {
+    phoneDisplay.textContent = `+91 ${mob.length > 5 ? mob.slice(0, 5) + ' ' + mob.slice(5) : mob}`;
+  }
+  nav('screen-otp');
+}
+
+// Handle Registration submit
+function handleRegistrationSubmit(){
+  const name = document.getElementById('reg-fullname')?.value?.trim();
+  if (name) {
+    bookingState.farmerName = name;
+  }
+  nav('screen-link-aadhaar');
+}
+
+// ==========================================
+// 1. WORKING CALENDAR IMPLEMENTATION
+// ==========================================
+const monthNames = [
+  { en: 'January', hi: 'जनवरी' },
+  { en: 'February', hi: 'फ़रवरी' },
+  { en: 'March', hi: 'मार्च' },
+  { en: 'April', hi: 'अप्रैल' },
+  { en: 'May', hi: 'मई' },
+  { en: 'June', hi: 'जून' },
+  { en: 'July', hi: 'जुलाई' },
+  { en: 'August', hi: 'अगस्त' },
+  { en: 'September', hi: 'सितंबर' },
+  { en: 'October', hi: 'अक्टूबर' },
+  { en: 'November', hi: 'नवंबर' },
+  { en: 'December', hi: 'दिसंबर' }
+];
+
+let calCurrentDate = new Date();
+let calYear = calCurrentDate.getFullYear();
+let calMonth = calCurrentDate.getMonth();
+let selectedBookingDate = new Date();
+
+function renderCalendar() {
+  const monthHeader = document.getElementById('cal-month-year');
+  const grid = document.getElementById('calendar-grid');
+  if (!monthHeader || !grid) return;
+
+  const mData = monthNames[calMonth];
+  monthHeader.textContent = `${mData.en} ${calYear} / ${mData.hi} ${calYear}`;
+
+  grid.innerHTML = '';
+
+  const firstDayIndex = new Date(calYear, calMonth, 1).getDay(); // 0 is Sun
+  const totalDaysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+  const prevMonthDays = new Date(calYear, calMonth, 0).getDate();
+
+  // Previous month trailing days
+  for (let x = firstDayIndex; x > 0; x--) {
+    const prevDay = prevMonthDays - x + 1;
+    const div = document.createElement('div');
+    div.className = 'text-outline-variant/40 py-2.5 text-sm';
+    div.textContent = prevDay;
+    grid.appendChild(div);
+  }
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  // Current month days
+  for (let d = 1; d <= totalDaysInMonth; d++) {
+    const thisDayDate = new Date(calYear, calMonth, d);
+    thisDayDate.setHours(0, 0, 0, 0);
+
+    const isSelected = selectedBookingDate.getFullYear() === calYear &&
+                       selectedBookingDate.getMonth() === calMonth &&
+                       selectedBookingDate.getDate() === d;
+    
+    const isPast = thisDayDate < today;
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+
+    // Status dot color based on pattern
+    let dotColor = 'bg-green-500';
+    let statusText = 'Available';
+    if (d % 7 === 0 || d === 19 || d === 20) {
+      dotColor = 'bg-red-500';
+      statusText = 'Full';
+    } else if (d % 5 === 0 || d === 15 || d === 16 || d === 17) {
+      dotColor = 'bg-yellow-400';
+      statusText = 'Filling Fast';
+    }
+
+    if (isPast) {
+      btn.className = 'py-2 rounded-xl text-outline-variant/40 opacity-40 flex flex-col items-center justify-center cursor-not-allowed text-sm';
+      btn.disabled = true;
+      btn.innerHTML = `<span>${d}</span><div class="w-1.5 h-1.5 rounded-full bg-outline-variant/30 mt-0.5"></div>`;
+    } else if (isSelected) {
+      btn.className = 'py-2 rounded-xl bg-primary text-on-primary font-bold flex flex-col items-center justify-center shadow-md scale-105 ring-2 ring-secondary-container transition-all text-sm';
+      btn.innerHTML = `<span>${d}</span><div class="w-1.5 h-1.5 rounded-full bg-secondary-container mt-0.5"></div>`;
+    } else {
+      btn.className = 'py-2 rounded-xl hover:bg-surface-variant text-on-surface font-medium flex flex-col items-center justify-center transition-colors text-sm active:scale-95';
+      btn.innerHTML = `<span>${d}</span><div class="w-1.5 h-1.5 rounded-full ${dotColor} mt-0.5"></div>`;
+      btn.onclick = () => {
+        selectCalendarDate(d, thisDayDate, statusText);
+      };
+    }
+
+    grid.appendChild(btn);
+  }
+
+  // Next month leading days to complete grid if needed
+  const totalCells = firstDayIndex + totalDaysInMonth;
+  const remainingCells = (7 - (totalCells % 7)) % 7;
+  for (let n = 1; n <= remainingCells; n++) {
+    const div = document.createElement('div');
+    div.className = 'text-outline-variant/40 py-2.5 text-sm';
+    div.textContent = n;
+    grid.appendChild(div);
+  }
+
+  updateDateBadge();
+}
+
+function selectCalendarDate(dayNum, dateObj, statusText) {
+  selectedBookingDate = new Date(calYear, calMonth, dayNum);
+  bookingState.date = selectedBookingDate;
+  renderCalendar();
+  showToast(`Date chosen: ${selectedBookingDate.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })} (${statusText})`, 'calendar_today');
+}
+
+function prevMonth() {
+  calMonth--;
+  if (calMonth < 0) {
+    calMonth = 11;
+    calYear--;
+  }
+  renderCalendar();
+}
+
+function nextMonth() {
+  calMonth++;
+  if (calMonth > 11) {
+    calMonth = 0;
+    calYear++;
+  }
+  renderCalendar();
+}
+
+function updateDateBadge() {
+  const badge = document.getElementById('selected-date-badge');
+  if (badge) {
+    const str = selectedBookingDate.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+    badge.textContent = `Selected: ${str}`;
+  }
+}
+
+// ==========================================
+// 2. WORKING CROP CHOOSER & QUANTITY
+// ==========================================
+function selectCrop(cropName, rate, element) {
+  bookingState.crop = cropName;
+  bookingState.cropRate = Number(rate);
+
+  // Update button visual styles
+  document.querySelectorAll('.crop-choice-btn').forEach(btn => {
+    btn.className = 'crop-choice-btn flex-none w-36 flex flex-col items-center justify-center p-4 rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 hover:bg-surface-variant transition-all';
+    const nameSpan = btn.querySelector('.crop-name');
+    if (nameSpan) {
+      nameSpan.className = 'text-label-lg font-bold text-center crop-name text-on-surface';
+    }
+    const rateSpan = btn.querySelector('.crop-rate-label');
+    if (rateSpan) {
+      rateSpan.className = 'text-label-md text-primary mt-1 crop-rate-label';
+    }
+  });
+
+  if (element) {
+    element.className = 'crop-choice-btn flex-none w-36 flex flex-col items-center justify-center p-4 rounded-xl border-2 border-secondary bg-secondary-container text-on-secondary-container shadow-md active:scale-95 transition-all';
+    const nameSpan = element.querySelector('.crop-name');
+    if (nameSpan) {
+      nameSpan.className = 'text-label-lg font-bold text-center crop-name text-on-secondary-container';
+    }
+    const rateSpan = element.querySelector('.crop-rate-label');
+    if (rateSpan) {
+      rateSpan.className = 'text-label-md font-bold mt-1 crop-rate-label text-on-secondary-container';
+    }
+  }
+
+  const badge = document.getElementById('selected-crop-badge');
+  if (badge) badge.textContent = cropName;
+
+  updatePayoutCalculation();
+  showToast(`Crop selected: ${cropName} (₹${rate}/Qtl)`, 'agriculture');
+}
+
+function adjustQuantity(delta) {
+  let curr = parseInt(document.getElementById('crop-qty-input')?.value || '50') || 50;
+  curr += delta;
+  if (curr < 1) curr = 1;
+  if (curr > 5000) curr = 5000;
+  
+  const input = document.getElementById('crop-qty-input');
+  if (input) input.value = curr;
+  bookingState.quantity = curr;
+  updatePayoutCalculation();
+}
+
+function handleQuantityInput(val) {
+  let q = parseInt(val) || 0;
+  if (q < 1) q = 1;
+  bookingState.quantity = q;
+  updatePayoutCalculation();
+}
+
+function updatePayoutCalculation() {
+  const qty = bookingState.quantity || 1;
+  const rate = bookingState.cropRate || 2425;
+  const total = qty * rate;
+  bookingState.estimatedPayout = total;
+
+  const payoutEl = document.getElementById('estimated-payout-display');
+  if (payoutEl) {
+    payoutEl.textContent = `₹ ${total.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  }
+}
+
+// ==========================================
+// 3. TIME SLOT & CENTER SELECTION
+// ==========================================
+function selectTimeSlot(slotName, element) {
+  bookingState.timeSlot = slotName;
+
+  document.querySelectorAll('.time-slot-btn').forEach(btn => {
+    btn.className = 'time-slot-btn flex flex-col items-center justify-center p-4 min-h-[105px] rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 hover:bg-surface-variant relative overflow-hidden transition-all';
+    const slotSpan = btn.querySelector('.slot-name');
+    if (slotSpan) slotSpan.className = 'text-label-lg font-bold slot-name text-on-surface';
+    const timeSpan = btn.querySelector('.slot-time');
+    if (timeSpan) timeSpan.className = 'text-label-md slot-time text-on-surface-variant';
+  });
+
+  if (element) {
+    element.className = 'time-slot-btn flex flex-col items-center justify-center p-4 min-h-[105px] rounded-xl border-2 border-secondary bg-secondary-container text-on-secondary-container shadow-md active:scale-95 relative overflow-hidden transition-all';
+    const slotSpan = element.querySelector('.slot-name');
+    if (slotSpan) slotSpan.className = 'text-label-lg font-bold slot-name text-on-secondary-container';
+    const timeSpan = element.querySelector('.slot-time');
+    if (timeSpan) timeSpan.className = 'text-label-md slot-time text-on-secondary-container opacity-90';
+  }
+
+  const badge = document.getElementById('selected-slot-badge');
+  if (badge) badge.textContent = slotName;
+
+  showToast(`Time slot: ${slotName}`, 'schedule');
+}
+
+function handleCenterChange(val) {
+  bookingState.center = val;
+  showToast(`Selected Mandi: ${val.split('(')[0].trim()}`, 'location_on');
+}
+
+function openBookingForMandi(mandiName) {
+  bookingState.center = mandiName;
+  const select = document.getElementById('booking-center-select');
+  if (select) {
+    for (let opt of select.options) {
+      if (opt.value.includes(mandiName.split(' ')[0]) || opt.textContent.includes(mandiName.split(' ')[0])) {
+        opt.selected = true;
+        break;
+      }
+    }
+  }
+  nav('screen-book-slot');
+  showToast(`Booking for: ${mandiName.split('(')[0].trim()}`, 'location_on');
+}
+
+// ==========================================
+// 4. CONFIRM BOOKING & DOWNLOAD TOKEN
+// ==========================================
+function confirmSlotBooking() {
+  const centerSelect = document.getElementById('booking-center-select');
+  if (centerSelect && centerSelect.value) {
+    bookingState.center = centerSelect.value;
+  }
+
+  // Generate dynamic Token Number
+  const tokenNum = '#' + Math.floor(10 + Math.random() * 90);
+  bookingState.tokenNumber = tokenNum;
+
+  // Format date
+  const dateStr = bookingState.date.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+
+  // Update Mandi Token screen fields
+  const tokenNumEl = document.getElementById('token-num-display');
+  if (tokenNumEl) tokenNumEl.textContent = tokenNum;
+
+  const farmerEl = document.getElementById('token-farmer-display');
+  if (farmerEl) farmerEl.textContent = bookingState.farmerName;
+
+  const mandiEl = document.getElementById('token-mandi-display');
+  if (mandiEl) mandiEl.textContent = bookingState.center;
+
+  const dateEl = document.getElementById('token-date-display');
+  if (dateEl) dateEl.textContent = dateStr;
+
+  const slotEl = document.getElementById('token-slot-display');
+  if (slotEl) slotEl.textContent = bookingState.timeSlot;
+
+  const cropEl = document.getElementById('token-crop-display');
+  if (cropEl) cropEl.textContent = `${bookingState.crop} • ${bookingState.quantity} Quintals`;
+
+  const payoutEl = document.getElementById('token-payout-display');
+  if (payoutEl) {
+    const total = bookingState.quantity * bookingState.cropRate;
+    payoutEl.textContent = `₹ ${total.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  }
+
+  showToast('Booking Confirmed! टोकन जनरेट हो गया।', 'verified');
+  nav('screen-mandi-token');
+}
+
+function downloadTokenReceipt() {
+  showToast('Downloading Mandi Token PDF (टोकन डाउनलोड हो रहा है)...', 'download');
 }
 
 // OTP auto-advance
@@ -1064,21 +1435,25 @@ function startTimer(){
   },1000);
 }
 
-// Calendar date selection
+// Initialize on page load
 document.addEventListener('DOMContentLoaded',()=>{
-  const grid=document.getElementById('calendar-grid');
-  if(!grid)return;
-  grid.querySelectorAll('button').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      grid.querySelectorAll('button').forEach(b=>{b.classList.remove('bg-primary','text-on-primary','font-bold');});
-      btn.classList.add('bg-primary','text-on-primary','font-bold');
-    });
-  });
+  renderCalendar();
+  updatePayoutCalculation();
+
   // Start OTP timer when OTP screen is shown
   const observer=new MutationObserver(()=>{
-    if(document.getElementById('screen-otp').classList.contains('active'))startTimer();
+    const otpScr = document.getElementById('screen-otp');
+    if(otpScr && otpScr.classList.contains('active')) startTimer();
+    const bookScr = document.getElementById('screen-book-slot');
+    if(bookScr && bookScr.classList.contains('active')) {
+      renderCalendar();
+      updatePayoutCalculation();
+    }
   });
-  observer.observe(document.getElementById('screen-otp'),{attributes:true,attributeFilter:['class']});
+  const otpScreen = document.getElementById('screen-otp');
+  if (otpScreen) observer.observe(otpScreen, {attributes:true,attributeFilter:['class']});
+  const bookScreen = document.getElementById('screen-book-slot');
+  if (bookScreen) observer.observe(bookScreen, {attributes:true,attributeFilter:['class']});
 });
 </script>
 </body>
