@@ -96,10 +96,10 @@
   <header class="bg-surface border-b border-outline-variant w-full sticky top-0 flex items-center px-5 py-2.5 z-40">
     <div class="flex items-center gap-2 flex-1 cursor-pointer" onclick="nav('screen-dashboard')">
       <span class="material-symbols-outlined text-primary text-3xl icon-fill">agriculture</span>
-      <h1 class="text-headline-md font-bold text-primary">Kisan Setu | किसान सेतु</h1>
+      <h1 class="text-headline-md font-bold text-primary" data-i18n="app_title">Kisan Setu | किसान सेतु</h1>
     </div>
-    <button onclick="toggleLanguageModal()" class="flex items-center gap-1 px-3 py-1 rounded-full border border-outline text-primary text-sm font-medium hover:bg-surface-container-low transition-colors">
-      <span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">EN/हि</span>
+    <button onclick="toggleLanguageModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/5 text-primary text-xs font-bold shadow-xs hover:bg-primary/10 transition-colors">
+      <span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">🌐 हिन्दी (HI)</span>
     </button>
   </header>
   <main class="flex-1 flex flex-col justify-center items-center px-5 py-8">
@@ -109,32 +109,32 @@
           <span class="material-symbols-outlined text-[48px] text-primary icon-fill">agriculture</span>
         </div>
       </div>
-      <h2 class="text-headline-lg font-bold text-primary text-center mb-1">Welcome / स्वागत है</h2>
-      <p class="text-body-md text-on-surface-variant text-center mb-6">Enter your 10-digit mobile number to login.</p>
+      <h2 class="text-headline-lg font-bold text-primary text-center mb-1" data-i18n="login_welcome">Welcome / स्वागत है</h2>
+      <p class="text-body-md text-on-surface-variant text-center mb-6" data-i18n="login_sub">Enter your 10-digit mobile number to login.</p>
       <form onsubmit="event.preventDefault();handleLoginSubmit()">
-        <label class="block text-label-lg text-on-surface mb-1 font-semibold">Mobile Number / मोबाइल नंबर</label>
+        <label class="block text-label-lg text-on-surface mb-1 font-semibold" data-i18n="mobile_label">Mobile Number / मोबाइल नंबर</label>
         <div class="relative flex items-center mb-4">
           <span class="absolute left-4 text-body-lg font-bold text-primary">+91</span>
           <input id="login-mobile-input" class="w-full h-[56px] pl-14 pr-4 bg-surface-bright border-2 border-outline rounded-xl text-body-lg font-bold text-on-surface focus:border-primary outline-none transition-colors shadow-inner" placeholder="98765 43210" type="tel" maxlength="10" value="9876543210">
         </div>
         <button type="submit" class="w-full h-[56px] bg-primary-container text-on-primary-container text-label-lg font-bold rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-transform hover:bg-primary hover:text-on-primary shadow-md">
-          Send OTP <span class="material-symbols-outlined">arrow_forward</span>
+          <span data-i18n="send_otp">Send OTP</span> <span class="material-symbols-outlined">arrow_forward</span>
         </button>
       </form>
 
       <!-- Direct 1-Click Demo Login Button -->
       <div class="relative flex py-4 items-center">
         <div class="flex-grow border-t border-outline-variant"></div>
-        <span class="flex-shrink mx-3 text-xs text-on-surface-variant uppercase font-bold tracking-wider">Or Instant Access</span>
+        <span class="flex-shrink mx-3 text-xs text-on-surface-variant uppercase font-bold tracking-wider" data-i18n="direct_demo_tag">Or Instant Access</span>
         <div class="flex-grow border-t border-outline-variant"></div>
       </div>
       <button type="button" onclick="quickDemoLogin()" class="w-full h-[52px] bg-secondary-container text-on-secondary-container text-label-md font-bold rounded-xl flex items-center justify-center gap-2 active:scale-95 transition-transform border border-secondary shadow-md hover:brightness-105">
-        <span class="material-symbols-outlined text-xl">bolt</span> Direct Farmer Login (Demo Mode)
+        <span class="material-symbols-outlined text-xl">bolt</span> <span data-i18n="direct_demo">Direct Farmer Login (Demo Mode)</span>
       </button>
 
       <div class="mt-6 text-center">
-        <p class="text-label-md text-on-surface-variant mb-1.5">New to Kisan Setu?</p>
-        <button onclick="nav('screen-registration')" class="text-primary text-label-lg font-bold underline underline-offset-4 hover:opacity-80">Register as Farmer / किसान पंजीकरण</button>
+        <p class="text-label-md text-on-surface-variant mb-1.5" data-i18n="new_user">New to Kisan Setu?</p>
+        <button onclick="nav('screen-registration')" class="text-primary text-label-lg font-bold underline underline-offset-4 hover:opacity-80" data-i18n="register_farmer">Register as Farmer / किसान पंजीकरण</button>
       </div>
     </div>
   </main>
@@ -146,9 +146,9 @@
     <button onclick="nav('screen-login')" class="text-primary flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-variant mr-2">
       <span class="material-symbols-outlined">arrow_back</span>
     </button>
-    <h1 class="text-headline-md font-bold text-primary flex-1">Kisan Setu | किसान सेतु</h1>
-    <button onclick="toggleLanguageModal()" class="flex items-center gap-1 px-3 py-1 rounded-full border border-outline text-primary text-sm font-medium">
-      <span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">EN/हि</span>
+    <h1 class="text-headline-md font-bold text-primary flex-1" data-i18n="app_title">Kisan Setu | किसान सेतु</h1>
+    <button onclick="toggleLanguageModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/5 text-primary text-xs font-bold shadow-xs">
+      <span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">🌐 हिन्दी (HI)</span>
     </button>
   </header>
   <main class="flex-1 flex flex-col items-center justify-center px-5 pb-8">
@@ -156,8 +156,8 @@
       <div class="inline-flex items-center justify-center w-20 h-20 bg-primary-container text-on-primary-container rounded-full mb-4 shadow-sm">
         <span class="material-symbols-outlined text-4xl">lock_open</span>
       </div>
-      <h2 class="text-headline-lg font-bold text-primary mb-1">Verify OTP</h2>
-      <p class="text-body-md text-on-surface-variant mb-1">6-digit code sent to</p>
+      <h2 class="text-headline-lg font-bold text-primary mb-1" data-i18n="verify_otp_title">Verify OTP</h2>
+      <p class="text-body-md text-on-surface-variant mb-1" data-i18n="verify_otp_sub">6-digit code sent to</p>
       <p id="otp-phone-display" class="text-body-lg font-bold text-on-surface mb-6">+91 98765 43210</p>
       
       <form onsubmit="event.preventDefault();nav('screen-dashboard');showToast('Welcome Ram Singh! लॉगिन सफल रहा।', 'verified')">
@@ -170,19 +170,19 @@
           <input aria-label="OTP digit 6" class="w-11 h-13 sm:w-12 sm:h-14 text-center text-[24px] font-bold bg-surface border-2 border-outline rounded-xl focus:border-secondary-container outline-none transition-colors" inputmode="numeric" maxlength="1" type="text" value="0">
         </div>
 
-        <button type="button" onclick="autofillDemoOTP()" class="text-xs font-bold text-primary mb-4 bg-primary/10 px-3 py-1.5 rounded-full border border-primary/20 hover:bg-primary/20 transition-colors">
+        <button type="button" onclick="autofillDemoOTP()" class="text-xs font-bold text-primary mb-4 bg-primary/10 px-3 py-1.5 rounded-full border border-primary/20 hover:bg-primary/20 transition-colors" data-i18n="fill_demo_otp">
           ⚡ One-Tap Fill Demo OTP (482910)
         </button>
 
         <div class="flex items-center justify-between mb-6 px-1">
-          <p class="text-body-md text-on-surface-variant text-sm">Didn't receive code?</p>
+          <p class="text-body-md text-on-surface-variant text-sm" data-i18n="didnt_get_otp">Didn't receive code?</p>
           <button type="button" onclick="resendOTPAction()" class="text-label-md font-bold text-primary underline underline-offset-4">
-            Resend OTP <span class="text-outline" id="otp-timer">(00:30)</span>
+            <span data-i18n="resend_otp">Resend OTP</span> <span class="text-outline" id="otp-timer">(00:30)</span>
           </button>
         </div>
 
         <button type="submit" class="w-full bg-primary-container text-on-primary-container text-label-lg font-bold h-[56px] rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] transition-transform shadow-md hover:bg-primary hover:text-on-primary">
-          Verify &amp; Login <span class="material-symbols-outlined">verified</span>
+          <span data-i18n="verify_login">Verify &amp; Login</span> <span class="material-symbols-outlined">verified</span>
         </button>
       </form>
     </div>
@@ -194,44 +194,43 @@
   <header class="bg-white w-full sticky top-0 border-b border-outline-variant flex items-center justify-between px-5 h-[56px] z-50">
     <div class="flex items-center gap-2 cursor-pointer" onclick="nav('screen-dashboard')">
       <span class="material-symbols-outlined text-primary icon-fill">agriculture</span>
-      <h1 class="text-headline-sm font-bold text-primary">Kisan Setu | किसान सेतु</h1>
+      <h1 class="text-headline-sm font-bold text-primary" data-i18n="app_title">Kisan Setu | किसान सेतु</h1>
     </div>
     <button onclick="nav('screen-login')" class="text-primary h-[44px] w-[44px] flex items-center justify-center rounded-full hover:bg-surface-container">
       <span class="material-symbols-outlined">arrow_back</span>
     </button>
   </header>
   <main class="flex-grow px-5 pb-32 pt-6 max-w-lg mx-auto w-full">
-    <h2 class="text-headline-md font-bold text-on-surface mb-1">Farmer Registration</h2>
-    <p class="text-headline-sm text-primary font-bold mb-1">किसान पंजीकरण</p>
-    <p class="text-body-md text-on-surface-variant mb-6">Enter your basic details to create your digital farmer pass.</p>
+    <h2 class="text-headline-md font-bold text-on-surface mb-1" data-i18n="reg_title">Farmer Registration</h2>
+    <p class="text-body-md text-on-surface-variant mb-6" data-i18n="reg_sub">Enter your basic details to create your digital farmer pass.</p>
     <form class="space-y-4" onsubmit="event.preventDefault();handleRegistrationSubmit()">
       <div>
-        <label class="block text-label-lg text-on-surface mb-1 font-semibold">Full Name / पूरा नाम <span class="text-error">*</span></label>
+        <label class="block text-label-lg text-on-surface mb-1 font-semibold" data-i18n="full_name">Full Name / पूरा नाम <span class="text-error">*</span></label>
         <input id="reg-fullname" class="w-full h-[56px] px-4 bg-surface-container-low border-2 border-outline-variant rounded-xl text-body-lg font-bold text-on-surface focus:border-primary outline-none transition-colors" placeholder="e.g., Ram Singh" value="Ram Singh" required type="text">
       </div>
       <div>
-        <label class="block text-label-lg text-on-surface mb-1 font-semibold">Farmer ID / किसान आईडी</label>
+        <label class="block text-label-lg text-on-surface mb-1 font-semibold" data-i18n="farmer_id">Farmer ID / किसान आईडी</label>
         <input class="w-full h-[56px] px-4 bg-surface-container-low border-2 border-outline-variant rounded-xl text-body-lg text-on-surface focus:border-primary outline-none transition-colors" placeholder="e.g., PB-10492" value="PB-10492" type="text">
-        <p class="text-label-md text-on-surface-variant mt-1 text-xs">Leave blank if not registered yet (System will auto-generate)</p>
+        <p class="text-label-md text-on-surface-variant mt-1 text-xs" data-i18n="farmer_id_hint">Leave blank if not registered yet (System will auto-generate)</p>
       </div>
       <div>
-        <label class="block text-label-lg text-on-surface mb-1 font-semibold">Mobile Number / मोबाइल नंबर <span class="text-error">*</span></label>
+        <label class="block text-label-lg text-on-surface mb-1 font-semibold" data-i18n="mobile_label">Mobile Number / मोबाइल नंबर <span class="text-error">*</span></label>
         <div class="flex">
           <span class="inline-flex items-center px-4 bg-surface-container border-2 border-r-0 border-outline-variant rounded-l-xl text-body-lg font-bold text-primary h-[56px]">+91</span>
           <input class="flex-1 h-[56px] px-4 bg-surface-container-low border-2 border-outline-variant rounded-r-xl text-body-lg font-bold text-on-surface focus:border-primary outline-none" value="9876543210" required type="tel">
         </div>
       </div>
       <div>
-        <label class="block text-label-lg text-on-surface mb-1 font-semibold">Village or District / गांव या जिला <span class="text-error">*</span></label>
+        <label class="block text-label-lg text-on-surface mb-1 font-semibold" data-i18n="village_district">Village or District / गांव या जिला <span class="text-error">*</span></label>
         <div class="relative">
           <span class="absolute inset-y-0 left-0 pl-4 flex items-center"><span class="material-symbols-outlined text-outline">location_on</span></span>
           <input class="w-full h-[56px] pl-12 pr-4 bg-surface-container-low border-2 border-outline-variant rounded-xl text-body-lg text-on-surface focus:border-primary outline-none" placeholder="e.g., Karnal, Haryana" value="Karnal, Haryana" required type="text">
         </div>
       </div>
       <div class="pt-4">
-        <button type="submit" class="w-full h-[56px] bg-primary text-on-primary text-label-lg font-bold rounded-xl flex flex-col items-center justify-center active:scale-[0.98] transition-all shadow-md hover:bg-primary-container">
-          <span>Register &amp; Continue</span>
-          <span class="text-xs font-normal opacity-90">पंजीकरण करें और जारी रखें</span>
+        <button type="submit" class="w-full h-[56px] bg-primary text-on-primary text-label-lg font-bold rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] transition-all shadow-md hover:bg-primary-container">
+          <span data-i18n="reg_btn">Register &amp; Continue</span>
+          <span class="material-symbols-outlined">arrow_forward</span>
         </button>
       </div>
     </form>
@@ -241,22 +240,22 @@
 <!-- ===== SCREEN 4: LINK AADHAAR ===== -->
 <div id="screen-link-aadhaar" class="screen">
   <header class="border-b border-outline-variant flex items-center px-5 w-full sticky top-0 py-2.5 bg-surface-container-low z-10">
-    <button onclick="nav('screen-dashboard')" class="text-primary flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-variant mr-2">
+    <button onclick="nav('screen-registration')" class="text-primary flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-variant mr-2">
       <span class="material-symbols-outlined">arrow_back</span>
     </button>
-    <h1 class="text-headline-md font-bold text-primary flex-1">Kisan Setu | किसान सेतु</h1>
-    <button onclick="toggleLanguageModal()" class="flex items-center gap-1 px-3 py-1 rounded-full border border-outline text-primary text-sm font-medium"><span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">EN/हि</span></button>
+    <h1 class="text-headline-md font-bold text-primary flex-1" data-i18n="app_title">Kisan Setu | किसान सेतु</h1>
+    <button onclick="toggleLanguageModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/5 text-primary text-xs font-bold shadow-xs"><span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">🌐 हिन्दी (HI)</span></button>
   </header>
   <main class="flex-1 px-5 py-6 flex flex-col max-w-md mx-auto w-full pb-24">
-    <h2 class="text-headline-lg font-bold text-primary mb-1">Getting Started / शुरू करें</h2>
-    <p class="text-body-md text-on-surface-variant mb-4">Complete these steps to access all procurement &amp; DBT services.</p>
+    <h2 class="text-headline-lg font-bold text-primary mb-1" data-i18n="aadhaar_title">Step 2: Link Aadhaar</h2>
+    <p class="text-body-md text-on-surface-variant mb-4" data-i18n="aadhaar_sub">Complete these steps to access all procurement &amp; DBT services.</p>
     <div class="mb-4">
       <div class="flex justify-between items-center mb-1">
         <span class="text-label-md text-primary font-bold">Profile Setup Progress</span>
-        <span class="text-label-md text-on-surface-variant">Step 2 of 4</span>
+        <span class="text-label-md text-on-surface-variant font-bold">Step 2 of 4 (50%)</span>
       </div>
       <div class="w-full bg-surface-container-highest h-2.5 rounded-full overflow-hidden">
-        <div class="bg-primary h-full w-1/2 rounded-full"></div>
+        <div class="bg-primary h-full w-2/4 rounded-full transition-all duration-300"></div>
       </div>
     </div>
     <!-- Stepper -->
@@ -265,100 +264,286 @@
         <li class="flex items-start mb-6 relative">
           <div class="absolute left-[15px] top-[32px] bottom-[-24px] w-[4px] bg-primary"></div>
           <div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center z-10 shrink-0"><span class="material-symbols-outlined text-[18px]">check</span></div>
-          <div class="ml-4 pt-0.5"><h3 class="text-label-lg text-primary font-bold">1. Profile Setup</h3><p class="text-body-md text-on-surface-variant text-xs">Completed ✓</p></div>
+          <div class="ml-4 pt-0.5"><h3 class="text-label-lg text-primary font-bold" data-i18n="step1_title">1. Profile Setup</h3><p class="text-body-md text-on-surface-variant text-xs" data-i18n="completed_badge">Completed ✓</p></div>
+        </li>
+        <li class="flex items-start mb-6 relative">
+          <div class="absolute left-[15px] top-[32px] bottom-[-24px] w-[4px] bg-primary"></div>
+          <div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container border-2 border-secondary flex items-center justify-center z-10 shrink-0"><span class="text-label-lg font-bold">2</span></div>
+          <div class="ml-4 pt-0.5"><h3 class="text-label-lg text-on-background font-bold" data-i18n="step2_title">2. Aadhaar Linking</h3><p class="text-body-md text-secondary font-bold text-xs" data-i18n="current_step">Current Step ⚡</p></div>
         </li>
         <li class="flex items-start mb-6 relative">
           <div class="absolute left-[15px] top-[32px] bottom-[-24px] w-[4px] bg-outline-variant"></div>
-          <div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container border-2 border-secondary-container flex items-center justify-center z-10 shrink-0"><span class="text-label-lg font-bold">2</span></div>
-          <div class="ml-4 pt-0.5"><h3 class="text-label-lg text-on-background font-bold">2. Aadhaar Linking</h3><p class="text-body-md text-on-surface-variant text-xs">Current Step</p></div>
-        </li>
-        <li class="flex items-start mb-6 relative">
-          <div class="absolute left-[15px] top-[32px] bottom-[-24px] w-[4px] bg-outline-variant"></div>
-          <div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center z-10 shrink-0"><span class="text-label-lg">3</span></div>
-          <div class="ml-4 pt-0.5"><h3 class="text-label-lg text-on-surface-variant">3. Land Details</h3></div>
+          <div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center z-10 shrink-0"><span class="text-label-lg font-bold">3</span></div>
+          <div class="ml-4 pt-0.5"><h3 class="text-label-lg text-on-surface-variant font-bold" data-i18n="step3_title">3. Land Details</h3><p class="text-xs text-gray-500" data-i18n="next_step">Next Step</p></div>
         </li>
         <li class="flex items-start relative">
-          <div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center z-10 shrink-0"><span class="text-label-lg">4</span></div>
-          <div class="ml-4 pt-0.5"><h3 class="text-label-lg text-on-surface-variant">4. Bank Account for DBT</h3></div>
+          <div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center z-10 shrink-0"><span class="text-label-lg font-bold">4</span></div>
+          <div class="ml-4 pt-0.5"><h3 class="text-label-lg text-on-surface-variant font-bold" data-i18n="step4_title">4. Bank Account for DBT</h3><p class="text-xs text-gray-500" data-i18n="pending_badge">Pending</p></div>
         </li>
       </ul>
     </div>
     <!-- Aadhaar Action Card -->
     <div class="bg-tertiary-fixed border border-primary/20 rounded-2xl overflow-hidden mb-6 shadow-md">
       <div class="bg-primary text-on-primary p-4 flex items-center justify-between">
-        <h2 class="text-headline-sm flex items-center gap-2"><span class="material-symbols-outlined">fingerprint</span>Step 2: Link Aadhaar</h2>
+        <h2 class="text-headline-sm flex items-center gap-2 font-bold"><span class="material-symbols-outlined">fingerprint</span><span data-i18n="aadhaar_title">Step 2: Link Aadhaar</span></h2>
         <span class="text-xs bg-primary-container px-2.5 py-1 rounded-full text-[#7ebdac] font-bold">UIDAI Secured</span>
       </div>
       <div class="p-5 space-y-4 bg-surface">
         <div>
-          <label class="block text-label-lg text-on-surface mb-1 font-semibold" for="aadhaar-input">12-Digit Aadhaar Number</label>
+          <label class="block text-label-lg text-on-surface mb-1 font-semibold" for="aadhaar-input" data-i18n="aadhaar_num_label">12-Digit Aadhaar Number</label>
           <div class="relative">
             <input aria-describedby="aadhaar-hint" class="w-full h-[56px] border-2 border-outline rounded-xl px-4 text-body-lg font-mono font-bold text-on-surface focus:border-primary outline-none transition-colors" id="aadhaar-input" maxlength="14" placeholder="XXXX XXXX 3942" value="5481 9204 3942" type="text">
             <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-primary">lock</span>
           </div>
-          <p class="text-body-md text-xs text-on-surface-variant mt-1.5" id="aadhaar-hint">Your biometric &amp; Aadhaar data is encrypted via UIDAI sandbox.</p>
+          <p class="text-body-md text-xs text-on-surface-variant mt-1.5" id="aadhaar-hint" data-i18n="aadhaar_hint">Your biometric &amp; Aadhaar data is encrypted via UIDAI sandbox.</p>
         </div>
         <div class="flex items-start gap-3 mt-4">
           <input checked class="w-5 h-5 rounded border-outline text-primary cursor-pointer mt-0.5" id="aadhaar-consent" type="checkbox">
-          <label class="text-body-md text-xs text-on-surface-variant cursor-pointer leading-relaxed" for="aadhaar-consent">I hereby give my consent to Kisan Setu to use my Aadhaar details for e-KYC verification and direct benefit transfers (DBT).</label>
+          <label class="text-body-md text-xs text-on-surface-variant cursor-pointer leading-relaxed" for="aadhaar-consent" data-i18n="aadhaar_consent">I hereby give my consent to Kisan Setu to use my Aadhaar details for e-KYC verification and direct benefit transfers (DBT).</label>
         </div>
         <button onclick="simulateAadhaarVerify()" class="w-full h-[56px] bg-primary text-on-primary rounded-xl text-label-lg font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-md hover:bg-primary-container">
-          <span class="material-symbols-outlined">how_to_reg</span>Verify via Biometric / OTP
+          <span class="material-symbols-outlined">how_to_reg</span><span data-i18n="aadhaar_btn">Verify via Biometric / OTP</span>
         </button>
       </div>
     </div>
   </main>
 </div>
 
-<!-- ===== SCREEN 5: DBT SETUP ===== -->
+<!-- ===== SCREEN 5: FARMER LAND DETAILS (NEW STEP 3) ===== -->
+<div id="screen-land-details" class="screen">
+  <header class="border-b border-outline-variant flex items-center px-5 w-full sticky top-0 py-2.5 bg-surface-container-low z-10">
+    <button onclick="nav('screen-link-aadhaar')" class="text-primary flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-variant mr-2">
+      <span class="material-symbols-outlined">arrow_back</span>
+    </button>
+    <h1 class="text-headline-md font-bold text-primary flex-1" data-i18n="app_title">Kisan Setu | किसान सेतु</h1>
+    <button onclick="toggleLanguageModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/5 text-primary text-xs font-bold shadow-xs"><span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">🌐 हिन्दी (HI)</span></button>
+  </header>
+  <main class="flex-1 px-5 py-6 flex flex-col max-w-lg mx-auto w-full pb-28">
+    <h2 class="text-headline-lg font-bold text-primary mb-1" data-i18n="land_title">Farmer Land Details</h2>
+    <p class="text-body-md text-on-surface-variant mb-4" data-i18n="land_sub">Enter and verify your agricultural land records for MSP procurement eligibility.</p>
+    
+    <div class="mb-4">
+      <div class="flex justify-between items-center mb-1">
+        <span class="text-label-md text-primary font-bold">Profile Setup Progress</span>
+        <span class="text-label-md text-on-surface-variant font-bold">Step 3 of 4 (75%)</span>
+      </div>
+      <div class="w-full bg-surface-container-highest h-2.5 rounded-full overflow-hidden">
+        <div class="bg-primary h-full w-3/4 rounded-full transition-all duration-300"></div>
+      </div>
+    </div>
+
+    <!-- Stepper -->
+    <div class="mb-6 border border-outline-variant rounded-xl p-4 bg-surface-container-low">
+      <ul class="flex flex-col relative w-full">
+        <li class="flex items-start mb-6 relative">
+          <div class="absolute left-[15px] top-[32px] bottom-[-24px] w-[4px] bg-primary"></div>
+          <div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center z-10 shrink-0"><span class="material-symbols-outlined text-[18px]">check</span></div>
+          <div class="ml-4 pt-0.5"><h3 class="text-label-lg text-primary font-bold" data-i18n="step1_title">1. Profile Setup</h3><p class="text-body-md text-on-surface-variant text-xs" data-i18n="completed_badge">Completed ✓</p></div>
+        </li>
+        <li class="flex items-start mb-6 relative">
+          <div class="absolute left-[15px] top-[32px] bottom-[-24px] w-[4px] bg-primary"></div>
+          <div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center z-10 shrink-0"><span class="material-symbols-outlined text-[18px]">check</span></div>
+          <div class="ml-4 pt-0.5"><h3 class="text-label-lg text-primary font-bold" data-i18n="step2_title">2. Aadhaar Linking</h3><p class="text-body-md text-on-surface-variant text-xs" data-i18n="verified_badge">Verified ✓ (**3942)</p></div>
+        </li>
+        <li class="flex items-start mb-6 relative">
+          <div class="absolute left-[15px] top-[32px] bottom-[-24px] w-[4px] bg-outline-variant"></div>
+          <div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container border-2 border-secondary flex items-center justify-center z-10 shrink-0"><span class="text-label-lg font-bold">3</span></div>
+          <div class="ml-4 pt-0.5"><h3 class="text-label-lg text-on-background font-bold" data-i18n="step3_title">3. Land Details</h3><p class="text-body-md text-secondary font-bold text-xs" data-i18n="current_step">Current Step ⚡</p></div>
+        </li>
+        <li class="flex items-start relative">
+          <div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center z-10 shrink-0"><span class="text-label-lg font-bold">4</span></div>
+          <div class="ml-4 pt-0.5"><h3 class="text-label-lg text-on-surface-variant font-bold" data-i18n="step4_title">4. Bank Account for DBT</h3><p class="text-xs text-gray-500" data-i18n="next_step">Next Step</p></div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Verified Portal Sync Banner -->
+    <div class="bg-[#E8F5E9] border-2 border-[#C8E6C9] p-4 rounded-2xl flex items-center justify-between mb-5 shadow-sm">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-3xl icon-fill">verified_user</span>
+        <div>
+          <h3 class="text-sm font-bold text-primary" data-i18n="land_verified_banner">State Bhulekh / Meri Fasal e-Verified ✓</h3>
+          <p class="text-xs text-green-900" data-i18n="land_survey_synced">Land Record Synced • Survey ID: HY-KNL-2026-9021</p>
+        </div>
+      </div>
+      <span class="bg-primary text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Active</span>
+    </div>
+
+    <!-- Land Details Form -->
+    <form class="space-y-4" onsubmit="event.preventDefault();handleLandDetailsSubmit()">
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="block text-label-md text-on-surface mb-1 font-semibold" data-i18n="state_label">State / राज्य <span class="text-error">*</span></label>
+          <input id="land-state" class="w-full h-[52px] px-3.5 bg-surface-container-low border-2 border-outline-variant rounded-xl text-body-md font-bold text-on-surface focus:border-primary outline-none" value="Haryana" required type="text">
+        </div>
+        <div>
+          <label class="block text-label-md text-on-surface mb-1 font-semibold" data-i18n="district_label">District / जिला <span class="text-error">*</span></label>
+          <input id="land-district" class="w-full h-[52px] px-3.5 bg-surface-container-low border-2 border-outline-variant rounded-xl text-body-md font-bold text-on-surface focus:border-primary outline-none" value="Karnal" required type="text">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="block text-label-md text-on-surface mb-1 font-semibold" data-i18n="tehsil_label">Tehsil / तहसील <span class="text-error">*</span></label>
+          <input id="land-tehsil" class="w-full h-[52px] px-3.5 bg-surface-container-low border-2 border-outline-variant rounded-xl text-body-md font-bold text-on-surface focus:border-primary outline-none" value="Nilokheri" required type="text">
+        </div>
+        <div>
+          <label class="block text-label-md text-on-surface mb-1 font-semibold" data-i18n="village_label">Village / गाँव <span class="text-error">*</span></label>
+          <input id="land-village" class="w-full h-[52px] px-3.5 bg-surface-container-low border-2 border-outline-variant rounded-xl text-body-md font-bold text-on-surface focus:border-primary outline-none" value="Taraori" required type="text">
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-label-md text-on-surface mb-1 font-semibold" data-i18n="khasra_label">Khasra / Khewat / Khatoni No. <span class="text-error">*</span></label>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center"><span class="material-symbols-outlined text-outline">pin</span></span>
+          <input id="land-khasra" class="w-full h-[52px] pl-11 pr-4 bg-surface-container-low border-2 border-outline-variant rounded-xl text-body-md font-mono font-bold text-on-surface focus:border-primary outline-none" value="42//18/2, 42//19, 43//2" required type="text">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3">
+        <div class="col-span-2">
+          <label class="block text-label-md text-on-surface mb-1 font-semibold" data-i18n="cultivable_area">Total Cultivable Area <span class="text-error">*</span></label>
+          <input id="land-area" class="w-full h-[52px] px-4 bg-surface-container-low border-2 border-outline-variant rounded-xl text-body-lg font-black text-primary focus:border-primary outline-none" value="4.5" required type="number" step="0.1" min="0.1">
+        </div>
+        <div>
+          <label class="block text-label-md text-on-surface mb-1 font-semibold" data-i18n="unit_label">Unit / इकाई</label>
+          <select id="land-unit" class="w-full h-[52px] px-2 bg-surface-container-low border-2 border-outline-variant rounded-xl text-body-md font-bold text-on-surface focus:border-primary outline-none cursor-pointer">
+            <option value="Acres" selected>Acres (एकड़)</option>
+            <option value="Bigha">Bigha (बीघा)</option>
+            <option value="Hectares">Hectares (हेक्टेयर)</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-label-md text-on-surface mb-1 font-semibold" data-i18n="ownership_label">Land Ownership Category <span class="text-error">*</span></label>
+        <div class="grid grid-cols-3 gap-2">
+          <label class="flex items-center justify-center p-3 rounded-xl border-2 border-primary bg-primary/10 text-primary font-bold text-xs cursor-pointer">
+            <input type="radio" name="land_ownership" value="owner" checked class="hidden">
+            <span data-i18n="owner_opt">Owner (मालिक)</span>
+          </label>
+          <label class="flex items-center justify-center p-3 rounded-xl border border-outline-variant bg-surface text-on-surface font-semibold text-xs cursor-pointer hover:bg-surface-variant">
+            <input type="radio" name="land_ownership" value="tenant" class="hidden">
+            <span data-i18n="tenant_opt">Tenant (पट्टेदार)</span>
+          </label>
+          <label class="flex items-center justify-center p-3 rounded-xl border border-outline-variant bg-surface text-on-surface font-semibold text-xs cursor-pointer hover:bg-surface-variant">
+            <input type="radio" name="land_ownership" value="sharecropper" class="hidden">
+            <span data-i18n="sharecropper_opt">Sharecropper (बटाईदार)</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Sown Crop Area Details -->
+      <div class="bg-surface-container-lowest border-2 border-outline-variant rounded-2xl p-4 shadow-sm">
+        <h4 class="text-label-lg font-bold text-primary mb-2 flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">eco</span><span data-i18n="sown_crop_title">Sown Crop Declaration</span>
+        </h4>
+        <div class="space-y-2 text-xs">
+          <div class="flex justify-between items-center p-2.5 bg-green-50 rounded-xl border border-green-200">
+            <span class="font-bold text-[#00342b]" data-i18n="wheat_sown">🌾 Wheat - Rabi 2026</span>
+            <span class="font-black text-primary text-sm">3.5 Acres (~85 Qtl est.)</span>
+          </div>
+          <div class="flex justify-between items-center p-2.5 bg-amber-50 rounded-xl border border-amber-200">
+            <span class="font-bold text-amber-900" data-i18n="mustard_sown">🌼 Mustard - Rabi 2026</span>
+            <span class="font-black text-amber-900 text-sm">1.0 Acre (~20 Qtl est.)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-2">
+        <button type="submit" class="w-full h-[56px] bg-primary text-on-primary rounded-xl text-label-lg font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-md hover:bg-primary-container">
+          <span class="material-symbols-outlined">how_to_reg</span><span data-i18n="save_land_btn">Save Land Records &amp; Proceed to Bank Setup (Step 4)</span>
+        </button>
+      </div>
+    </form>
+  </main>
+</div>
+
+<!-- ===== SCREEN 6: DBT SETUP (STEP 4 OF 4) ===== -->
 <div id="screen-dbt-setup" class="screen">
   <header class="border-b border-outline-variant w-full sticky top-0 flex items-center px-5 py-2.5 z-40 bg-white">
-    <button onclick="nav('screen-dashboard')" class="p-2 mr-2 text-primary flex items-center justify-center h-10 w-10 rounded-full hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined">arrow_back</span></button>
-    <div class="flex items-center gap-2 flex-1"><span class="material-symbols-outlined text-primary icon-fill">grass</span><h1 class="text-headline-md font-bold text-primary">Kisan Setu | किसान सेतु</h1></div>
+    <button onclick="nav('screen-land-details')" class="p-2 mr-2 text-primary flex items-center justify-center h-10 w-10 rounded-full hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined">arrow_back</span></button>
+    <div class="flex items-center gap-2 flex-1"><span class="material-symbols-outlined text-primary icon-fill">grass</span><h1 class="text-headline-md font-bold text-primary" data-i18n="app_title">Kisan Setu | किसान सेतु</h1></div>
     <button onclick="toggleProfileModal()" class="flex items-center justify-center h-10 w-10 rounded-full bg-secondary-container text-on-secondary-container mr-2 shadow-sm"><span class="material-symbols-outlined">person</span></button>
-    <button onclick="toggleLanguageModal()" class="flex items-center gap-1 px-3 py-1 rounded-full border border-outline text-primary text-sm font-medium"><span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">EN/हि</span></button>
+    <button onclick="toggleLanguageModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/5 text-primary text-xs font-bold shadow-xs"><span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">🌐 हिन्दी (HI)</span></button>
   </header>
-  <main class="flex-grow px-5 flex flex-col gap-5 pt-6 pb-24 max-w-lg mx-auto w-full">
+  <main class="flex-grow px-5 flex flex-col gap-5 pt-6 pb-28 max-w-lg mx-auto w-full">
+    <div class="mb-2">
+      <div class="flex justify-between items-center mb-1">
+        <span class="text-label-md text-primary font-bold">Profile Setup Progress</span>
+        <span class="text-label-md text-green-700 font-bold">Step 4 of 4 (100% Final)</span>
+      </div>
+      <div class="w-full bg-surface-container-highest h-2.5 rounded-full overflow-hidden">
+        <div class="bg-green-600 h-full w-full rounded-full"></div>
+      </div>
+    </div>
+
+    <!-- Stepper -->
+    <div class="border border-outline-variant rounded-xl p-4 bg-surface-container-low">
+      <ul class="flex flex-col relative w-full">
+        <li class="flex items-start mb-6 relative">
+          <div class="absolute left-[15px] top-[32px] bottom-[-24px] w-[4px] bg-primary"></div>
+          <div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center z-10 shrink-0"><span class="material-symbols-outlined text-[18px]">check</span></div>
+          <div class="ml-4 pt-0.5"><h3 class="text-label-lg text-primary font-bold" data-i18n="step1_title">1. Profile Setup</h3><p class="text-body-md text-on-surface-variant text-xs" data-i18n="completed_badge">Completed ✓</p></div>
+        </li>
+        <li class="flex items-start mb-6 relative">
+          <div class="absolute left-[15px] top-[32px] bottom-[-24px] w-[4px] bg-primary"></div>
+          <div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center z-10 shrink-0"><span class="material-symbols-outlined text-[18px]">check</span></div>
+          <div class="ml-4 pt-0.5"><h3 class="text-label-lg text-primary font-bold" data-i18n="step2_title">2. Aadhaar Linking</h3><p class="text-body-md text-on-surface-variant text-xs" data-i18n="verified_badge">Verified ✓ (**3942)</p></div>
+        </li>
+        <li class="flex items-start mb-6 relative">
+          <div class="absolute left-[15px] top-[32px] bottom-[-24px] w-[4px] bg-primary"></div>
+          <div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center z-10 shrink-0"><span class="material-symbols-outlined text-[18px]">check</span></div>
+          <div class="ml-4 pt-0.5"><h3 class="text-label-lg text-primary font-bold" data-i18n="step3_title">3. Land Details</h3><p class="text-body-md text-on-surface-variant text-xs" data-i18n="verified_badge">Verified ✓ (4.5 Acres, Karnal)</p></div>
+        </li>
+        <li class="flex items-start relative">
+          <div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container border-2 border-secondary flex items-center justify-center z-10 shrink-0"><span class="text-label-lg font-bold">4</span></div>
+          <div class="ml-4 pt-0.5"><h3 class="text-label-lg text-on-background font-bold" data-i18n="step4_title">4. Bank Account for DBT</h3><p class="text-body-md text-secondary font-bold text-xs" data-i18n="current_step">Current Step ⚡</p></div>
+        </li>
+      </ul>
+    </div>
+
     <section class="bg-primary-container border-l-4 border-primary-fixed p-4 rounded-xl flex items-start gap-4 shadow-sm">
       <span class="material-symbols-outlined text-primary-fixed text-3xl mt-1 icon-fill">check_circle</span>
       <div>
-        <h2 class="text-headline-sm text-primary-fixed mb-1 font-bold">Aadhaar Verified ✓</h2>
-        <p class="text-body-md text-on-primary-container text-sm">Aadhaar ending in **3942 successfully linked. Confirm bank details for Direct Benefit Transfer (DBT).</p>
+        <h2 class="text-headline-sm text-primary-fixed mb-1 font-bold" data-i18n="dbt_step_title">Aadhaar &amp; Land Verified ✓</h2>
+        <p class="text-body-md text-on-primary-container text-sm" data-i18n="dbt_verified_msg">Aadhaar ending in **3942 and 4.5 Acres Land Record linked. Confirm bank details for Direct Benefit Transfer (DBT).</p>
       </div>
     </section>
     <section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 shadow-sm">
-      <h2 class="text-headline-sm text-on-surface mb-4 border-b border-surface-variant pb-2 font-bold">Primary DBT Account Details</h2>
+      <h2 class="text-headline-sm text-on-surface mb-4 border-b border-surface-variant pb-2 font-bold" data-i18n="dbt_acc_title">Primary DBT Account Details</h2>
       <div class="flex flex-col gap-4">
         <div>
-          <label class="block text-label-lg text-on-surface mb-1 font-semibold">Bank Name</label>
+          <label class="block text-label-lg text-on-surface mb-1 font-semibold" data-i18n="bank_name">Bank Name</label>
           <input class="w-full h-[56px] px-4 border border-outline rounded-xl bg-surface-container-low text-body-lg font-bold text-primary cursor-not-allowed" readonly type="text" value="State Bank of India (SBI)">
-          <p class="text-label-md text-on-surface-variant mt-1 text-xs">Fetched automatically via PFMS Aadhaar Bridge</p>
+          <p class="text-label-md text-on-surface-variant mt-1 text-xs" data-i18n="dbt_bank_hint">Fetched automatically via PFMS Aadhaar Bridge</p>
         </div>
         <div>
-          <label class="block text-label-lg text-on-surface mb-1 font-semibold">Account Number</label>
+          <label class="block text-label-lg text-on-surface mb-1 font-semibold" data-i18n="acc_num">Account Number</label>
           <div class="relative">
             <input id="bank-acc-input" class="w-full h-[56px] px-4 border border-outline rounded-xl bg-surface-container-lowest text-body-lg font-bold text-on-surface focus:border-primary outline-none" type="text" value="XXXX-XXXX-5678">
             <button onclick="togglePasswordVisibility('bank-acc-input')" class="absolute right-4 top-1/2 -translate-y-1/2 text-primary" type="button"><span class="material-symbols-outlined">visibility</span></button>
           </div>
         </div>
         <div>
-          <label class="block text-label-lg text-on-surface mb-1 font-semibold">IFSC Code</label>
+          <label class="block text-label-lg text-on-surface mb-1 font-semibold" data-i18n="ifsc_code">IFSC Code</label>
           <input class="w-full h-[56px] px-4 border border-outline rounded-xl bg-surface-container-lowest text-body-lg font-bold text-on-surface uppercase focus:border-primary outline-none" type="text" value="SBIN0001234">
         </div>
       </div>
     </section>
     <section class="bg-surface-container rounded-xl p-5 border border-outline-variant">
       <div class="flex items-center justify-between mb-2">
-        <h3 class="text-headline-sm text-on-surface font-bold">Enable Direct Benefit Transfer</h3>
+        <h3 class="text-headline-sm text-on-surface font-bold" data-i18n="enable_dbt">Enable Direct Benefit Transfer</h3>
         <label class="relative inline-flex items-center cursor-pointer">
           <input checked class="sr-only peer" type="checkbox">
           <div class="w-14 h-7 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
         </label>
       </div>
-      <p class="text-body-md text-on-surface-variant text-xs">I consent to receiving government MSP payments and subsidies directly to this account.</p>
+      <p class="text-body-md text-on-surface-variant text-xs" data-i18n="dbt_consent">I consent to receiving government MSP payments and subsidies directly to this account.</p>
     </section>
     <button onclick="nav('screen-dashboard');showToast('DBT Account Saved Successfully! बैंक खाता जुड़ गया।', 'account_balance')" class="w-full h-[56px] bg-primary text-on-primary rounded-xl text-label-lg font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-md hover:bg-primary-container">
-      <span class="material-symbols-outlined">save</span>Save &amp; Continue to Dashboard
+      <span class="material-symbols-outlined">save</span><span data-i18n="save_dbt_btn">Save &amp; Continue to Dashboard</span>
     </button>
   </main>
 </div>
@@ -371,13 +556,13 @@
     </button>
     <div class="flex items-center gap-2 flex-1 cursor-pointer" onclick="nav('screen-dashboard')">
       <span class="material-symbols-outlined text-primary text-3xl icon-fill">agriculture</span>
-      <h1 class="text-headline-md font-bold text-primary">Kisan Setu | किसान सेतु</h1>
+      <h1 class="text-headline-md font-bold text-primary" data-i18n="app_title">Kisan Setu | किसान सेतु</h1>
     </div>
     <button onclick="toggleProfileModal()" class="flex items-center justify-center h-10 w-10 rounded-full bg-secondary-container text-on-secondary-container mr-2 shadow-sm" title="Farmer Profile">
       <span class="material-symbols-outlined">person</span>
     </button>
-    <button onclick="toggleLanguageModal()" class="flex items-center gap-1 px-3 py-1 rounded-full border border-outline text-primary text-sm font-medium">
-      <span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">EN/हि</span>
+    <button onclick="toggleLanguageModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/5 text-primary text-xs font-bold shadow-xs">
+      <span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">🌐 हिन्दी (HI)</span>
     </button>
   </header>
   <main class="px-5 flex flex-col gap-5 pb-28 pt-4 max-w-4xl mx-auto w-full">
@@ -385,18 +570,18 @@
     <!-- Farmer Greeting Header -->
     <div class="flex items-center justify-between bg-surface-container-low p-4 rounded-xl border border-outline-variant/60">
       <div>
-        <h2 class="text-headline-sm font-bold text-primary">Namaste, Ram Singh Ji! 🙏</h2>
+        <h2 class="text-headline-sm font-bold text-primary" data-i18n="greeting">Namaste, Ram Singh Ji! 🙏</h2>
         <p class="text-label-md text-on-surface-variant">Karnal Sector • Farmer ID: PB-10492</p>
       </div>
       <span class="bg-[#E8F5E9] text-primary border border-primary/30 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
-        <span class="material-symbols-outlined text-sm icon-fill">verified</span>KYC Verified
+        <span class="material-symbols-outlined text-sm icon-fill">verified</span><span data-i18n="kyc_verified">KYC Verified</span>
       </span>
     </div>
 
     <!-- MSP Banner -->
     <section onclick="showMSPModal()" class="bg-primary-container text-on-primary-container rounded-xl p-4 flex items-center justify-between cursor-pointer hover:brightness-105 active:scale-[0.99] transition-all shadow-sm">
       <div class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-container text-3xl">trending_up</span>
-        <div><p class="text-label-lg font-bold">Current MSP: Wheat (गेहूं)</p><p class="text-label-md opacity-80 text-xs">Click to view all government crop rates</p></div>
+        <div><p class="text-label-lg font-bold" data-i18n="current_msp_wheat">Current MSP: Wheat</p><p class="text-label-md opacity-80 text-xs" data-i18n="msp_click_sub">Click to view all government crop rates</p></div>
       </div>
       <p class="text-headline-sm text-secondary-fixed font-black">₹2,425/Qtl</p>
     </section>
@@ -404,7 +589,7 @@
     <!-- Weather Widget -->
     <section onclick="showToast('Weather Forecast: 32°C Clear sky • Ideal for wheat harvest transport', 'wb_sunny')" class="bg-surface-bright border border-outline-variant rounded-xl p-4 flex items-center justify-between shadow-sm cursor-pointer hover:bg-surface-container-low transition-colors">
       <div class="flex items-center gap-3"><span class="material-symbols-outlined text-3xl text-amber-500 icon-fill">wb_sunny</span>
-        <div><p class="text-headline-sm text-primary font-bold">32°C | Clear Sky</p><p class="text-label-md text-on-surface-variant text-xs">साफ मौसम • उत्तम कटाई स्थिति</p></div>
+        <div><p class="text-headline-sm text-primary font-bold">32°C | Clear Sky</p><p class="text-label-md text-on-surface-variant text-xs" data-i18n="weather_desc">32°C | Clear Sky • Optimal Harvest Conditions</p></div>
       </div>
       <p class="text-label-lg font-bold text-primary">Karnal, HR</p>
     </section>
@@ -413,14 +598,14 @@
     <section onclick="nav('screen-live-tracker')" class="bg-primary text-on-primary rounded-xl overflow-hidden shadow-md cursor-pointer group hover:brightness-105 active:scale-[0.99] transition-all">
       <div class="p-5 flex flex-col gap-4">
         <div class="flex items-center justify-between">
-          <div><h2 class="text-headline-sm font-bold flex items-center gap-2">Live Queue Tracker <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span></h2><p class="text-label-md opacity-80 text-xs">लाइव कतार ट्रैकर (Karnal Mandi)</p></div>
+          <div><h2 class="text-headline-sm font-bold flex items-center gap-2" data-i18n="live_queue_card">Live Queue Tracker <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span></h2><p class="text-label-md opacity-80 text-xs" data-i18n="token_vehicle_pos">Allocated Gate: Gate 2 (Weighbridge WB-E04)</p></div>
           <span class="material-symbols-outlined text-4xl text-secondary-container animate-bounce">timer</span>
         </div>
         <div class="grid grid-cols-2 gap-4">
-          <div class="border-r border-surface/20 pr-2"><p class="text-label-md opacity-80 text-xs">Avg. Wait Time</p><p class="text-headline-md text-secondary-fixed font-bold">15 Mins</p></div>
+          <div class="border-r border-surface/20 pr-2"><p class="text-label-md opacity-80 text-xs" data-i18n="wait_label">Estimated Wait</p><p class="text-headline-md text-secondary-fixed font-bold">14 Mins</p></div>
           <div><p class="text-label-md opacity-80 text-xs">Active Token</p><p class="text-headline-md text-secondary-fixed font-bold">#48</p></div>
         </div>
-        <div><p class="text-[26px] font-bold text-secondary-fixed mb-1">3 <span class="text-body-lg font-normal opacity-80">vehicles ahead of you</span></p>
+        <div><p class="text-[26px] font-bold text-secondary-fixed mb-1">3 <span class="text-body-lg font-normal opacity-80" data-i18n="ahead_label">Vehicles Ahead</span></p>
           <div class="w-full bg-primary-container h-3 rounded-full overflow-hidden border border-primary/50"><div class="bg-secondary-container h-full rounded-full" style="width:75%"></div></div>
         </div>
       </div>
@@ -430,57 +615,57 @@
     <section class="grid grid-cols-2 sm:grid-cols-3 gap-3.5">
       <button onclick="nav('screen-book-slot')" class="bg-surface-bright border-2 border-outline-variant hover:border-primary rounded-xl p-4 flex flex-col items-center text-center group min-h-[115px] justify-center active:scale-[0.96] transition-all shadow-sm">
         <div class="bg-secondary-container/30 p-3 rounded-full text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors shrink-0 mb-2"><span class="material-symbols-outlined text-2xl">calendar_add_on</span></div>
-        <p class="text-label-lg font-bold text-primary leading-tight">Smart Booking</p>
-        <p class="text-[11px] text-on-surface-variant mt-0.5">स्लॉट बुक करें</p>
+        <p class="text-label-lg font-bold text-primary leading-tight" data-i18n="book_slot_card">Smart Slot Booking</p>
+        <p class="text-[11px] text-on-surface-variant mt-0.5" data-i18n="book_slot_desc">Reserve verified slot</p>
       </button>
 
       <button onclick="nav('screen-nearby-mandis')" class="bg-surface-bright border-2 border-outline-variant hover:border-primary rounded-xl p-4 flex flex-col items-center text-center group min-h-[115px] justify-center active:scale-[0.96] transition-all shadow-sm">
         <div class="bg-secondary-container/30 p-3 rounded-full text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors shrink-0 mb-2"><span class="material-symbols-outlined text-2xl">map</span></div>
-        <p class="text-label-lg font-bold text-primary leading-tight">Nearby Mandis</p>
-        <p class="text-[11px] text-on-surface-variant mt-0.5">नज़दीकी मंडियां</p>
+        <p class="text-label-lg font-bold text-primary leading-tight" data-i18n="nearby_mandis_card">Nearby Mandis</p>
+        <p class="text-[11px] text-on-surface-variant mt-0.5" data-i18n="nearby_mandis_desc">Compare prices &amp; wait</p>
       </button>
 
       <button onclick="nav('screen-procurement')" class="bg-surface-bright border-2 border-outline-variant hover:border-primary rounded-xl p-4 flex flex-col items-center text-center group min-h-[115px] justify-center active:scale-[0.96] transition-all shadow-sm">
         <div class="bg-secondary-container/30 p-3 rounded-full text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors shrink-0 mb-2"><span class="material-symbols-outlined text-2xl">fact_check</span></div>
-        <p class="text-label-lg font-bold text-primary leading-tight">Quality Check</p>
-        <p class="text-[11px] text-on-surface-variant mt-0.5">गुणवत्ता व तौल</p>
+        <p class="text-label-lg font-bold text-primary leading-tight" data-i18n="quality_card">Quality Check</p>
+        <p class="text-[11px] text-on-surface-variant mt-0.5" data-i18n="quality_desc">6-stage weighment &amp; J-Form</p>
       </button>
 
       <button onclick="nav('screen-payments')" class="bg-surface-bright border-2 border-outline-variant hover:border-primary rounded-xl p-4 flex flex-col items-center text-center group min-h-[115px] justify-center active:scale-[0.96] transition-all shadow-sm">
         <div class="bg-secondary-container/30 p-3 rounded-full text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors shrink-0 mb-2"><span class="material-symbols-outlined text-2xl">account_balance</span></div>
-        <p class="text-label-lg font-bold text-primary leading-tight">DBT Payments</p>
-        <p class="text-[11px] text-on-surface-variant mt-0.5">डीबीटी भुगतान</p>
+        <p class="text-label-lg font-bold text-primary leading-tight" data-i18n="dbt_card">DBT Payments</p>
+        <p class="text-[11px] text-on-surface-variant mt-0.5" data-i18n="dbt_desc">Direct bank transfers</p>
       </button>
 
       <button onclick="nav('screen-live-tracker')" class="bg-surface-bright border-2 border-outline-variant hover:border-primary rounded-xl p-4 flex flex-col items-center text-center group min-h-[115px] justify-center active:scale-[0.96] transition-all shadow-sm">
         <div class="bg-secondary-container/30 p-3 rounded-full text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors shrink-0 mb-2"><span class="material-symbols-outlined text-2xl">local_shipping</span></div>
-        <p class="text-label-lg font-bold text-primary leading-tight">Live Tracker</p>
-        <p class="text-[11px] text-on-surface-variant mt-0.5">लाइव ट्रैकर</p>
+        <p class="text-label-lg font-bold text-primary leading-tight" data-i18n="live_queue_card">Live Tracker</p>
+        <p class="text-[11px] text-on-surface-variant mt-0.5" data-i18n="live_queue_desc">Gate &amp; weighbridge</p>
       </button>
 
       <button onclick="nav('screen-help')" class="bg-surface-bright border-2 border-outline-variant hover:border-primary rounded-xl p-4 flex flex-col items-center text-center group min-h-[115px] justify-center active:scale-[0.96] transition-all shadow-sm">
         <div class="bg-secondary-container/30 p-3 rounded-full text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors shrink-0 mb-2"><span class="material-symbols-outlined text-2xl">help_center</span></div>
-        <p class="text-label-lg font-bold text-primary leading-tight">Help Center</p>
-        <p class="text-[11px] text-on-surface-variant mt-0.5">सहायता केंद्र</p>
+        <p class="text-label-lg font-bold text-primary leading-tight" data-i18n="help_title">Help Center</p>
+        <p class="text-[11px] text-on-surface-variant mt-0.5" data-i18n="call_mandi_support">1800-180-1551</p>
       </button>
     </section>
 
     <!-- Recent Activity -->
     <section>
-      <h3 class="text-headline-sm font-bold text-primary mb-3 border-l-4 border-secondary-container pl-2">Recent Activity / हाल की गतिविधि</h3>
+      <h3 class="text-headline-sm font-bold text-primary mb-3 border-l-4 border-secondary-container pl-2" data-i18n="recent_txns">Recent Activity / हाल की गतिविधि</h3>
       <div onclick="showReceiptModal('payment', 'TXN-77412', 'Wheat Sale Complete', 15400, 6.35)" class="bg-tertiary-fixed border border-primary/20 rounded-xl p-4 flex justify-between items-center cursor-pointer hover:shadow-md transition-all active:scale-[0.99] group">
         <div class="flex items-center gap-3">
           <div class="bg-primary text-on-primary p-2.5 rounded-full"><span class="material-symbols-outlined icon-fill">check_circle</span></div>
           <div>
             <p class="text-label-lg text-on-tertiary-fixed-variant font-bold flex items-center gap-1.5">
-              Wheat Sale Complete <span class="material-symbols-outlined text-xs text-primary group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+              <span data-i18n="wheat_sale">Wheat Sale Complete</span> <span class="material-symbols-outlined text-xs text-primary group-hover:translate-x-0.5 transition-transform">open_in_new</span>
             </p>
             <p class="text-label-md text-on-tertiary-fixed-variant opacity-80 text-xs">Today, 10:30 AM • Click to view DBT voucher</p>
           </div>
         </div>
         <div class="text-right">
           <span class="text-headline-sm font-bold text-primary block">₹15,400</span>
-          <span class="text-[11px] font-bold text-primary/80 bg-surface/60 px-2.5 py-0.5 rounded-full border border-primary/20">Receipt</span>
+          <span class="text-[11px] font-bold text-primary/80 bg-surface/60 px-2.5 py-0.5 rounded-full border border-primary/20" data-i18n="download_voucher">Receipt</span>
         </div>
       </div>
     </section>
@@ -488,11 +673,11 @@
   
   <!-- Bottom Nav -->
   <nav class="bg-surface border-t-2 border-primary-container fixed bottom-0 w-full z-50 flex justify-around items-center h-[76px] px-2 pb-1 shadow-lg">
-    <button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-2 py-1 flex-1 max-w-[80px]"><span class="material-symbols-outlined text-[24px] icon-fill">home</span><span class="text-[10px] font-bold leading-tight mt-0.5">Home<br>होम</span></button>
-    <button onclick="nav('screen-live-tracker')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1 hover:text-primary"><span class="material-symbols-outlined text-[24px]">local_shipping</span><span class="text-[10px] font-medium leading-tight mt-0.5">Track<br>ट्रैक</span></button>
-    <button onclick="nav('screen-nearby-mandis')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1 hover:text-primary"><span class="material-symbols-outlined text-[24px]">location_on</span><span class="text-[10px] font-medium leading-tight mt-0.5">Mandis<br>मंडियां</span></button>
-    <button onclick="nav('screen-procurement')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1 hover:text-primary"><span class="material-symbols-outlined text-[24px]">high_quality</span><span class="text-[10px] font-medium leading-tight mt-0.5">Quality<br>गुणवत्ता</span></button>
-    <button onclick="nav('screen-payments')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1 hover:text-primary"><span class="material-symbols-outlined text-[24px]">payments</span><span class="text-[10px] font-medium leading-tight mt-0.5">Payments<br>भुगतान</span></button>
+    <button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-2 py-1 flex-1 max-w-[80px]"><span class="material-symbols-outlined text-[24px] icon-fill">home</span><span class="text-[11px] font-bold leading-tight mt-0.5" data-i18n="nav_home">Home</span></button>
+    <button onclick="nav('screen-live-tracker')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1 hover:text-primary"><span class="material-symbols-outlined text-[24px]">local_shipping</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_track">Track</span></button>
+    <button onclick="nav('screen-nearby-mandis')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1 hover:text-primary"><span class="material-symbols-outlined text-[24px]">location_on</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_mandis">Mandis</span></button>
+    <button onclick="nav('screen-procurement')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1 hover:text-primary"><span class="material-symbols-outlined text-[24px]">high_quality</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_quality">Quality</span></button>
+    <button onclick="nav('screen-payments')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1 hover:text-primary"><span class="material-symbols-outlined text-[24px]">payments</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_payments">Payments</span></button>
   </nav>
 </div>
 
@@ -612,11 +797,11 @@
   </main>
   
   <nav class="bg-surface border-t-2 border-primary-container fixed bottom-0 w-full z-50 flex justify-around items-center h-[76px] px-2 pb-1 shadow-lg">
-    <button onclick="nav('screen-dashboard')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">home</span><span class="text-[10px] font-medium leading-tight mt-0.5">Home<br>होम</span></button>
-    <button onclick="nav('screen-live-tracker')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">local_shipping</span><span class="text-[10px] font-medium leading-tight mt-0.5">Track<br>ट्रैक</span></button>
-    <button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-2 py-1 flex-1 max-w-[80px]"><span class="material-symbols-outlined text-[24px] icon-fill">location_on</span><span class="text-[10px] font-bold leading-tight mt-0.5">Mandis<br>मंडियां</span></button>
-    <button onclick="nav('screen-procurement')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">high_quality</span><span class="text-[10px] font-medium leading-tight mt-0.5">Quality<br>गुणवत्ता</span></button>
-    <button onclick="nav('screen-payments')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">payments</span><span class="text-[10px] font-medium leading-tight mt-0.5">Payments<br>भुगतान</span></button>
+    <button onclick="nav('screen-dashboard')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">home</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_home">Home</span></button>
+    <button onclick="nav('screen-live-tracker')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">local_shipping</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_track">Track</span></button>
+    <button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-2 py-1 flex-1 max-w-[80px]"><span class="material-symbols-outlined text-[24px] icon-fill">location_on</span><span class="text-[11px] font-bold leading-tight mt-0.5" data-i18n="nav_mandis">Mandis</span></button>
+    <button onclick="nav('screen-procurement')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">high_quality</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_quality">Quality</span></button>
+    <button onclick="nav('screen-payments')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">payments</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_payments">Payments</span></button>
   </nav>
 </div>
 
@@ -624,13 +809,13 @@
 <div id="screen-book-slot" class="screen">
   <header class="bg-surface border-b border-outline-variant w-full sticky top-0 flex items-center px-5 py-2.5 z-40">
     <button onclick="nav('screen-dashboard')" class="text-primary p-2 rounded-full hover:bg-surface-variant mr-2"><span class="material-symbols-outlined">arrow_back</span></button>
-    <h1 class="text-headline-sm font-bold text-primary flex-1">Book a Slot | स्लॉट बुक करें</h1>
-    <button onclick="toggleLanguageModal()" class="flex items-center gap-1 px-3 py-1 rounded-full border border-outline text-primary text-sm font-medium"><span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">EN/हि</span></button>
+    <h1 class="text-headline-sm font-bold text-primary flex-1" data-i18n="book_slot_card">Book a Slot | स्लॉट बुक करें</h1>
+    <button onclick="toggleLanguageModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/5 text-primary text-xs font-bold shadow-xs"><span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">🌐 हिन्दी (HI)</span></button>
   </header>
   <main class="flex-grow px-5 pt-5 pb-44 max-w-3xl mx-auto w-full">
     <!-- Center Selection -->
     <section class="mb-6">
-      <label class="block text-label-lg font-bold text-primary mb-1">1. Select Procurement Mandi / केंद्र चुनें</label>
+      <label class="block text-label-lg font-bold text-primary mb-1" data-i18n="book_step1_label">1. Select Procurement Mandi / केंद्र चुनें</label>
       <div class="flex items-center gap-2 mb-2 bg-primary/10 w-fit px-3 py-1 rounded-full border border-primary/20">
         <span class="material-symbols-outlined text-primary text-sm">timer</span>
         <span class="text-xs text-primary font-bold">Recommended: Shortest Queue Available</span>
@@ -651,7 +836,7 @@
     <!-- Date Calendar -->
     <section class="mb-6">
       <div class="flex justify-between items-center mb-3">
-        <label class="text-label-lg font-bold text-primary">2. Select Arrival Date / तिथि चुनें</label>
+        <label class="text-label-lg font-bold text-primary" data-i18n="book_step2_label">2. Select Arrival Date / तिथि चुनें</label>
         <span id="selected-date-badge" class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full border border-primary/20">Selected: Today</span>
       </div>
       <div class="bg-surface-container-lowest border-2 border-outline-variant rounded-2xl p-4 shadow-sm">
@@ -677,13 +862,13 @@
     <!-- Crop & Quantity Selection -->
     <section class="mb-6">
       <div class="flex justify-between items-center mb-3">
-        <label class="text-label-lg font-bold text-primary">3. Select Crop &amp; Quantity / फसल और मात्रा</label>
+        <label class="text-label-lg font-bold text-primary" data-i18n="book_step3_label">3. Select Crop &amp; Quantity / फसल और मात्रा</label>
         <span id="selected-crop-badge" class="bg-secondary-container text-on-secondary-container text-xs font-bold px-3 py-1 rounded-full border border-secondary">Wheat (गेहूँ)</span>
       </div>
       <div class="flex overflow-x-auto no-scrollbar gap-3 pb-2 mb-5" id="crops-container">
         <button type="button" onclick="selectCrop('Wheat (गेहूँ)', 2425, this)" data-crop="Wheat (गेहूँ)" data-rate="2425" class="crop-choice-btn flex-none w-36 flex flex-col items-center justify-center p-4 rounded-xl border-2 border-secondary bg-secondary-container text-on-secondary-container shadow-md active:scale-95 transition-all">
           <span class="material-symbols-outlined text-4xl mb-2 icon-fill">grass</span>
-          <span class="text-label-lg font-bold text-center crop-name text-on-secondary-container">Wheat (गेहूँ)</span>
+          <span class="text-label-lg font-bold text-center crop-name text-on-secondary-container" data-i18n="wheat_sown">Wheat (गेहूँ)</span>
           <span class="text-label-md font-bold mt-1 crop-rate-label text-on-secondary-container">₹2,425/Qtl</span>
         </button>
         <button type="button" onclick="selectCrop('Paddy (धान)', 2320, this)" data-crop="Paddy (धान)" data-rate="2320" class="crop-choice-btn flex-none w-36 flex flex-col items-center justify-center p-4 rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 hover:bg-surface-variant transition-all">
@@ -693,7 +878,7 @@
         </button>
         <button type="button" onclick="selectCrop('Mustard (सरसों)', 5950, this)" data-crop="Mustard (सरसों)" data-rate="5950" class="crop-choice-btn flex-none w-36 flex flex-col items-center justify-center p-4 rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 hover:bg-surface-variant transition-all">
           <span class="material-symbols-outlined text-4xl text-primary mb-2 icon-fill">spa</span>
-          <span class="text-label-lg font-bold text-center crop-name text-on-surface">Mustard (सरसों)</span>
+          <span class="text-label-lg font-bold text-center crop-name text-on-surface" data-i18n="mustard_sown">Mustard (सरसों)</span>
           <span class="text-label-md text-primary mt-1 crop-rate-label">₹5,950/Qtl</span>
         </button>
         <button type="button" onclick="selectCrop('Gram (चना)', 5650, this)" data-crop="Gram (चना)" data-rate="5650" class="crop-choice-btn flex-none w-36 flex flex-col items-center justify-center p-4 rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 hover:bg-surface-variant transition-all">
@@ -711,7 +896,7 @@
       <!-- Quantity Input -->
       <div class="grid grid-cols-1 gap-4">
         <div>
-          <label class="block text-label-lg font-bold text-on-surface mb-2">Quantity (Quintals / क्विंटल) <span class="text-error">*</span></label>
+          <label class="block text-label-lg font-bold text-on-surface mb-2" data-i18n="qty_label">Quantity (Quintals / क्विंटल) <span class="text-error">*</span></label>
           <div class="flex items-center rounded-xl border-2 border-outline-variant overflow-hidden bg-surface-container-lowest shadow-sm">
             <button type="button" onclick="adjustQuantity(-5)" class="w-14 h-14 flex items-center justify-center text-primary hover:bg-surface-container text-2xl font-bold active:scale-90 transition-all">-</button>
             <input id="crop-qty-input" oninput="handleQuantityInput(this.value)" class="flex-grow px-3 py-3 border-none focus:ring-0 text-center font-black text-on-surface text-2xl outline-none bg-transparent" type="number" min="1" max="5000" value="50">
@@ -721,7 +906,7 @@
         </div>
         <div class="bg-[#E8F5E9] border-2 border-[#C8E6C9] rounded-xl p-4 flex items-center justify-between shadow-sm">
           <div>
-            <p class="text-xs text-on-surface-variant mb-0.5 font-semibold">Estimated Govt. MSP Payout / अनुमानित भुगतान</p>
+            <p class="text-xs text-on-surface-variant mb-0.5 font-semibold" data-i18n="est_payout_label">Estimated Govt. MSP Payout / अनुमानित भुगतान</p>
             <span id="estimated-payout-display" class="text-headline-md font-black text-primary">₹ 1,21,250.00</span>
           </div>
           <span class="bg-primary text-on-primary px-3 py-1.5 rounded-full text-xs font-bold shadow-sm">100% DBT Bharat</span>
@@ -732,7 +917,7 @@
     <!-- Time Slot -->
     <section class="mb-6">
       <div class="flex justify-between items-center mb-3">
-        <label class="text-label-lg font-bold text-primary">4. Select Time Slot / समय चुनें</label>
+        <label class="text-label-lg font-bold text-primary" data-i18n="book_step4_label">4. Select Time Slot / समय चुनें</label>
         <span id="selected-slot-badge" class="bg-secondary-container text-on-secondary-container text-xs font-bold px-3 py-1 rounded-full border border-secondary">Morning (08:00–10:00 AM)</span>
       </div>
       <div class="grid grid-cols-2 gap-3" id="time-slots-container">
@@ -764,7 +949,7 @@
   
   <div class="fixed w-full backdrop-blur-sm border-t-2 p-4 z-50 bottom-0 bg-surface/95 shadow-2xl">
     <button type="button" onclick="confirmSlotBooking()" class="w-full max-w-3xl mx-auto h-[56px] bg-primary text-on-primary rounded-xl text-label-lg font-bold flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform hover:bg-primary-container">
-      <span class="material-symbols-outlined icon-fill">check_circle</span>Confirm Booking &amp; Generate Token / पुष्टि करें
+      <span class="material-symbols-outlined icon-fill">check_circle</span><span data-i18n="confirm_booking_btn">Confirm Booking &amp; Generate Token / पुष्टि करें</span>
     </button>
   </div>
 </div>
@@ -773,21 +958,21 @@
 <div id="screen-mandi-token" class="screen">
   <header class="bg-surface border-b border-outline-variant w-full sticky top-0 flex items-center px-5 py-2.5 z-40">
     <button onclick="nav('screen-dashboard')" class="text-primary p-2 rounded-full hover:bg-surface-variant mr-2"><span class="material-symbols-outlined">arrow_back</span></button>
-    <h1 class="text-headline-md font-bold text-primary flex-1">Kisan Setu | किसान सेतु</h1>
+    <h1 class="text-headline-md font-bold text-primary flex-1" data-i18n="app_title">Kisan Setu | किसान सेतु</h1>
     <button onclick="toggleProfileModal()" class="flex items-center justify-center h-10 w-10 rounded-full bg-secondary-container text-on-secondary-container mr-2 shadow-sm"><span class="material-symbols-outlined">person</span></button>
-    <button onclick="toggleLanguageModal()" class="flex items-center gap-1 px-3 py-1 rounded-full border border-outline text-primary text-sm font-medium"><span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">EN/हि</span></button>
+    <button onclick="toggleLanguageModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/5 text-primary text-xs font-bold shadow-xs"><span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">🌐 हिन्दी (HI)</span></button>
   </header>
   <main class="flex-1 px-5 py-6 flex flex-col gap-5 pb-28 max-w-2xl mx-auto w-full">
     <div class="flex flex-col items-center text-center">
       <div class="bg-primary-container rounded-full p-4 mb-3 shadow-sm"><span class="material-symbols-outlined text-4xl text-[#7ebdac] icon-fill">check_circle</span></div>
-      <h2 class="text-headline-lg font-bold text-primary">Booking Confirmed!</h2>
-      <p class="text-body-md text-on-surface-variant">बुकिंग पक्की हो गई • Gate Entry Pass Ready</p>
+      <h2 class="text-headline-lg font-bold text-primary" data-i18n="booking_confirmed_title">Booking Confirmed!</h2>
+      <p class="text-body-md text-on-surface-variant" data-i18n="token_pass_ready">Gate Entry Pass Ready • गेट पास तैयार है</p>
     </div>
     
     <!-- Token Card -->
     <div class="bg-tertiary-fixed rounded-2xl border border-primary/20 overflow-hidden shadow-lg">
       <div class="bg-primary p-4 text-center text-on-primary">
-        <p class="text-xs uppercase tracking-widest text-[#7ebdac] font-bold">Allocated Mandi Token / टोकन संख्या</p>
+        <p class="text-xs uppercase tracking-widest text-[#7ebdac] font-bold" data-i18n="token_num_label">Allocated Mandi Token / टोकन संख्या</p>
         <div id="token-num-display" class="text-[60px] font-black leading-tight text-[#fdd400]">#48</div>
       </div>
       <div class="p-5 flex flex-col items-center bg-surface-container-lowest">
@@ -820,222 +1005,301 @@
             <rect x="150" y="160" width="20" height="10" fill="#00342b"/>
           </svg>
         </div>
-        <p class="text-xs text-on-surface-variant text-center mb-4 font-bold uppercase tracking-wider">Scan at Mandi Entry Gate • गेट पर स्कैन करें</p>
+        <p class="text-xs text-on-surface-variant text-center mb-4 font-bold uppercase tracking-wider" data-i18n="scan_gate_hint">Scan at Mandi Entry Gate • गेट पर स्कैन करें</p>
         <div class="w-full space-y-2.5 text-xs">
-          <div class="flex justify-between border-b border-outline-variant/60 pb-1.5"><span class="text-on-surface-variant font-medium">Farmer Name</span><span id="token-farmer-display" class="font-bold text-primary text-sm">Ram Singh</span></div>
-          <div class="flex justify-between border-b border-outline-variant/60 pb-1.5"><span class="text-on-surface-variant font-medium">Mandi Yard</span><span id="token-mandi-display" class="font-bold text-primary text-sm">Karnal Grain Market</span></div>
-          <div class="flex justify-between border-b border-outline-variant/60 pb-1.5"><span class="text-on-surface-variant font-medium">Arrival Date</span><span id="token-date-display" class="font-bold text-primary text-sm">Today</span></div>
-          <div class="flex justify-between border-b border-outline-variant/60 pb-1.5"><span class="text-on-surface-variant font-medium">Reporting Slot</span><span id="token-slot-display" class="font-bold text-primary text-sm">Morning (08:00 AM – 10:00 AM)</span></div>
-          <div class="flex justify-between border-b border-outline-variant/60 pb-1.5"><span class="text-on-surface-variant font-medium">Crop &amp; Quantity</span><span id="token-crop-display" class="font-bold text-primary text-sm">Wheat (गेहूँ) • 50 Quintals</span></div>
-          <div class="flex justify-between pt-0.5"><span class="text-on-surface-variant font-medium">Est. MSP Payout</span><span id="token-payout-display" class="font-black text-primary text-base">₹ 1,21,250.00</span></div>
+          <div class="flex justify-between border-b border-outline-variant/60 pb-1.5"><span class="text-on-surface-variant font-medium" data-i18n="full_name">Farmer Name</span><span id="token-farmer-display" class="font-bold text-primary text-sm">Ram Singh</span></div>
+          <div class="flex justify-between border-b border-outline-variant/60 pb-1.5"><span class="text-on-surface-variant font-medium" data-i18n="mandi_yard_label">Mandi Yard</span><span id="token-mandi-display" class="font-bold text-primary text-sm">Karnal Grain Market</span></div>
+          <div class="flex justify-between border-b border-outline-variant/60 pb-1.5"><span class="text-on-surface-variant font-medium" data-i18n="arrival_date_label">Arrival Date</span><span id="token-date-display" class="font-bold text-primary text-sm">Today</span></div>
+          <div class="flex justify-between border-b border-outline-variant/60 pb-1.5"><span class="text-on-surface-variant font-medium" data-i18n="reporting_slot_label">Reporting Slot</span><span id="token-slot-display" class="font-bold text-primary text-sm">Morning (08:00 AM – 10:00 AM)</span></div>
+          <div class="flex justify-between border-b border-outline-variant/60 pb-1.5"><span class="text-on-surface-variant font-medium" data-i18n="crop_qty_label">Crop &amp; Quantity</span><span id="token-crop-display" class="font-bold text-primary text-sm">Wheat (गेहूँ) • 50 Quintals</span></div>
+          <div class="flex justify-between pt-0.5"><span class="text-on-surface-variant font-medium" data-i18n="est_payout_label">Est. MSP Payout</span><span id="token-payout-display" class="font-black text-primary text-base">₹ 1,21,250.00</span></div>
         </div>
       </div>
     </div>
     
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
       <button onclick="downloadTokenReceipt()" class="w-full bg-primary-container text-on-primary-container flex items-center justify-center gap-2 py-3.5 rounded-xl text-label-lg font-bold shadow-md active:scale-95 transition-transform hover:bg-primary hover:text-on-primary">
-        <span class="material-symbols-outlined text-2xl">description</span>View &amp; Print Pass (PDF)
+        <span class="material-symbols-outlined text-2xl">description</span><span data-i18n="print_gate_pass">View &amp; Print Pass (PDF)</span>
       </button>
       <button onclick="nav('screen-live-tracker')" class="w-full bg-secondary-container text-on-secondary-container flex items-center justify-center gap-2 py-3.5 rounded-xl text-label-lg font-bold shadow-md active:scale-95 transition-transform border border-secondary hover:brightness-105">
-        <span class="material-symbols-outlined text-2xl">local_shipping</span>Track Queue Status
+        <span class="material-symbols-outlined text-2xl">local_shipping</span><span data-i18n="live_queue_card">Track Queue Status</span>
       </button>
     </div>
   </main>
 </div>
 
-<!-- ===== SCREEN 10: LIVE TRACKER ===== -->
+<!-- ===== SCREEN 10: LIVE QUEUE TRACKER (OLDER DESIGN) ===== -->
 <div id="screen-live-tracker" class="screen">
-  <header class="sticky top-0 w-full z-50 border-b-2 flex justify-between items-center px-5 h-[56px] bg-surface border-outline-variant">
-    <button onclick="toggleDrawer()" class="hover:bg-primary/20 active:scale-95 flex items-center justify-center w-10 h-10 rounded-full"><span class="material-symbols-outlined">menu</span></button>
-    <h1 class="text-headline-md font-bold text-center flex-1 text-primary">Kisan Setu | <span class="font-medium">किसान सेतु</span></h1>
-    <button onclick="speakQueueStatus()" class="hover:bg-primary/20 active:scale-95 flex items-center justify-center w-10 h-10 rounded-full text-primary" title="Voice Announcement">
+  <header class="sticky top-0 w-full z-50 border-b-2 flex justify-between items-center px-5 h-[56px] bg-surface text-on-surface border-outline-variant bg-white">
+    <button onclick="toggleDrawer()" class="hover:bg-primary/20 active:scale-95 transition-transform flex items-center justify-center w-10 h-10 rounded-full text-primary">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <h1 class="font-headline-md text-headline-md text-center flex-1 font-bold text-primary" data-i18n="tracker_title">Live Queue Tracker | <span class="font-medium">लाइव कतार ट्रैकर</span></h1>
+    <button onclick="speakQueueStatus()" class="hover:bg-primary/20 active:scale-95 transition-transform flex items-center justify-center w-10 h-10 rounded-full text-primary" title="Voice Announcement / आवाज़ सुनें">
       <span class="material-symbols-outlined text-2xl">volume_up</span>
     </button>
   </header>
-  <main class="px-5 py-5 space-y-5 pb-28 max-w-3xl mx-auto w-full">
+  
+  <main class="mt-4 px-5 py-2 max-w-3xl mx-auto space-y-5 pb-32 w-full">
     <!-- Status Card -->
-    <section class="bg-[#E8F5E9] border border-primary/20 rounded-2xl overflow-hidden shadow-md">
+    <section aria-labelledby="status-heading" class="bg-[#E8F5E9] border border-primary/20 rounded-xl overflow-hidden shadow-sm">
       <div class="bg-primary text-on-primary px-4 py-3 flex justify-between items-center">
-        <div><h2 class="text-xs text-[#7ebdac] uppercase tracking-wider font-bold">Live Token | टोकन आईडी</h2><p class="text-headline-md font-black text-[#fdd400] mt-0.5">#KP-2026-8492</p></div>
-        <div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 border border-secondary"><span class="material-symbols-outlined text-[16px] animate-spin">sync</span>Active</div>
+        <div>
+          <h2 class="font-label-lg text-label-lg opacity-90 uppercase tracking-wider text-xs font-bold text-[#7ebdac]" id="status-heading" data-i18n="token_num_label">Token ID | टोकन आईडी</h2>
+          <p id="tracker-token-display" class="font-headline-md text-headline-md font-bold mt-1 text-[#fdd400]">#KP-2026-8492</p>
+        </div>
+        <div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md font-bold flex items-center gap-1 border border-secondary shadow-xs">
+          <span class="material-symbols-outlined text-[18px]">sync</span> <span class="text-xs">Active</span>
+        </div>
       </div>
-      <div class="p-5 text-center">
-        <p class="text-xs text-on-surface-variant mb-0.5 uppercase tracking-wider font-semibold">Current Mandi Stage / वर्तमान चरण</p>
-        <h3 class="text-headline-lg font-black text-primary">In Mandi Gate Queue</h3>
-        <p class="text-body-md text-primary-container mt-0.5 font-medium">मंडी कतार में (Gate 2 Lane)</p>
+      <div class="p-6 text-center">
+        <p class="font-body-md text-on-surface-variant mb-1 font-medium" data-i18n="curr_stage_label">Current Stage | वर्तमान चरण</p>
+        <h3 class="font-headline-lg text-headline-lg font-bold text-primary" data-i18n="in_mandi_queue">In Mandi Queue</h3>
+        <p class="font-body-lg text-body-lg text-primary-container mt-1 font-medium" data-i18n="in_mandi_queue_sub">मंडी कतार में</p>
       </div>
     </section>
 
     <!-- Metrics Grid -->
-    <section class="grid grid-cols-2 gap-3">
-      <div class="bg-surface-container-lowest border-2 border-surface-variant rounded-2xl p-4 flex flex-col items-center text-center shadow-sm">
-        <span class="material-symbols-outlined text-primary-container text-3xl mb-1 icon-fill">directions_car</span>
-        <p id="tracker-ahead-count" class="text-headline-lg font-black text-primary">3</p>
-        <p class="text-xs text-on-surface-variant mt-0.5 font-bold">Vehicles Ahead<br><span class="opacity-80">आगे के वाहन</span></p>
+    <section aria-label="Real-time Metrics" class="grid grid-cols-2 gap-4">
+      <div class="bg-surface-container-lowest border-2 border-surface-variant rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-xs">
+        <span class="material-symbols-outlined text-primary-container text-3xl mb-2 icon-fill">directions_car</span>
+        <p id="tracker-ahead-count" class="font-headline-md text-headline-md font-bold text-primary">12</p>
+        <p class="font-label-md text-label-md text-on-surface-variant mt-1" data-i18n="vehicles_ahead_label">Vehicles Ahead<br><span class="text-xs">आगे के वाहन</span></p>
       </div>
-      <div class="bg-surface-container-lowest border-2 border-secondary rounded-2xl p-4 flex flex-col items-center text-center shadow-sm">
-        <span class="material-symbols-outlined text-secondary text-3xl mb-1 icon-fill">schedule</span>
-        <p id="tracker-wait-time" class="text-headline-lg font-black text-secondary">~15 mins</p>
-        <p class="text-xs text-on-surface-variant mt-0.5 font-bold">Est. Wait Time<br><span class="opacity-80">प्रतीक्षा समय</span></p>
+      <div class="bg-surface-container-lowest border-2 border-secondary rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-xs">
+        <span class="material-symbols-outlined text-secondary text-3xl mb-2 icon-fill">schedule</span>
+        <p id="tracker-wait-time" class="font-headline-md text-headline-md font-bold text-on-surface">~15 mins</p>
+        <p class="font-label-md text-label-md text-on-surface-variant mt-1" data-i18n="est_wait_label">Est. Wait<br><span class="text-xs">अनुमानित प्रतीक्षा</span></p>
       </div>
-      <div class="col-span-2 bg-surface-container-lowest border-2 border-surface-variant rounded-2xl p-4 flex items-center justify-between shadow-sm">
+      <div class="col-span-2 bg-surface-container-lowest border-2 border-surface-variant rounded-xl p-4 flex items-center justify-between shadow-xs">
         <div class="flex items-center gap-3">
-          <span class="material-symbols-outlined text-primary-container text-3xl bg-surface-container p-2.5 rounded-xl icon-fill">sensor_door</span>
-          <div><p class="text-xs text-on-surface-variant font-semibold">Assigned Entry Gate</p><p class="text-headline-sm font-bold text-primary">Gate 2 (Commercial Bay)</p></div>
+          <span class="material-symbols-outlined text-primary-container text-3xl bg-surface-container p-2 rounded-lg icon-fill">sensor_door</span>
+          <div>
+            <p class="font-label-md text-label-md text-on-surface-variant font-medium" data-i18n="assigned_gate_label">Assigned Gate | आवंटित गेट</p>
+            <p class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">Gate 2 (Weighbridge WB-E04)</p>
+          </div>
         </div>
-        <button onclick="advanceQueueSimulation()" class="bg-primary text-on-primary px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1 active:scale-95 shadow-sm hover:bg-primary-container">
-          <span class="material-symbols-outlined text-sm">refresh</span>Refresh Queue
-        </button>
+        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary font-headline-md text-headline-md font-bold shadow-sm">
+          2
+        </div>
       </div>
     </section>
 
-    <!-- Lifecycle Stepper -->
-    <section class="bg-surface-container-lowest border border-surface-variant rounded-2xl p-5 shadow-sm">
-      <h3 class="text-headline-sm font-bold text-primary border-b border-surface-variant pb-3 mb-5">Crop Lifecycle / फसल चक्र</h3>
-      <div class="relative pl-6 space-y-6">
+    <!-- Vertical Pipeline Stepper -->
+    <section aria-label="Process Pipeline" class="bg-surface-container-lowest border border-surface-variant rounded-xl p-6 shadow-xs">
+      <div class="flex items-center justify-between border-b border-surface-variant pb-3 mb-6">
+        <h3 class="font-headline-sm text-headline-sm font-bold text-primary" data-i18n="crop_lifecycle_title">Crop Lifecycle / फसल चक्र</h3>
+        <button onclick="advanceQueueSimulation()" class="bg-primary text-white px-3 py-1 rounded-lg text-xs font-bold flex items-center gap-1 hover:bg-primary-container active:scale-95 shadow-xs">
+          <span class="material-symbols-outlined text-sm">fast_forward</span><span data-i18n="sim_advance_btn">Advance Simulation</span>
+        </button>
+      </div>
+      <div class="relative pl-6 space-y-8">
+        <!-- Line connecting steps -->
         <div class="absolute left-[33px] top-4 bottom-8 w-1 bg-surface-variant rounded-full z-0"></div>
-        <div class="absolute left-[33px] top-4 h-[50px] w-1 bg-primary rounded-t-full z-0"></div>
+        <!-- Active portion of line (Solid green for completed steps) -->
+        <div class="absolute left-[33px] top-4 h-[40px] w-1 bg-primary rounded-t-full z-0"></div>
         
-        <div class="relative z-10 flex items-start gap-3">
-          <div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center shrink-0 border-4 border-surface-container-lowest shadow-sm"><span class="material-symbols-outlined text-on-primary text-lg icon-fill">check</span></div>
-          <div><p class="text-label-lg font-bold text-primary">1. Slot Booked / स्लॉट बुक</p><p class="text-xs text-primary font-medium">Completed ✓</p></div>
+        <!-- Step 1: Completed -->
+        <div class="relative z-10 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0 border-4 border-surface-container-lowest shadow-sm">
+            <span class="material-symbols-outlined text-on-primary text-xl icon-fill">check</span>
+          </div>
+          <div>
+            <p class="font-label-lg text-label-lg font-bold text-on-surface" data-i18n="step_slot_booked">Slot Booked / स्लॉट बुक</p>
+            <p class="font-label-md text-label-md text-primary font-semibold">Completed ✓</p>
+          </div>
         </div>
         
-        <div class="relative z-10 flex items-start gap-3">
-          <div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center shrink-0 border-4 border-surface-container-lowest shadow-sm ring-2 ring-secondary animate-pulse"><span class="material-symbols-outlined text-on-secondary-container text-lg icon-fill">more_horiz</span></div>
-          <div class="bg-secondary-fixed-dim/20 px-3 py-2 rounded-xl border border-secondary/30 flex-1"><p class="text-label-lg font-bold text-on-secondary-container">2. Gate Entry / गेट एंट्री</p><p class="text-xs text-secondary font-bold mt-0.5">In Progress (Serving Token #48)</p></div>
+        <!-- Step 2: In Progress -->
+        <div class="relative z-10 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center shrink-0 border-4 border-surface-container-lowest shadow-sm ring-2 ring-secondary ring-offset-2 ring-offset-surface-container-lowest animate-pulse">
+            <span class="material-symbols-outlined text-on-secondary-container text-xl icon-fill">more_horiz</span>
+          </div>
+          <div class="bg-secondary-fixed-dim/20 px-3 py-2 rounded-lg border border-secondary/30 flex-1">
+            <p class="font-label-lg text-label-lg text-on-surface font-bold" data-i18n="step_gate_entry">Gate Entry / गेट एंट्री</p>
+            <p class="font-label-md text-label-md text-secondary font-bold mt-0.5">In Progress (Line #4)</p>
+          </div>
         </div>
         
-        <div onclick="nav('screen-procurement')" class="relative z-10 flex items-start gap-3 cursor-pointer group hover:bg-surface-container-low p-1.5 -ml-1.5 rounded-xl transition-colors">
-          <div class="w-9 h-9 rounded-full bg-surface-variant group-hover:bg-primary-fixed flex items-center justify-center shrink-0 border-4 border-surface-container-lowest"><span class="material-symbols-outlined text-on-surface-variant text-lg">biotech</span></div>
-          <div><p class="text-label-lg font-bold group-hover:text-primary flex items-center gap-1">3. Quality Check / गुणवत्ता जांच <span class="material-symbols-outlined text-xs">open_in_new</span></p><p class="text-xs text-on-surface-variant">Next Stage (Lab Testing)</p></div>
+        <!-- Step 3: Pending -->
+        <div class="relative z-10 flex items-start gap-4 opacity-70">
+          <div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center shrink-0 border-4 border-surface-container-lowest">
+            <span class="material-symbols-outlined text-on-surface-variant text-xl">biotech</span>
+          </div>
+          <div>
+            <p class="font-label-lg text-label-lg font-bold text-on-surface" data-i18n="step_quality_check">Quality Check &amp; Lab Testing / गुणवत्ता जांच</p>
+            <p class="font-label-md text-label-md text-on-surface-variant">Pending</p>
+          </div>
         </div>
         
-        <div onclick="nav('screen-procurement')" class="relative z-10 flex items-start gap-3 cursor-pointer group hover:bg-surface-container-low p-1.5 -ml-1.5 rounded-xl transition-colors">
-          <div class="w-9 h-9 rounded-full bg-surface-variant group-hover:bg-primary-fixed flex items-center justify-center shrink-0 border-4 border-surface-container-lowest"><span class="material-symbols-outlined text-on-surface-variant text-lg">scale</span></div>
-          <div><p class="text-label-lg font-bold group-hover:text-primary">4. Weighing &amp; Bagging / वजन</p><p class="text-xs text-on-surface-variant">Electronic Weighbridge</p></div>
+        <!-- Step 4: Pending -->
+        <div class="relative z-10 flex items-start gap-4 opacity-70">
+          <div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center shrink-0 border-4 border-surface-container-lowest">
+            <span class="material-symbols-outlined text-on-surface-variant text-xl">scale</span>
+          </div>
+          <div>
+            <p class="font-label-lg text-label-lg font-bold text-on-surface" data-i18n="step_weighing_bagging">Weighing &amp; Bagging / वजन और भराई</p>
+            <p class="font-label-md text-label-md text-on-surface-variant">Pending</p>
+          </div>
         </div>
         
-        <div onclick="showReceiptModal('quality')" class="relative z-10 flex items-start gap-3 cursor-pointer group hover:bg-surface-container-low p-1.5 -ml-1.5 rounded-xl transition-colors">
-          <div class="w-9 h-9 rounded-full bg-surface-variant group-hover:bg-primary-fixed flex items-center justify-center shrink-0 border-4 border-surface-container-lowest"><span class="material-symbols-outlined text-on-surface-variant text-lg">description</span></div>
-          <div><p class="text-label-lg font-bold group-hover:text-primary">5. Receipt Generation / रसीद</p><p class="text-xs text-on-surface-variant">J-Form Certification</p></div>
+        <!-- Step 5: Pending -->
+        <div class="relative z-10 flex items-start gap-4 opacity-70">
+          <div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center shrink-0 border-4 border-surface-container-lowest">
+            <span class="material-symbols-outlined text-on-surface-variant text-xl">description</span>
+          </div>
+          <div>
+            <p class="font-label-lg text-label-lg font-bold text-on-surface" data-i18n="step_receipt_gen">Receipt Generation / रसीद</p>
+            <p class="font-label-md text-label-md text-on-surface-variant">Pending</p>
+          </div>
         </div>
         
-        <div onclick="nav('screen-payments')" class="relative z-10 flex items-start gap-3 cursor-pointer group hover:bg-surface-container-low p-1.5 -ml-1.5 rounded-xl transition-colors">
-          <div class="w-9 h-9 rounded-full bg-surface-variant group-hover:bg-primary-fixed flex items-center justify-center shrink-0 border-4 border-surface-container-lowest"><span class="material-symbols-outlined text-on-surface-variant text-lg">payments</span></div>
-          <div><p class="text-label-lg font-bold group-hover:text-primary">6. DBT Payment / भुगतान</p><p class="text-xs text-on-surface-variant">Direct Bank Transfer</p></div>
+        <!-- Step 6: Pending -->
+        <div class="relative z-10 flex items-start gap-4 opacity-70">
+          <div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center shrink-0 border-4 border-surface-container-lowest">
+            <span class="material-symbols-outlined text-on-surface-variant text-xl">payments</span>
+          </div>
+          <div>
+            <p class="font-label-lg text-label-lg font-bold text-on-surface" data-i18n="step_payment_disb">Payment Disbursement / भुगतान</p>
+            <p class="font-label-md text-label-md text-on-surface-variant">Pending</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Vehicle Details -->
-    <section class="bg-surface-container border border-surface-variant rounded-2xl p-4 flex items-center gap-4 shadow-sm">
-      <div class="w-14 h-14 bg-surface-variant rounded-xl flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-surface-variant text-3xl">local_shipping</span></div>
-      <div>
-        <p class="text-xs text-on-surface-variant font-bold uppercase tracking-wider">Registered Vehicle | वाहन विवरण</p>
-        <div class="bg-surface-container-lowest border-2 border-outline px-3 py-1.5 mt-1 inline-block rounded-lg shadow-inner"><p class="text-headline-sm font-black text-on-surface tracking-widest uppercase">HR-05-AB-7812</p></div>
+    <section class="bg-surface-container border border-surface-variant rounded-xl p-4 flex items-center gap-4 shadow-xs">
+      <div class="w-16 h-16 bg-surface-variant rounded-lg flex items-center justify-center shrink-0">
+        <span class="material-symbols-outlined text-on-surface-variant text-3xl">local_shipping</span>
+      </div>
+      <div class="flex-1">
+        <p class="font-label-md text-label-md text-on-surface-variant font-medium" data-i18n="vehicle_details_label">Vehicle Details | वाहन विवरण</p>
+        <div class="bg-surface-container-lowest border-2 border-outline px-3 py-1.5 mt-1 inline-block rounded-md shadow-xs">
+          <p class="font-headline-md text-headline-md text-on-surface tracking-widest uppercase font-bold">HR-05-AB-7812</p>
+        </div>
       </div>
     </section>
+
+    <!-- Actions Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+      <button onclick="downloadTokenReceipt()" class="w-full bg-primary text-white flex items-center justify-center gap-2 py-3 rounded-xl text-label-lg font-bold shadow-md active:scale-95 transition-transform hover:bg-primary-container">
+        <span class="material-symbols-outlined text-2xl">description</span><span data-i18n="print_gate_pass">View &amp; Print Gate Pass (PDF)</span>
+      </button>
+      <button onclick="showDirectionsModal('Karnal Grain Market', '5.2 km', '12 mins')" class="w-full bg-secondary-container text-on-secondary-container flex items-center justify-center gap-2 py-3 rounded-xl text-label-lg font-bold shadow-md active:scale-95 transition-transform border border-secondary hover:brightness-105">
+        <span class="material-symbols-outlined text-2xl">directions</span><span data-i18n="view_route_map">View Gate 2 Route on Map</span>
+      </button>
+    </div>
   </main>
   
   <nav class="bg-surface border-t-2 border-primary-container fixed bottom-0 w-full z-50 flex justify-around items-center h-[76px] px-2 pb-1 shadow-lg">
-    <button onclick="nav('screen-dashboard')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">home</span><span class="text-[10px] font-medium leading-tight mt-0.5">Home<br>होम</span></button>
-    <button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-2 py-1 flex-1 max-w-[80px]"><span class="material-symbols-outlined text-[24px] icon-fill">local_shipping</span><span class="text-[10px] font-bold leading-tight mt-0.5">Track<br>ट्रैक</span></button>
-    <button onclick="nav('screen-nearby-mandis')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">location_on</span><span class="text-[10px] font-medium leading-tight mt-0.5">Mandis<br>मंडियां</span></button>
-    <button onclick="nav('screen-procurement')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">high_quality</span><span class="text-[10px] font-medium leading-tight mt-0.5">Quality<br>गुणवत्ता</span></button>
-    <button onclick="nav('screen-payments')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">payments</span><span class="text-[10px] font-medium leading-tight mt-0.5">Payments<br>भुगतान</span></button>
+    <button onclick="nav('screen-dashboard')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">home</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_home">Home</span></button>
+    <button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-2 py-1 flex-1 max-w-[80px]"><span class="material-symbols-outlined text-[24px] icon-fill">local_shipping</span><span class="text-[11px] font-bold leading-tight mt-0.5" data-i18n="nav_track">Track</span></button>
+    <button onclick="nav('screen-nearby-mandis')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">location_on</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_mandis">Mandis</span></button>
+    <button onclick="nav('screen-procurement')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">high_quality</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_quality">Quality</span></button>
+    <button onclick="nav('screen-payments')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">payments</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_payments">Payments</span></button>
   </nav>
 </div>
 
-<!-- ===== SCREEN 11: PROCUREMENT / QUALITY & WEIGHING ===== -->
+<!-- ===== SCREEN 11: QUALITY & WEIGHING DETAILS ===== -->
 <div id="screen-procurement" class="screen">
   <header class="bg-surface border-b border-outline-variant w-full sticky top-0 flex items-center px-5 py-2.5 z-40 bg-surface-container-lowest">
     <button onclick="toggleDrawer()" class="mr-2 text-primary p-2 rounded-full hover:bg-surface-variant flex items-center justify-center h-10 w-10"><span class="material-symbols-outlined">menu</span></button>
-    <h1 class="text-headline-sm font-bold text-primary flex-1"><span class="material-symbols-outlined mr-1 align-middle icon-fill">agriculture</span>Kisan Setu | किसान सेतु</h1>
+    <h1 class="text-headline-sm font-bold text-primary flex-1" data-i18n="app_title"><span class="material-symbols-outlined mr-1 align-middle icon-fill">agriculture</span>Kisan Setu | किसान सेतु</h1>
     <button onclick="toggleProfileModal()" class="flex items-center justify-center h-10 w-10 rounded-full bg-secondary-container text-on-secondary-container mr-2 shadow-sm"><span class="material-symbols-outlined">person</span></button>
-    <button onclick="toggleLanguageModal()" class="flex items-center gap-1 px-3 py-1 rounded-full border border-outline text-primary text-sm font-medium"><span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">EN/हि</span></button>
+    <button onclick="toggleLanguageModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/5 text-primary text-xs font-bold shadow-xs"><span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">🌐 हिन्दी (HI)</span></button>
   </header>
-  <main class="px-5 pt-5 pb-28 max-w-3xl mx-auto w-full">
-    <div class="flex items-center justify-between mb-4">
+  <main class="px-5 pt-5 pb-32 max-w-3xl mx-auto w-full space-y-5">
+    <div class="flex items-center justify-between mb-2">
       <div>
-        <h2 class="text-headline-lg font-bold text-primary">Procurement Lot #8902A</h2>
-        <p class="text-body-md text-on-surface-variant">Wheat Procurement • Karnal Grain Market (Yard 4)</p>
+        <h2 class="text-headline-lg font-bold text-primary" data-i18n="quality_title">Procurement Lot #8902A</h2>
+        <p class="text-body-md text-on-surface-variant" data-i18n="quality_sub">Wheat Procurement • Karnal Grain Market (Yard 4)</p>
       </div>
-      <span class="bg-[#E8F5E9] text-primary border border-primary text-xs font-bold px-3 py-1 rounded-full uppercase">Grade-A Certified</span>
+      <span class="bg-[#E8F5E9] text-primary border border-primary text-xs font-bold px-3.5 py-1.5 rounded-full uppercase shadow-xs">Grade-A Certified</span>
     </div>
 
-    <!-- Moisture & Quality Test Card -->
-    <div class="bg-surface-bright rounded-2xl border border-outline-variant shadow-md mb-5 overflow-hidden">
-      <div class="bg-secondary-container text-on-secondary-container px-5 py-3.5 flex items-center justify-between border-b-2 border-secondary">
-        <div class="flex items-center gap-3"><span class="material-symbols-outlined icon-fill text-[30px]">science</span>
-          <div><h3 class="text-headline-sm font-bold">Laboratory Quality Report / गुणवत्ता जांच</h3><p class="text-xs opacity-90">Certified Lab Grade A Assessment</p></div>
+    <!-- Current Stage Detail Card / Quality & Moisture Test -->
+    <div class="bg-surface-bright rounded-2xl border border-outline-variant shadow-sm overflow-hidden">
+      <div class="bg-secondary-container text-on-secondary-container px-5 py-4 flex flex-col md:flex-row md:items-center justify-between border-b-2 border-secondary gap-3">
+        <div class="flex items-start md:items-center gap-3">
+          <span class="material-symbols-outlined icon-fill text-[32px] shrink-0">science</span>
+          <div>
+            <h3 class="font-headline-sm font-bold text-on-secondary-container">Moisture &amp; Quality Test / गुणवत्ता जांच</h3>
+            <p class="font-label-md opacity-90 mt-0.5 text-xs font-medium">Quality Testing Complete / जांच पूर्ण</p>
+          </div>
         </div>
-        <div class="bg-surface-bright/80 px-3 py-1 rounded-full flex items-center gap-1.5 border border-secondary/30 shrink-0">
-          <span class="w-2.5 h-2.5 bg-green-600 rounded-full"></span>
-          <span class="text-xs font-bold text-green-900">Passed ✓</span>
+        <div class="bg-surface-bright/80 px-3 py-1 rounded-full flex items-center gap-1.5 self-start md:self-auto shrink-0 border border-secondary/30 shadow-xs">
+          <span class="w-2.5 h-2.5 bg-green-700 rounded-full"></span>
+          <span class="font-label-md font-bold text-primary text-xs">Passed (Grade-A)</span>
         </div>
       </div>
-      <div class="p-5 flex flex-col gap-4">
-        <div class="grid grid-cols-3 gap-3">
-          <div class="p-3.5 bg-surface-container-low rounded-xl border border-outline-variant text-center">
-            <p class="text-xs text-on-surface-variant font-medium">Moisture</p>
-            <p class="text-headline-md text-primary font-black mt-1">12.5%</p>
-            <p class="text-[10px] text-green-700 font-bold mt-0.5">Target &lt;14% (PASS)</p>
+      
+      <div class="p-5 flex flex-col gap-4 bg-white">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div class="p-3.5 bg-surface-container-low rounded-xl border border-outline-variant flex flex-col justify-between text-center">
+            <p class="font-label-md text-on-surface font-bold">Moisture Level</p>
+            <p class="font-headline-md text-primary font-bold text-2xl my-1">12.5%</p>
+            <span class="text-xs text-green-700 font-bold bg-green-50 py-0.5 rounded border border-green-200">Target: &lt;14% (PASS)</span>
           </div>
-          <div class="p-3.5 bg-surface-container-low rounded-xl border border-outline-variant text-center">
-            <p class="text-xs text-on-surface-variant font-medium">Foreign Matter</p>
-            <p class="text-headline-md text-primary font-black mt-1">0.8%</p>
-            <p class="text-[10px] text-green-700 font-bold mt-0.5">Target &lt;2% (PASS)</p>
+          <div class="p-3.5 bg-surface-container-low rounded-xl border border-outline-variant flex flex-col justify-between text-center">
+            <p class="font-label-md text-on-surface font-bold">Foreign Matter</p>
+            <p class="font-headline-md text-primary font-bold text-2xl my-1">0.8%</p>
+            <span class="text-xs text-green-700 font-bold bg-green-50 py-0.5 rounded border border-green-200">Target: &lt;2% (PASS)</span>
           </div>
-          <div class="p-3.5 bg-surface-container-low rounded-xl border border-outline-variant text-center">
-            <p class="text-xs text-on-surface-variant font-medium">Damaged</p>
-            <p class="text-headline-md text-primary font-black mt-1">1.2%</p>
-            <p class="text-[10px] text-green-700 font-bold mt-0.5">Target &lt;2% (PASS)</p>
+          <div class="p-3.5 bg-surface-container-low rounded-xl border border-outline-variant flex flex-col justify-between text-center">
+            <p class="font-label-md text-on-surface font-bold">Damaged Grain</p>
+            <p class="font-headline-md text-primary font-bold text-2xl my-1">1.2%</p>
+            <span class="text-xs text-green-700 font-bold bg-green-50 py-0.5 rounded border border-green-200">Target: &lt;2% (PASS)</span>
           </div>
         </div>
-        
-        <button onclick="showReceiptModal('quality')" class="w-full py-3.5 bg-primary text-on-primary rounded-xl text-label-lg font-bold flex items-center justify-center gap-2 active:scale-95 transition-all shadow-md hover:bg-primary-container">
-          <span class="material-symbols-outlined">description</span>View &amp; Print J-Form Certificate / तौल पर्ची
-        </button>
+
+        <div class="bg-surface-container-low p-3.5 rounded-xl border border-outline-variant flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary shrink-0 mt-0.5">verified</span>
+          <p class="text-xs text-on-surface leading-relaxed">Your wheat produce meets APMC Grade-A procurement specifications. Verified by Inspector Dr. S. K. Sharma. / आपकी फसल गुणवत्ता परीक्षण में खरी उतरी है।</p>
+        </div>
       </div>
     </div>
 
     <!-- Electronic Weighbridge Card -->
-    <div class="bg-surface-bright rounded-2xl p-5 border border-surface-variant shadow-md mb-5">
+    <div class="bg-surface-bright rounded-2xl p-5 border border-surface-variant shadow-md">
       <h3 class="text-headline-sm font-bold text-primary mb-4 flex items-center gap-2">
-        <span class="material-symbols-outlined text-primary">scale</span>Electronic Weighbridge / इलेक्ट्रॉनिक तौल
+        <span class="material-symbols-outlined text-primary">scale</span>Electronic Weighbridge Sensor Readings / धर्मकांटा
       </h3>
       <div class="space-y-4">
         <div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant">
           <div class="grid grid-cols-3 gap-2 divide-x divide-outline-variant text-center">
             <div class="px-2"><p class="text-xs text-on-surface-variant mb-1 font-semibold">Gross Weight</p><p class="text-headline-sm font-bold text-on-surface">62.40 Qtl</p><span class="text-[10px] text-gray-500">(वाहन सहित)</span></div>
             <div class="px-2"><p class="text-xs text-on-surface-variant mb-1 font-semibold">Tare Weight</p><p class="text-headline-sm font-bold text-on-surface">12.10 Qtl</p><span class="text-[10px] text-gray-500">(खाली वाहन)</span></div>
-            <div class="px-2"><p class="text-xs text-on-surface-variant mb-1 font-semibold">Net Crop</p><p class="text-headline-sm font-black text-primary">50.30 Qtl</p><span class="text-[10px] text-primary font-bold">(शुद्ध वजन)</span></div>
+            <div class="px-2"><p class="text-xs text-on-surface-variant mb-1 font-semibold">Net Crop</p><p class="text-headline-sm font-black text-primary">50.30 Qtl</p><span class="text-[10px] text-primary font-bold">(शुद्ध फसल)</span></div>
           </div>
         </div>
         
         <div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant flex items-center justify-between">
           <div class="flex items-center gap-3">
             <span class="material-symbols-outlined text-primary text-3xl">inventory_2</span>
-            <div><p class="text-label-lg font-bold">Standard Bagging Status</p><p class="text-xs text-on-surface-variant">125 Bags • 40kg Jute standard</p></div>
+            <div><p class="text-label-lg font-bold">Standard Bagging Status</p><p class="text-xs text-on-surface-variant">125 Bags • 40kg Jute standard (30 kg bag tare adjustment)</p></div>
           </div>
           <span class="bg-[#E8F5E9] text-primary border border-primary text-xs font-bold px-3 py-1 rounded-full">Completed ✓</span>
         </div>
       </div>
     </div>
 
-    <!-- Call Center Action -->
-    <button onclick="showCallModal()" class="w-full h-[56px] bg-surface text-primary border-2 border-outline-variant hover:bg-surface-variant hover:border-primary active:scale-[0.98] transition-all rounded-xl text-label-lg font-bold flex items-center justify-center gap-3 shadow-sm">
-      <span class="material-symbols-outlined">call</span>Call Mandi Support Center (1800-180-1551)
-    </button>
+    <!-- Actions -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+      <button onclick="showReceiptModal('quality')" class="w-full py-3.5 bg-primary text-white rounded-xl text-label-lg font-bold flex items-center justify-center gap-2 active:scale-95 transition-all shadow-md hover:bg-primary-container">
+        <span class="material-symbols-outlined">description</span><span data-i18n="view_jform_btn">View &amp; Print J-Form Certificate</span>
+      </button>
+      <button onclick="showCallModal()" class="w-full py-3.5 bg-surface text-primary border-2 border-outline-variant hover:bg-surface-variant hover:border-primary active:scale-[0.98] transition-all rounded-xl text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm">
+        <span class="material-symbols-outlined">call</span><span data-i18n="call_mandi_support">Call Mandi Support (1800-180-1551)</span>
+      </button>
+    </div>
   </main>
   
   <nav class="bg-surface border-t-2 border-primary-container fixed bottom-0 w-full z-50 flex justify-around items-center h-[76px] px-2 pb-1 shadow-lg">
-    <button onclick="nav('screen-dashboard')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">home</span><span class="text-[10px] font-medium leading-tight mt-0.5">Home<br>होम</span></button>
-    <button onclick="nav('screen-live-tracker')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">local_shipping</span><span class="text-[10px] font-medium leading-tight mt-0.5">Track<br>ट्रैक</span></button>
-    <button onclick="nav('screen-nearby-mandis')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">location_on</span><span class="text-[10px] font-medium leading-tight mt-0.5">Mandis<br>मंडियां</span></button>
-    <button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-2 py-1 flex-1 max-w-[80px]"><span class="material-symbols-outlined text-[24px] icon-fill">high_quality</span><span class="text-[10px] font-bold leading-tight mt-0.5">Quality<br>गुणवत्ता</span></button>
-    <button onclick="nav('screen-payments')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">payments</span><span class="text-[10px] font-medium leading-tight mt-0.5">Payments<br>भुगतान</span></button>
+    <button onclick="nav('screen-dashboard')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">home</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_home">Home</span></button>
+    <button onclick="nav('screen-live-tracker')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">local_shipping</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_track">Track</span></button>
+    <button onclick="nav('screen-nearby-mandis')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">location_on</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_mandis">Mandis</span></button>
+    <button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-2 py-1 flex-1 max-w-[80px]"><span class="material-symbols-outlined text-[24px] icon-fill">high_quality</span><span class="text-[11px] font-bold leading-tight mt-0.5" data-i18n="nav_quality">Quality</span></button>
+    <button onclick="nav('screen-payments')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">payments</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_payments">Payments</span></button>
   </nav>
 </div>
 
@@ -1043,47 +1307,47 @@
 <div id="screen-payments" class="screen">
   <header class="bg-surface-container-lowest border-b border-outline-variant w-full sticky top-0 flex items-center px-5 py-2.5 z-40">
     <button onclick="toggleDrawer()" class="mr-2 text-primary p-2 rounded-full hover:bg-surface-variant flex items-center justify-center h-10 w-10"><span class="material-symbols-outlined">menu</span></button>
-    <div class="flex items-center gap-2 flex-1"><span class="material-symbols-outlined text-primary icon-fill">agriculture</span><h1 class="text-headline-sm font-bold text-primary">Kisan Setu | किसान सेतु</h1></div>
+    <div class="flex items-center gap-2 flex-1"><span class="material-symbols-outlined text-primary icon-fill">agriculture</span><h1 class="text-headline-sm font-bold text-primary" data-i18n="app_title">Kisan Setu | किसान सेतु</h1></div>
     <button onclick="toggleProfileModal()" class="flex items-center justify-center h-10 w-10 rounded-full bg-secondary-container text-on-secondary-container mr-2 shadow-sm"><span class="material-symbols-outlined">person</span></button>
-    <button onclick="toggleLanguageModal()" class="flex items-center gap-1 px-3 py-1 rounded-full border border-outline text-primary text-sm font-medium"><span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">EN/हि</span></button>
+    <button onclick="toggleLanguageModal()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/5 text-primary text-xs font-bold shadow-xs"><span class="material-symbols-outlined text-[18px]">language</span><span class="curr-lang-label">🌐 हिन्दी (HI)</span></button>
   </header>
   <main class="px-5 pt-5 pb-28 max-w-3xl mx-auto w-full">
-    <h2 class="text-headline-lg font-bold text-primary mb-1">My Payments / मेरे भुगतान</h2>
-    <p class="text-body-md text-on-surface-variant mb-4">Direct Benefit Transfer (DBT) &amp; APMC Procurement Disbursal</p>
+    <h2 class="text-headline-lg font-bold text-primary mb-1" data-i18n="payments_title">My Payments</h2>
+    <p class="text-body-md text-on-surface-variant mb-4" data-i18n="payments_sub">Direct Benefit Transfer (DBT) &amp; APMC Procurement Disbursal</p>
     
     <!-- Financial Metrics -->
     <div class="grid grid-cols-2 gap-3 mb-5">
       <div class="bg-primary-container text-on-primary-container p-4 rounded-2xl shadow-sm">
-        <p class="text-xs uppercase tracking-wider text-[#7ebdac] font-bold mb-1">Total Received / प्राप्त राशि</p>
+        <p class="text-xs uppercase tracking-wider text-[#7ebdac] font-bold mb-1" data-i18n="total_received">Total Received / प्राप्त राशि</p>
         <h3 class="text-headline-md font-black text-white">₹ 1,45,000</h3>
         <p class="text-xs opacity-90 mt-1">Direct Bank Credit (This Season)</p>
       </div>
       <div class="bg-secondary-container text-on-secondary-container p-4 rounded-2xl border-2 border-secondary shadow-sm">
-        <p class="text-xs uppercase tracking-wider text-secondary font-bold mb-1">Pending / प्रक्रिया में</p>
+        <p class="text-xs uppercase tracking-wider text-secondary font-bold mb-1" data-i18n="pending_payout">Pending / प्रक्रिया में</p>
         <h3 class="text-headline-md font-black text-[#6f5c00]">₹ 32,500</h3>
         <p class="text-xs text-secondary mt-1">Expected in 24-48 Hours</p>
       </div>
     </div>
 
     <!-- Transactions List -->
-    <h3 class="text-headline-sm font-bold text-primary mb-3">Recent Transactions / हाल के लेनदेन</h3>
+    <h3 class="text-headline-sm font-bold text-primary mb-3" data-i18n="recent_txns">Recent Transactions / हाल के लेनदेन</h3>
     <div id="transactions-container" class="space-y-3.5">
       <div class="bg-surface-container-lowest border-2 border-outline-variant p-4 rounded-2xl flex flex-col gap-3 relative shadow-sm hover:border-primary transition-colors">
         <div class="absolute left-0 top-0 bottom-0 w-2.5 bg-primary-container rounded-l-2xl"></div>
         <div class="flex justify-between items-start pl-2">
-          <div><h4 class="text-label-lg font-bold text-primary">Wheat Sale (Mandi) / गेहूं की बिक्री</h4><p class="text-xs text-on-surface-variant">12 May 2024 • Ref: TXN-89234 • 20 Qtl</p></div>
+          <div><h4 class="text-label-lg font-bold text-primary" data-i18n="wheat_sale">Wheat Sale (Mandi) / गेहूं की बिक्री</h4><p class="text-xs text-on-surface-variant">12 May 2024 • Ref: TXN-89234 • 20 Qtl</p></div>
           <span class="text-headline-sm font-black text-primary ml-2">₹ 45,000</span>
         </div>
         <div class="flex items-center justify-between pl-2 pt-1 border-t border-outline-variant/40">
           <span class="inline-flex items-center px-3 py-1 rounded-full bg-[#E8F5E9] text-primary text-xs font-bold border border-primary"><span class="material-symbols-outlined text-[15px] mr-1 icon-fill">check_circle</span>Completed</span>
-          <button onclick="showReceiptModal('payment', 'TXN-89234', 'Wheat Sale (Mandi)', 45000, 20)" class="text-primary text-xs font-bold flex items-center bg-primary/10 px-3 py-1.5 rounded-lg hover:bg-primary hover:text-white transition-colors active:scale-95"><span class="material-symbols-outlined text-[16px] mr-1">download</span>Voucher / रसीद</button>
+          <button onclick="showReceiptModal('payment', 'TXN-89234', 'Wheat Sale (Mandi)', 45000, 20)" class="text-primary text-xs font-bold flex items-center bg-primary/10 px-3 py-1.5 rounded-lg hover:bg-primary hover:text-white transition-colors active:scale-95"><span class="material-symbols-outlined text-[16px] mr-1">download</span><span data-i18n="download_voucher">Voucher / रसीद</span></button>
         </div>
       </div>
 
       <div class="bg-surface-container-lowest border-2 border-secondary p-4 rounded-2xl flex flex-col gap-3 relative shadow-sm">
         <div class="absolute left-0 top-0 bottom-0 w-2.5 bg-secondary rounded-l-2xl"></div>
         <div class="flex justify-between items-start pl-2">
-          <div><h4 class="text-label-lg font-bold">Paddy Procurement / धान की खरीद</h4><p class="text-xs text-on-surface-variant">10 May 2024 • Ref: PRQ-1109 • 15 Qtl</p></div>
+          <div><h4 class="text-label-lg font-bold" data-i18n="mustard_procurement">Paddy Procurement / धान की खरीद</h4><p class="text-xs text-on-surface-variant">10 May 2024 • Ref: PRQ-1109 • 15 Qtl</p></div>
           <span class="text-headline-sm font-black text-amber-900 ml-2">₹ 32,500</span>
         </div>
         <div class="flex items-center justify-between pl-2 pt-1 border-t border-outline-variant/40">
@@ -1106,18 +1370,18 @@
     </div>
     
     <div class="mt-5 flex justify-center">
-      <button onclick="loadMorePayments()" id="load-more-btn" class="border-2 border-primary text-primary text-label-lg font-bold px-8 py-3 rounded-xl hover:bg-surface-variant h-[52px] w-full flex items-center justify-center transition-colors active:scale-98 shadow-sm">
+      <button onclick="loadMorePayments()" id="load-more-btn" class="border-2 border-primary text-primary text-label-lg font-bold px-8 py-3 rounded-xl hover:bg-surface-variant h-[52px] w-full flex items-center justify-center transition-colors active:scale-98 shadow-sm" data-i18n="load_more_txns">
         Load Historical Records / पिछले रिकॉर्ड देखें
       </button>
     </div>
   </main>
   
   <nav class="bg-surface border-t-2 border-primary-container fixed bottom-0 w-full z-50 flex justify-around items-center h-[76px] px-2 pb-1 shadow-lg">
-    <button onclick="nav('screen-dashboard')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">home</span><span class="text-[10px] font-medium leading-tight mt-0.5">Home<br>होम</span></button>
-    <button onclick="nav('screen-live-tracker')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">local_shipping</span><span class="text-[10px] font-medium leading-tight mt-0.5">Track<br>ट्रैक</span></button>
-    <button onclick="nav('screen-nearby-mandis')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">location_on</span><span class="text-[10px] font-medium leading-tight mt-0.5">Mandis<br>मंडियां</span></button>
-    <button onclick="nav('screen-procurement')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">high_quality</span><span class="text-[10px] font-medium leading-tight mt-0.5">Quality<br>गुणवत्ता</span></button>
-    <button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-2 py-1 flex-1 max-w-[80px]"><span class="material-symbols-outlined text-[24px] icon-fill">payments</span><span class="text-[10px] font-bold leading-tight mt-0.5">Payments<br>भुगतान</span></button>
+    <button onclick="nav('screen-dashboard')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">home</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_home">Home</span></button>
+    <button onclick="nav('screen-live-tracker')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">local_shipping</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_track">Track</span></button>
+    <button onclick="nav('screen-nearby-mandis')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">location_on</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_mandis">Mandis</span></button>
+    <button onclick="nav('screen-procurement')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">high_quality</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_quality">Quality</span></button>
+    <button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-2 py-1 flex-1 max-w-[80px]"><span class="material-symbols-outlined text-[24px] icon-fill">payments</span><span class="text-[11px] font-bold leading-tight mt-0.5" data-i18n="nav_payments">Payments</span></button>
   </nav>
 </div>
 
@@ -1125,18 +1389,18 @@
 <div id="screen-help" class="screen">
   <header class="bg-white border-b border-outline-variant w-full sticky top-0 flex items-center px-5 z-50 py-2.5">
     <button onclick="nav('screen-dashboard')" class="text-primary p-2 rounded-full hover:bg-surface-variant flex items-center justify-center h-10 w-10 mr-2"><span class="material-symbols-outlined">arrow_back</span></button>
-    <div class="flex-1 flex items-center gap-2"><span class="material-symbols-outlined text-primary text-3xl icon-fill">agriculture</span><h1 class="text-headline-sm font-bold text-primary">Kisan Setu | किसान सेतु</h1></div>
+    <div class="flex-1 flex items-center gap-2"><span class="material-symbols-outlined text-primary text-3xl icon-fill">agriculture</span><h1 class="text-headline-sm font-bold text-primary" data-i18n="app_title">Kisan Setu | किसान सेतु</h1></div>
     <button onclick="toggleProfileModal()" class="flex items-center justify-center h-10 w-10 rounded-full text-primary hover:bg-surface-variant"><span class="material-symbols-outlined">account_circle</span></button>
   </header>
   <main class="flex-1 px-5 flex flex-col gap-5 py-5 pb-28 max-w-3xl mx-auto w-full">
     <!-- Language Selector Grid -->
     <section class="flex flex-col gap-3">
-      <h2 class="text-headline-sm font-bold text-primary">Change Language / भाषा बदलें</h2>
+      <h2 class="text-headline-sm font-bold text-primary" data-i18n="select_lang_modal">Change Language / भाषा बदलें</h2>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-        <button onclick="setAppLanguage('en')" class="h-[50px] bg-surface border-2 border-outline-variant text-on-surface text-label-md font-bold rounded-xl flex items-center justify-center active:bg-surface-variant transition-colors hover:border-primary">English</button>
-        <button onclick="setAppLanguage('hi')" class="h-[50px] bg-primary-container border-2 border-primary-container text-on-primary-container text-label-md font-bold rounded-xl flex items-center justify-center shadow-sm">हिंदी</button>
-        <button onclick="setAppLanguage('pa')" class="h-[50px] bg-surface border-2 border-outline-variant text-on-surface text-label-md font-bold rounded-xl flex items-center justify-center active:bg-surface-variant transition-colors hover:border-primary">ਪੰਜਾਬੀ</button>
-        <button onclick="setAppLanguage('mr')" class="h-[50px] bg-surface border-2 border-outline-variant text-on-surface text-label-md font-bold rounded-xl flex items-center justify-center active:bg-surface-variant transition-colors hover:border-primary">मराठी</button>
+        <button id="help-lang-en" onclick="setAppLanguage('en')" class="h-[50px] bg-surface border-2 border-outline-variant text-on-surface text-label-md font-bold rounded-xl flex items-center justify-center active:bg-surface-variant transition-colors hover:border-primary">English</button>
+        <button id="help-lang-hi" onclick="setAppLanguage('hi')" class="h-[50px] bg-primary-container border-2 border-primary text-white text-label-md font-bold rounded-xl flex items-center justify-center shadow-sm">हिंदी</button>
+        <button id="help-lang-pa" onclick="setAppLanguage('pa')" class="h-[50px] bg-surface border-2 border-outline-variant text-on-surface text-label-md font-bold rounded-xl flex items-center justify-center active:bg-surface-variant transition-colors hover:border-primary">ਪੰਜਾਬੀ</button>
+        <button id="help-lang-mr" onclick="setAppLanguage('mr')" class="h-[50px] bg-surface border-2 border-outline-variant text-on-surface text-label-md font-bold rounded-xl flex items-center justify-center active:bg-surface-variant transition-colors hover:border-primary">मराठी</button>
       </div>
     </section>
 
@@ -1185,17 +1449,17 @@
       
       <button onclick="showSahayakModal()" class="w-full min-h-[72px] bg-secondary-container text-on-secondary-container border-2 border-secondary-container rounded-xl flex items-center justify-center gap-3 px-4 py-3 active:scale-95 transition-transform shadow-md hover:brightness-105">
         <span class="material-symbols-outlined text-3xl icon-fill">smart_toy</span>
-        <div class="text-left"><div class="text-headline-sm font-bold">Chat with Sahayak AI</div><div class="text-xs text-on-surface-variant">सहायक से चैट करें (Instant)</div></div>
+        <div class="text-left"><div class="text-headline-sm font-bold" data-i18n="sahayak_title">Chat with Sahayak AI</div><div class="text-xs text-on-surface-variant">सहायक से चैट करें (Instant)</div></div>
       </button>
     </section>
   </main>
   
   <nav class="bg-surface border-t-2 border-primary-container fixed bottom-0 w-full z-50 flex justify-around items-center h-[76px] px-2 pb-1 shadow-lg">
-    <button onclick="nav('screen-dashboard')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">home</span><span class="text-[10px] font-medium leading-tight mt-0.5">Home<br>होम</span></button>
-    <button onclick="nav('screen-live-tracker')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">local_shipping</span><span class="text-[10px] font-medium leading-tight mt-0.5">Track<br>ट्रैक</span></button>
-    <button onclick="nav('screen-nearby-mandis')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">location_on</span><span class="text-[10px] font-medium leading-tight mt-0.5">Mandis<br>मंडियां</span></button>
-    <button onclick="nav('screen-procurement')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">high_quality</span><span class="text-[10px] font-medium leading-tight mt-0.5">Quality<br>गुणवत्ता</span></button>
-    <button onclick="nav('screen-payments')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">payments</span><span class="text-[10px] font-medium leading-tight mt-0.5">Payments<br>भुगतान</span></button>
+    <button onclick="nav('screen-dashboard')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">home</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_home">Home</span></button>
+    <button onclick="nav('screen-live-tracker')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">local_shipping</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_track">Track</span></button>
+    <button onclick="nav('screen-nearby-mandis')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">location_on</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_mandis">Mandis</span></button>
+    <button onclick="nav('screen-procurement')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">high_quality</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_quality">Quality</span></button>
+    <button onclick="nav('screen-payments')" class="flex flex-col items-center justify-center text-on-surface-variant flex-1 max-w-[80px] px-2 py-1"><span class="material-symbols-outlined text-[24px]">payments</span><span class="text-[11px] font-medium leading-tight mt-0.5" data-i18n="nav_payments">Payments</span></button>
   </nav>
 </div>
 
@@ -1238,13 +1502,16 @@
           <span class="material-symbols-outlined text-xl">local_shipping</span> 🚚 Live Queue Tracker
         </button>
         <button onclick="drawerNav('screen-procurement')" class="w-full flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-surface-container text-left text-primary font-bold text-sm">
-          <span class="material-symbols-outlined text-xl">high_quality</span> 🔬 Quality &amp; Weighing Check
+          <span class="material-symbols-outlined text-xl">account_tree</span> 🔬 Quality &amp; Flow Chart
         </button>
         <button onclick="drawerNav('screen-payments')" class="w-full flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-surface-container text-left text-primary font-bold text-sm">
           <span class="material-symbols-outlined text-xl">payments</span> 💳 DBT Payments &amp; Slips
         </button>
         <button onclick="drawerNav('screen-mandi-token')" class="w-full flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-surface-container text-left text-primary font-bold text-sm">
           <span class="material-symbols-outlined text-xl">confirmation_number</span> 🎫 Active Mandi Gate Pass
+        </button>
+        <button onclick="drawerNav('screen-land-details')" class="w-full flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-surface-container text-left text-primary font-bold text-sm">
+          <span class="material-symbols-outlined text-xl">landscape</span> 🌾 Farmer Land Details (भू-अभिलेख)
         </button>
         <button onclick="drawerNav('screen-link-aadhaar')" class="w-full flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-surface-container text-left text-primary font-bold text-sm">
           <span class="material-symbols-outlined text-xl">fingerprint</span> 🆔 Aadhaar Linking
@@ -1284,12 +1551,15 @@
       <div class="flex justify-between border-b border-outline-variant/60 pb-2"><span class="text-on-surface-variant font-medium">Farmer ID:</span><span class="font-bold text-primary text-sm">PB-10492 / KS-9921</span></div>
       <div class="flex justify-between border-b border-outline-variant/60 pb-2"><span class="text-on-surface-variant font-medium">Registered Mobile:</span><span class="font-bold text-primary text-sm">+91 98765 43210</span></div>
       <div class="flex justify-between border-b border-outline-variant/60 pb-2"><span class="text-on-surface-variant font-medium">Aadhaar Status:</span><span class="font-bold text-green-700 text-sm">✓ Linked (**3942)</span></div>
+      <div class="flex justify-between border-b border-outline-variant/60 pb-2"><span class="text-on-surface-variant font-medium">Land Holding:</span><span class="font-bold text-primary text-sm">4.5 Acres (Taraori, Karnal)</span></div>
       <div class="flex justify-between border-b border-outline-variant/60 pb-2"><span class="text-on-surface-variant font-medium">DBT Bank Account:</span><span class="font-bold text-primary text-sm">SBI (XXXX-5678)</span></div>
-      <div class="flex justify-between border-b border-outline-variant/60 pb-2"><span class="text-on-surface-variant font-medium">Land Holding:</span><span class="font-bold text-primary text-sm">4.5 Acres (Karnal, HR)</span></div>
       
-      <div class="pt-2">
-        <button onclick="toggleProfileModal();nav('screen-dbt-setup')" class="w-full py-3 bg-primary text-on-primary rounded-xl font-bold text-xs flex items-center justify-center gap-2 hover:bg-primary-container">
-          <span class="material-symbols-outlined text-base">edit</span>Edit Bank / Aadhaar Details
+      <div class="pt-2 grid grid-cols-2 gap-2">
+        <button onclick="toggleProfileModal();nav('screen-land-details')" class="py-2.5 bg-surface-container text-primary border border-primary/30 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 hover:bg-surface-variant">
+          <span class="material-symbols-outlined text-sm">landscape</span>Land Records
+        </button>
+        <button onclick="toggleProfileModal();nav('screen-dbt-setup')" class="py-2.5 bg-primary text-on-primary rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 hover:bg-primary-container">
+          <span class="material-symbols-outlined text-sm">account_balance</span>Bank Details
         </button>
       </div>
     </div>
@@ -1300,21 +1570,24 @@
 <div id="language-modal" class="fixed inset-0 z-[9970] bg-black/60 backdrop-blur-xs hidden items-center justify-center p-4 no-print">
   <div class="bg-surface rounded-2xl shadow-2xl border border-outline-variant max-w-sm w-full p-5 space-y-4 animate-in fade-in zoom-in duration-150">
     <div class="flex items-center justify-between border-b border-outline-variant pb-3">
-      <h3 class="font-bold text-primary text-base flex items-center gap-2"><span class="material-symbols-outlined">language</span>Select App Language</h3>
+      <div>
+        <h3 class="font-bold text-primary text-base flex items-center gap-2"><span class="material-symbols-outlined">language</span>Select App Language</h3>
+        <p class="text-xs text-on-surface-variant mt-0.5">अपनी पसंदीदा भाषा चुनें</p>
+      </div>
       <button onclick="toggleLanguageModal()" class="text-outline hover:text-primary"><span class="material-symbols-outlined">close</span></button>
     </div>
-    <div class="grid grid-cols-2 gap-3">
-      <button onclick="setAppLanguage('en')" class="p-3 border-2 border-outline-variant rounded-xl font-bold text-primary hover:border-primary text-center">
-        <span class="block text-base">English</span><span class="text-xs text-gray-500 font-normal">Default</span>
+    <div class="grid grid-cols-2 gap-3" id="modal-lang-grid">
+      <button id="lang-btn-en" onclick="setAppLanguage('en')" class="lang-option-btn p-3 border-2 border-outline-variant rounded-xl font-bold text-primary hover:border-primary text-center transition-all">
+        <span class="block text-base">English</span><span class="text-xs text-gray-500 font-normal">English (EN)</span>
       </button>
-      <button onclick="setAppLanguage('hi')" class="p-3 border-2 border-primary bg-primary-container text-on-primary-container rounded-xl font-bold text-center">
-        <span class="block text-base">हिन्दी</span><span class="text-xs opacity-80 font-normal">Hindi</span>
+      <button id="lang-btn-hi" onclick="setAppLanguage('hi')" class="lang-option-btn p-3 border-2 border-primary bg-primary-container text-on-primary-container font-black rounded-xl text-center shadow-sm transition-all ring-2 ring-primary">
+        <span class="block text-base">हिन्दी</span><span class="text-xs opacity-90 font-bold">✓ Selected</span>
       </button>
-      <button onclick="setAppLanguage('pa')" class="p-3 border-2 border-outline-variant rounded-xl font-bold text-primary hover:border-primary text-center">
-        <span class="block text-base">ਪੰਜਾਬੀ</span><span class="text-xs text-gray-500 font-normal">Punjabi</span>
+      <button id="lang-btn-pa" onclick="setAppLanguage('pa')" class="lang-option-btn p-3 border-2 border-outline-variant rounded-xl font-bold text-primary hover:border-primary text-center transition-all">
+        <span class="block text-base">ਪੰਜਾਬੀ</span><span class="text-xs text-gray-500 font-normal">Punjabi (PA)</span>
       </button>
-      <button onclick="setAppLanguage('mr')" class="p-3 border-2 border-outline-variant rounded-xl font-bold text-primary hover:border-primary text-center">
-        <span class="block text-base">मराठी</span><span class="text-xs text-gray-500 font-normal">Marathi</span>
+      <button id="lang-btn-mr" onclick="setAppLanguage('mr')" class="lang-option-btn p-3 border-2 border-outline-variant rounded-xl font-bold text-primary hover:border-primary text-center transition-all">
+        <span class="block text-base">मराठी</span><span class="text-xs text-gray-500 font-normal">Marathi (MR)</span>
       </button>
     </div>
   </div>
@@ -1490,7 +1763,17 @@ const bookingState = {
   cropRate: 2425,
   quantity: 50,
   timeSlot: 'Morning (08:00 AM – 10:00 AM)',
-  tokenNumber: '#48'
+  tokenNumber: '#48',
+  landDetails: {
+    state: 'Haryana',
+    district: 'Karnal',
+    tehsil: 'Nilokheri',
+    village: 'Taraori',
+    khasra: '42//18/2, 42//19',
+    area: '4.5',
+    unit: 'Acres',
+    ownership: 'Owner'
+  }
 };
 
 // Global Payment & Receipt State
@@ -1502,7 +1785,901 @@ let currentPaymentData = {
   qty: 20
 };
 let currentQualityLotId = '#8902A';
-let appLanguage = 'en';
+let appLanguage = 'hi';
+
+// ==========================================
+// COMPLETE MULTI-LANGUAGE I18N DICTIONARY
+// ==========================================
+const i18nData = {
+  en: {
+    app_title: '<span class="material-symbols-outlined mr-1 align-middle icon-fill">agriculture</span>Kisan Setu',
+    nav_home: 'Home',
+    nav_track: 'Track',
+    nav_mandis: 'Mandis',
+    nav_quality: 'Quality',
+    nav_payments: 'Payments',
+    select_lang_modal: 'Select App Language',
+    sahayak_title: 'Chat with Sahayak AI',
+    help_title: 'Help Center & FAQs',
+    login_header_tag: 'Official e-NAM & APMC Procurement',
+    login_title: 'Kisan Setu',
+    login_welcome: 'Welcome to Kisan Setu',
+    login_sub: 'Log in with your registered mobile number',
+    login_subtitle: 'Unified Mandi e-Pass & MSP Direct Procurement Gateway',
+    login_phone_label: 'Registered Mobile Number',
+    mobile_label: 'Mobile Number',
+    login_pass_label: 'Security PIN / Password',
+    remember_me: 'Remember Me',
+    forgot_pin: 'Forgot PIN?',
+    send_otp_btn: 'Send Login OTP',
+    send_otp: 'Send OTP',
+    quick_demo_btn: 'Quick Demo Login (Ram Singh)',
+    direct_demo: 'Direct Demo Mode',
+    direct_demo_tag: 'Instant Access',
+    no_account: 'Don\'t have an account?',
+    new_user: 'New Farmer?',
+    register_here: 'Register as New Farmer',
+    register_farmer: 'Register Farmer',
+    otp_title: 'Verify Security OTP',
+    verify_otp_title: 'Verify OTP',
+    otp_sub: 'Enter 6-digit code sent to',
+    verify_otp_sub: 'Enter 6-digit verification code',
+    verify_otp_btn: 'Verify & Enter Portal',
+    verify_login: 'Verify & Login',
+    autofill_demo_otp: 'Autofill Demo OTP (482910)',
+    fill_demo_otp: 'Fill Demo OTP',
+    resend_otp: 'Resend OTP Code',
+    didnt_get_otp: 'Didn\'t receive code?',
+    reg_title: 'Farmer Portal Registration',
+    reg_sub: 'Create your unified farmer profile',
+    step1_badge: 'Step 1 of 4 • Basic Info',
+    step2_badge: 'Step 2 of 4 • Aadhaar',
+    step3_badge: 'Step 3 of 4 • Land Details',
+    step4_badge: 'Step 4 of 4 • DBT Bank',
+    step1_title: 'Basic Details',
+    step2_title: 'Aadhaar e-KYC',
+    step3_title: 'Land Records',
+    step4_title: 'DBT Bank Account',
+    current_step: 'Current Step',
+    next_step: 'Next Step',
+    full_name_label: 'Full Name (as per Aadhaar)',
+    full_name: 'Full Name',
+    farmer_id: 'Farmer ID',
+    farmer_id_hint: 'State Agriculture Registration ID',
+    reg_btn: 'Register & Continue to Aadhaar',
+    aadhaar_title: 'Link Aadhaar Biometrics',
+    aadhaar_sub: 'Direct Benefit Transfer (DBT) & e-KYC Verification',
+    aadhaar_num_label: '12-Digit Aadhaar Number',
+    aadhaar_hint: 'Secured with UIDAI 256-bit encryption',
+    aadhaar_consent: 'I give consent to fetch e-KYC and land ownership details',
+    send_aadhaar_otp_btn: 'Verify Aadhaar with UIDAI OTP',
+    aadhaar_btn: 'Verify Aadhaar',
+    skip_aadhaar: 'Skip for Now',
+    kyc_verified: 'e-KYC Verified ✓',
+    land_title: 'Farmer Land Records',
+    land_sub: 'Verified with State Land Revenue Records (Bhoomi Portal)',
+    land_verified_banner: 'Bhoomi Portal Sync Active',
+    land_survey_synced: 'Survey & Geospatial Boundary Validated',
+    state_label: 'State',
+    district_label: 'District',
+    tehsil_label: 'Tehsil / Sub-District',
+    village_label: 'Village / Gram Panchayat',
+    village_district: 'Village & District',
+    khasra_label: 'Khasra / Murabba / Survey No.',
+    land_area_label: 'Cultivable Land Area',
+    cultivable_area: 'Cultivable Area',
+    unit_label: 'Unit',
+    ownership_label: 'Land Ownership Type',
+    owner_opt: 'Land Owner (खसरेदार/मालिक)',
+    tenant_opt: 'Tenant Farmer (काश्तकार)',
+    sharecropper_opt: 'Sharecropper (बटाईदार)',
+    sown_crop_title: 'Sown Crops This Season (Girdawari Records)',
+    wheat_sown: 'Wheat (गेहूँ) • 3.5 Acres Sown Area',
+    mustard_sown: 'Mustard (सरसों) • 1.0 Acre Sown Area',
+    save_land_btn: 'Save Land Records & Continue',
+    dbt_title: 'DBT Direct Bank Account Setup',
+    dbt_acc_title: 'DBT Bank Account',
+    dbt_sub: 'PFMS Government Subsidies & APMC MSP Payouts',
+    dbt_desc: 'Direct credit via Aadhaar Payment Bridge',
+    account_num_label: 'Bank Account Number',
+    acc_num: 'Account Number',
+    confirm_acc_label: 'Confirm Account Number',
+    ifsc_label: 'Bank IFSC Code',
+    ifsc_code: 'IFSC Code',
+    bank_name_label: 'Bank Name',
+    bank_name: 'Bank Name',
+    dbt_bank_hint: 'Account must be seeded with Aadhaar',
+    enable_dbt: 'Enable instant DBT payout notifications',
+    dbt_consent: 'I authorize direct credit of procurement MSP funds',
+    save_bank_btn: 'Save Bank & Go to Dashboard',
+    save_dbt_btn: 'Save Bank Account',
+    dbt_step_title: 'DBT Bank Verified ✓',
+    dbt_verified_msg: 'Active for Aadhaar Payment Bridge',
+    dash_welcome: 'Welcome Back,',
+    greeting: 'Ram Singh',
+    dash_sub: 'Kisan Setu Smart Dashboard • Harvest Season 2026',
+    weather_desc: '28°C Sunny • Mandis fully open for Rabi harvest inward',
+    quick_actions_title: 'Mandi Services & Booking',
+    book_slot_action: 'Smart Slot Booking',
+    book_slot_card: 'Book Slot',
+    book_slot_desc: 'Avoid long gate waiting lines',
+    nearby_mandis_action: 'Nearby Mandis',
+    nearby_mandis_card: 'Nearby Mandis',
+    nearby_mandis_desc: 'Live wait times & daily rates',
+    live_queue_action: 'Live Queue Tracker',
+    live_queue_card: 'Live Queue',
+    live_queue_desc: 'Radar gate tracking & radar sync',
+    quality_action: 'Quality & Flow Chart',
+    quality_card: 'Quality Flow Chart',
+    quality_desc: '6-stage e-procurement pipeline',
+    payments_action: 'My Payments',
+    dbt_card: 'DBT Payments',
+    mandi_token_action: 'Mandi Token Pass',
+    land_records_action: 'Land Records',
+    dbt_bank_action: 'DBT Bank Setup',
+    msp_banner_title: 'Govt. MSP Rates (Rabi 2026)',
+    current_msp_wheat: 'Wheat MSP: ₹2,425 / Qtl',
+    msp_wheat: 'Wheat: ₹2,425/Qtl',
+    msp_mustard: 'Mustard: ₹5,950/Qtl',
+    msp_paddy: 'Paddy: ₹2,320/Qtl',
+    msp_gram: 'Gram: ₹5,650/Qtl',
+    msp_click_sub: 'Click for official notification',
+    mandis_dir_title: 'Nearby Mandis Directory',
+    search_mandis_placeholder: 'Search mandi by name, district, or crop...',
+    slot_booking_title: 'Smart Slot Booking',
+    slot_booking_sub: 'Select Mandi, Preferred Date & Time Slot',
+    book_step1_label: '1. Choose Mandi Center',
+    book_step2_label: '2. Select Arrival Date',
+    book_step3_label: '3. Choose Crop & Quantity',
+    book_step4_label: '4. Select Time Slot',
+    select_mandi_label: 'Select Destination Mandi',
+    select_crop_label: 'Select Crop Commodity',
+    crop_qty_label: 'Crop Quantity (Quintals)',
+    qty_label: 'Quantity (Qtl)',
+    select_slot_label: 'Select Time Slot',
+    confirm_booking_btn: 'Confirm Booking & Generate Gate Pass',
+    booking_confirmed_title: 'Slot Confirmed!',
+    mandi_pass_title: 'Active Mandi Gate Pass',
+    mandi_pass_sub: 'Fast-Track Vehicle Entry Pass with Live QR Code',
+    token_pass_ready: 'Digital Mandi Gate Pass Ready',
+    token_num_label: 'Token Number',
+    farmer_name_label: 'Farmer Name',
+    mandi_name_label: 'Destination Mandi',
+    entry_gate_label: 'Assigned Entry Gate',
+    mandi_yard_label: 'Assigned Gate & Lane',
+    arrival_date_label: 'Arrival Date',
+    time_slot_label: 'Time Slot',
+    reporting_slot_label: 'Reporting Time Slot',
+    crop_label: 'Crop Commodity',
+    est_payout_label: 'Estimated DBT Payout',
+    print_pass_btn: 'Print / Download PDF',
+    track_queue_btn: 'Track Live Queue',
+    scan_gate_hint: 'Show QR code at Gate 2 Scanner for automatic boom barrier opening',
+    tracker_title: 'Live Queue Tracker',
+    token_vehicle_pos: 'Karnal Grain Market • Gate 2 (Weighbridge WB-E04)',
+    queue_pos_label: 'Your Position',
+    ahead_label: 'Vehicles Ahead',
+    wait_label: 'Est. Wait Time',
+    yard_cap_label: 'Yard Capacity',
+    lane_g1: 'Gate 1: Heavy Trucks',
+    lane_g2: 'Gate 2: Tractor-Trolley (YOU)',
+    lane_g3: 'Gate 3: LCV / Pickups',
+    live_stream_title: 'Real-Time Vehicle Queue Stream',
+    sim_advance_btn: 'Advance Simulation',
+    print_gate_pass: 'View & Print Gate Pass (PDF)',
+    view_route_map: 'View Gate 2 Route on Map',
+    quality_title: 'Procurement Lot #8902A',
+    quality_sub: 'Wheat Procurement • Karnal Grain Market (Yard 4)',
+    flow_chart_title: 'Quality & Weighing Flow Chart',
+    flow_chart_sub: 'Standard 6-Stage APMC e-Procurement Pipeline',
+    stage1_title: 'Vehicle Inward & Gross Weighment',
+    stage1_desc: 'Tractor-Trolley HR-05-AB-7812 on Weighbridge WB-E04',
+    stage2_title: 'Automated Grain Sampling & Lab Assay',
+    stage2_desc: 'Pneumatic grain sampler probe test by Inspector Dr. S. K. Sharma',
+    stage3_title: 'Produce Unloading & Tare Weighment',
+    stage3_desc: 'Produce unloaded at Bay 4 • Empty Tare: 12.10 Qtl',
+    stage4_title: 'Standard Bagging & Final Billable',
+    stage4_desc: '125 Standard Jute Bags (40 kg each • 30 kg standard tare deduction)',
+    stage5_title: 'Form J Certification & Digital Sign',
+    stage5_desc: 'Digitally certified by APMC Quality Inspector Dr. S. K. Sharma',
+    stage6_title: 'PFMS Direct Benefit Transfer (DBT) Payout',
+    stage6_desc: 'Automated transfer of ₹ 1,21,250.00 directly to SBI Account (XXXX-5678)',
+    view_jform_btn: 'View & Print J-Form Certificate',
+    call_mandi_support: 'Call Mandi Support (1800-180-1551)',
+    payments_title: 'My Payments',
+    payments_sub: 'Direct Benefit Transfer (DBT) & APMC Procurement Disbursal',
+    total_received: 'Total Received / प्राप्त राशि',
+    pending_payout: 'Pending / प्रक्रिया में',
+    recent_txns: 'Recent Transactions / हाल के लेनदेन',
+    wheat_sale: 'Wheat Sale (Mandi)',
+    mustard_procurement: 'Paddy Procurement',
+    download_voucher: 'Voucher / Receipt',
+    load_more_txns: 'Load Historical Records',
+    completed_badge: 'Completed ✓',
+    pending_badge: 'Processing ⏳',
+    verified_badge: 'Verified & Active',    curr_stage_label: 'Current Stage | वर्तमान चरण',
+    in_mandi_queue: 'In Mandi Queue',
+    in_mandi_queue_sub: 'मंडी कतार में',
+    vehicles_ahead_label: 'Vehicles Ahead<br><span class="text-xs">आगे के वाहन</span>',
+    est_wait_label: 'Est. Wait<br><span class="text-xs">अनुमानित प्रतीक्षा</span>',
+    assigned_gate_label: 'Assigned Gate | आवंटित गेट',
+    crop_lifecycle_title: 'Crop Lifecycle / फसल चक्र',
+    step_slot_booked: 'Slot Booked / स्लॉट बुक',
+    step_gate_entry: 'Gate Entry / गेट एंट्री',
+    step_quality_check: 'Quality Check & Lab Testing / गुणवत्ता जांच',
+    step_weighing_bagging: 'Weighing & Bagging / वजन और भराई',
+    step_receipt_gen: 'Receipt Generation / रसीद',
+    step_payment_disb: 'Payment Disbursement / भुगतान',
+    vehicle_details_label: 'Vehicle Details | वाहन विवरण',
+
+  },
+  hi: {
+    app_title: '<span class="material-symbols-outlined mr-1 align-middle icon-fill">agriculture</span>किसान सेतु',
+    nav_home: 'होम',
+    nav_track: 'ट्रैक',
+    nav_mandis: 'मंडियां',
+    nav_quality: 'गुणवत्ता',
+    nav_payments: 'भुगतान',
+    select_lang_modal: 'भाषा बदलें',
+    sahayak_title: 'किसान सहायक से चैट करें',
+    help_title: 'सहायता केंद्र एवं अक्सर पूछे जाने वाले प्रश्न',
+    login_header_tag: 'आधिकारिक ई-नाम एवं कृषि खरीद पोर्टल',
+    login_title: 'किसान सेतु',
+    login_welcome: 'किसान सेतु में आपका स्वागत है',
+    login_sub: 'अपने पंजीकृत मोबाइल नंबर से लॉगिन करें',
+    login_subtitle: 'एकीकृत मंडी ई-पास एवं न्यूनतम समर्थन मूल्य (MSP) खरीद गेटवे',
+    login_phone_label: 'पंजीकृत मोबाइल नंबर',
+    mobile_label: 'मोबाइल नंबर',
+    login_pass_label: 'सुरक्षा पिन / पासवर्ड',
+    remember_me: 'मुझे याद रखें',
+    forgot_pin: 'पिन भूल गए?',
+    send_otp_btn: 'लॉगिन ओटीपी भेजें',
+    send_otp: 'ओटीपी भेजें',
+    quick_demo_btn: 'त्वरित डेमो लॉगिन (राम सिंह)',
+    direct_demo: 'सीधा डेमो मोड',
+    direct_demo_tag: 'त्वरित प्रवेश',
+    no_account: 'खाता नहीं है?',
+    new_user: 'नए किसान?',
+    register_here: 'नया किसान पंजीकरण करें',
+    register_farmer: 'किसान पंजीकरण',
+    otp_title: 'सुरक्षा ओटीपी सत्यापित करें',
+    verify_otp_title: 'ओटीपी सत्यापन',
+    otp_sub: 'इस नंबर पर भेजा गया 6-अंकों का कोड दर्ज करें',
+    verify_otp_sub: '6 अंकों का सुरक्षा कोड दर्ज करें',
+    verify_otp_btn: 'सत्यापित करें और पोर्टल में प्रवेश करें',
+    verify_login: 'सत्यापित कर लॉगिन करें',
+    autofill_demo_otp: 'डेमो ओटीपी ऑटो-भरें (482910)',
+    fill_demo_otp: 'डेमो ओटीपी भरें',
+    resend_otp: 'ओटीपी पुनः भेजें',
+    didnt_get_otp: 'ओटीपी नहीं मिला?',
+    reg_title: 'किसान पोर्टल पंजीकरण',
+    reg_sub: 'अपनी किसान प्रोफाइल बनाएं',
+    step1_badge: 'चरण 1 / 4 • मूल जानकारी',
+    step2_badge: 'चरण 2 / 4 • आधार प्रमाणीकरण',
+    step3_badge: 'चरण 3 / 4 • भू-अभिलेख एवं भूमि विवरण',
+    step4_badge: 'चरण 4 / 4 • डीबीटी बैंक खाता',
+    step1_title: 'मूल विवरण',
+    step2_title: 'आधार ई-केवाईसी',
+    step3_title: 'भू-अभिलेख',
+    step4_title: 'डीबीटी बैंक',
+    current_step: 'वर्तमान चरण',
+    next_step: 'अगला चरण',
+    full_name_label: 'पूरा नाम (आधार के अनुसार)',
+    full_name: 'पूरा नाम',
+    farmer_id: 'किसान आईडी',
+    farmer_id_hint: 'राज्य कृषि पंजीकरण संख्या',
+    reg_btn: 'पंजीकरण करें एवं आधार जोड़ें',
+    aadhaar_title: 'आधार कार्ड लिंक करें',
+    aadhaar_sub: 'डीबीटी और ई-केवाईसी सत्यापन के लिए आधार प्रमाणीकरण',
+    aadhaar_num_label: '12-अंकों का आधार नंबर',
+    aadhaar_hint: 'यूआईडीएआई द्वारा 256-बिट सुरक्षित',
+    aadhaar_consent: 'मैं ई-केवाईसी एवं भूमि स्वामित्व विवरण प्राप्त करने की सहमति देता हूँ',
+    send_aadhaar_otp_btn: 'यूआईडीएआई ओटीपी से आधार सत्यापित करें',
+    aadhaar_btn: 'आधार सत्यापित करें',
+    skip_aadhaar: 'अभी के लिए छोड़ें',
+    kyc_verified: 'ई-केवाईसी सत्यापित ✓',
+    land_title: 'किसान भूमि विवरण एवं भू-अभिलेख',
+    land_sub: 'राज्य राजस्व रिकॉर्ड (भूमि पोर्टल) से सत्यापित',
+    land_verified_banner: 'भूमि पोर्टल डेटा स्वचालित रूप से लिंक',
+    land_survey_synced: 'सर्वेक्षण एवं भू-स्थानिक सीमा सत्यापित',
+    state_label: 'राज्य',
+    district_label: 'जिला',
+    tehsil_label: 'तहसील / उप-जिला',
+    village_label: 'गांव / ग्राम पंचायत',
+    village_district: 'गांव व जिला',
+    khasra_label: 'खसरा / मुरब्बा / सर्वे नंबर',
+    land_area_label: 'कृषि योग्य कुल भूमि क्षेत्र',
+    cultivable_area: 'कृषि क्षेत्र',
+    unit_label: 'इकाई',
+    ownership_label: 'भूमि स्वामित्व श्रेणी',
+    owner_opt: 'भूमि स्वामी (खातेदार/मालिक)',
+    tenant_opt: 'काश्तकार / पट्टेदार',
+    sharecropper_opt: 'बटाईदार',
+    sown_crop_title: 'इस मौसम में बोई गई फसलें (गिरदावरी रिकॉर्ड)',
+    wheat_sown: 'गेहूं • 3.5 एकड़ बोया गया क्षेत्र',
+    mustard_sown: 'सरसों • 1.0 एकड़ बोया गया क्षेत्र',
+    save_land_btn: 'भूमि विवरण सुरक्षित करें और आगे बढ़ें',
+    dbt_title: 'डीबीटी बैंक खाता विवरण जोड़ें',
+    dbt_acc_title: 'डीबीटी बैंक खाता',
+    dbt_sub: 'सरकारी सब्सिडी और एमएसपी भुगतान सीधे बैंक खाते में',
+    dbt_desc: 'आधार पेमेंट ब्रिज के माध्यम से सीधा हस्तांतरण',
+    account_num_label: 'बैंक खाता संख्या',
+    acc_num: 'खाता संख्या',
+    confirm_acc_label: 'खाता संख्या पुनः दर्ज करें',
+    ifsc_label: 'बैंक आईएफएससी (IFSC) कोड',
+    ifsc_code: 'आईएफएससी कोड',
+    bank_name_label: 'बैंक का नाम',
+    bank_name: 'बैंक नाम',
+    dbt_bank_hint: 'खाता आधार से जुड़ा होना अनिवार्य है',
+    enable_dbt: 'त्वरित डीबीटी भुगतान सूचनाएं सक्षम करें',
+    dbt_consent: 'मैं खरीद समर्थन मूल्य सीधे खाते में जमा करने की अनुमति देता हूँ',
+    save_bank_btn: 'बैंक विवरण सुरक्षित करें और डैशबोर्ड पर जाएं',
+    save_dbt_btn: 'बैंक खाता सुरक्षित करें',
+    dbt_step_title: 'डीबीटी बैंक सत्यापित ✓',
+    dbt_verified_msg: 'आधार पेमेंट ब्रिज सक्रिय',
+    dash_welcome: 'स्वागत है,',
+    greeting: 'राम सिंह जी',
+    dash_sub: 'किसान सेतु स्मार्ट डैशबोर्ड • रबी विपणन सत्र 2026',
+    weather_desc: '28°C साफ मौसम • रबी फसल आवक के लिए मंडियां खुली हैं',
+    quick_actions_title: 'मंडी सेवाएं एवं स्मार्ट स्लॉट बुकिंग',
+    book_slot_action: 'स्मार्ट स्लॉट बुकिंग',
+    book_slot_card: 'स्लॉट बुक करें',
+    book_slot_desc: 'लंबी कतारों से बचें',
+    nearby_mandis_action: 'नजदीकी मंडियां',
+    nearby_mandis_card: 'नजदीकी मंडियां',
+    nearby_mandis_desc: 'लाइव प्रतीक्षा समय और भाव',
+    live_queue_action: 'लाइव कतार ट्रैकर',
+    live_queue_card: 'लाइव कतार',
+    live_queue_desc: 'गेट रडार व वाहन ट्रैकिंग',
+    quality_action: 'गुणवत्ता एवं प्रवाह चार्ट',
+    quality_card: 'गुणवत्ता प्रवाह चार्ट',
+    quality_desc: '6-चरणीय ई-खरीद प्रक्रिया',
+    payments_action: 'मेरे भुगतान',
+    dbt_card: 'डीबीटी भुगतान',
+    mandi_token_action: 'मंडी टोकन पास',
+    land_records_action: 'भू-अभिलेख (भूमि)',
+    dbt_bank_action: 'डीबीटी बैंक खाता',
+    msp_banner_title: 'सरकारी न्यूनतम समर्थन मूल्य (MSP 2026)',
+    current_msp_wheat: 'गेहूं MSP: ₹2,425 / क्विंटल',
+    msp_wheat: 'गेहूं: ₹2,425/क्विंटल',
+    msp_mustard: 'सरसों: ₹5,950/क्विंटल',
+    msp_paddy: 'धान: ₹2,320/क्विंटल',
+    msp_gram: 'चना: ₹5,650/क्विंटल',
+    msp_click_sub: 'विस्तृत विवरण के लिए क्लिक करें',
+    mandis_dir_title: 'नजदीकी अनाज मंडियां',
+    search_mandis_placeholder: 'मंडी का नाम, जिला या फसल खोजें...',
+    slot_booking_title: 'स्मार्ट स्लॉट बुकिंग',
+    slot_booking_sub: 'मंडी, पसंदीदा तारीख और समय स्लॉट चुनें',
+    book_step1_label: '1. मंडी केंद्र चुनें',
+    book_step2_label: '2. आगमन की तारीख चुनें',
+    book_step3_label: '3. फसल एवं मात्रा चुनें',
+    book_step4_label: '4. समय स्लॉट चुनें',
+    select_mandi_label: 'गंतव्य अनाज मंडी चुनें',
+    select_crop_label: 'फसल का चयन करें',
+    crop_qty_label: 'फसल की मात्रा (क्विंटल में)',
+    qty_label: 'मात्रा (क्विंटल)',
+    select_slot_label: 'आगमन समय स्लॉट चुनें',
+    confirm_booking_btn: 'बुकिंग पक्की करें और ई-टोकन जनरेट करें',
+    booking_confirmed_title: 'स्लॉट पक्का हो गया!',
+    mandi_pass_title: 'सक्रिय मंडी गेट पास (टोकन पर्ची)',
+    mandi_pass_sub: 'क्यूआर कोड सहित फास्ट-ट्रैक वाहन प्रवेश पास',
+    token_pass_ready: 'डिजिटल मंडी गेट पास तैयार है',
+    token_num_label: 'टोकन संख्या',
+    farmer_name_label: 'किसान का नाम',
+    mandi_name_label: 'गंतव्य मंडी केंद्र',
+    entry_gate_label: 'निर्धारित प्रवेश गेट',
+    mandi_yard_label: 'निर्धारित गेट एवं लेन',
+    arrival_date_label: 'आगमन तारीख',
+    time_slot_label: 'समय स्लॉट',
+    reporting_slot_label: 'उपस्थिति समय स्लॉट',
+    crop_label: 'फसल एवं मात्रा',
+    est_payout_label: 'अनुमानित डीबीटी भुगतान',
+    print_pass_btn: 'प्रिंट / डाउनलोड पर्ची (PDF)',
+    track_queue_btn: 'लाइव कतार ट्रैक करें',
+    scan_gate_hint: 'गेट 2 स्कैनर पर क्यूआर कोड दिखाएं ताकि बूम बैरियर स्वतः खुल जाए',
+    tracker_title: 'लाइव कतार ट्रैकर',
+    token_vehicle_pos: 'करनाल अनाज मंडी • गेट नं 2 (धर्मकांटा WB-E04)',
+    queue_pos_label: 'आपकी स्थिति',
+    ahead_label: 'आगे वाहन',
+    wait_label: 'अनुमानित प्रतीक्षा समय',
+    yard_cap_label: 'यार्ड क्षमता',
+    lane_g1: 'गेट 1: भारी ट्रक लेन',
+    lane_g2: 'गेट 2: ट्रैक्टर-ट्रॉली (आपकी लेन)',
+    lane_g3: 'गेट 3: पिकअप व छोटे वाहन',
+    live_stream_title: 'लाइव वाहन कतार क्रम',
+    sim_advance_btn: 'सिमुलेशन आगे बढ़ाएं (अगला वाहन)',
+    print_gate_pass: 'गेट पास देखें और प्रिंट करें (PDF)',
+    view_route_map: 'नक्शे पर गेट 2 का रास्ता देखें',
+    quality_title: 'खरीद लॉट संख्या #8902A',
+    quality_sub: 'गेहूं खरीद • करनाल अनाज मंडी (यार्ड 4)',
+    flow_chart_title: 'गुणवत्ता एवं वजन परीक्षण प्रवाह चार्ट',
+    flow_chart_sub: 'मानक 6-चरणीय कृषि उपज ई-खरीद प्रक्रिया',
+    stage1_title: 'वाहन प्रवेश एवं सकल इलेक्ट्रॉनिक तौल',
+    stage1_desc: 'ट्रैक्टर-ट्रॉली HR-05-AB-7812 का धर्मकांटा WB-E04 पर वजन',
+    stage2_title: 'डिजिटल लैब अनाज नमूना एवं गुणवत्ता जांच',
+    stage2_desc: 'स्वचालित प्रोब से नमी, कचरा व दाने का परीक्षण पूर्ण (ग्रेड-ए पास)',
+    stage3_title: 'फसल अनलोडिंग एवं खाली वाहन तौल (टेयर)',
+    stage3_desc: 'यार्ड बे 4 में अनलोडिंग • खाली वाहन वजन: 12.10 क्विंटल',
+    stage4_title: 'मानकीकृत बोरियां एवं शुद्ध देय वजन',
+    stage4_desc: '125 मानक जूट बोरियां (40 किग्रा प्रत्येक • अंतिम वजन 50.00 क्विंटल)',
+    stage5_title: 'जे-फॉर्म (Form J) डिजिटल प्रमाणन एवं हस्ताक्षर',
+    stage5_desc: 'कृषि उपज मंडी समिति गुणवत्ता निरीक्षक द्वारा सत्यापित',
+    stage6_title: 'पीएफएमएस डीबीटी सीधा बैंक खाता भुगतान',
+    stage6_desc: '₹ 1,21,250.00 का सीधा हस्तांतरण एसबीआई खाते (XXXX-5678) में जारी',
+    view_jform_btn: 'जे-फॉर्म प्रमाणपत्र देखें और प्रिंट करें',
+    call_mandi_support: 'मंडी सहायता हेल्पलाइन पर कॉल करें (1800-180-1551)',
+    payments_title: 'मेरे भुगतान',
+    payments_sub: 'प्रत्यक्ष लाभ अंतरण (डीबीटी) एवं मंडी खरीद भुगतान',
+    total_received: 'कुल प्राप्त राशि (इस सीजन)',
+    pending_payout: 'प्रक्रियाधीन भुगतान',
+    recent_txns: 'हाल के लेनदेन रिकॉर्ड',
+    wheat_sale: 'गेहूं की बिक्री (मंडी)',
+    mustard_procurement: 'धान खरीद (मंडी)',
+    download_voucher: 'रसीद / वाउचर',
+    load_more_txns: 'पिछले रिकॉर्ड देखें',
+    completed_badge: 'पूर्ण ✓',
+    pending_badge: 'प्रक्रियाधीन ⏳',
+    verified_badge: 'सत्यापित एवं सक्रिय',    curr_stage_label: 'वर्तमान चरण',
+    in_mandi_queue: 'मंडी कतार में',
+    in_mandi_queue_sub: 'कतार स्थिति सक्रिय',
+    vehicles_ahead_label: 'आगे के वाहन',
+    est_wait_label: 'अनुमानित प्रतीक्षा',
+    assigned_gate_label: 'आवंटित गेट',
+    crop_lifecycle_title: 'फसल चक्र एवं प्रगति',
+    step_slot_booked: 'स्लॉट बुक (पूर्ण)',
+    step_gate_entry: 'गेट एंट्री (प्रक्रिया में)',
+    step_quality_check: 'गुणवत्ता जांच एवं लैब परीक्षण',
+    step_weighing_bagging: 'वजन एवं बोरी भराई',
+    step_receipt_gen: 'रसीद (जे-फॉर्म) उत्पादन',
+    step_payment_disb: 'डीबीटी भुगतान वितरण',
+    vehicle_details_label: 'वाहन विवरण',
+
+  },
+  pa: {
+    app_title: '<span class="material-symbols-outlined mr-1 align-middle icon-fill">agriculture</span>ਕਿਸਾਨ ਸੇਤੂ',
+    nav_home: 'ਹੋਮ',
+    nav_track: 'ਟ੍ਰੈਕ',
+    nav_mandis: 'ਮੰਡੀਆਂ',
+    nav_quality: 'ਗੁਣਵੱਤਾ',
+    nav_payments: 'ਭੁਗਤਾਨ',
+    select_lang_modal: 'ਭਾਸ਼ਾ ਬਦਲੋ',
+    sahayak_title: 'ਕਿਸਾਨ ਸਹਾਇਕ ਨਾਲ ਗੱਲ ਕਰੋ',
+    help_title: 'ਸਹਾਇਤਾ ਕੇਂਦਰ ਅਤੇ ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ',
+    login_header_tag: 'ਅਧਿਕਾਰਤ ਈ-ਨਾਮ ਅਤੇ ਮੰਡੀ ਖਰੀਦ ਪੋਰਟਲ',
+    login_title: 'ਕਿਸਾਨ ਸੇਤੂ',
+    login_welcome: 'ਕਿਸਾਨ ਸੇਤੂ ਵਿੱਚ ਤੁਹਾਡਾ ਸਵਾਗਤ ਹੈ',
+    login_sub: 'ਆਪਣੇ ਰਜਿਸਟਰਡ ਮੋਬਾਈਲ ਨੰਬਰ ਨਾਲ ਲੌਗਇਨ ਕਰੋ',
+    login_subtitle: 'ਏਕੀਕ੍ਰਿਤ ਮੰਡੀ ਈ-ਪਾਸ ਅਤੇ ਐਮ.ਐਸ.ਪੀ ਖਰੀਦ ਗੇਟਵੇ',
+    login_phone_label: 'ਰਜਿਸਟਰਡ ਮੋਬਾਈਲ ਨੰਬਰ',
+    mobile_label: 'ਮੋਬਾਈਲ ਨੰਬਰ',
+    login_pass_label: 'ਸੁਰੱਖਿਆ ਪਿੰਨ / ਪਾਸਵਰਡ',
+    remember_me: 'ਮੈਨੂੰ ਯਾਦ ਰੱਖੋ',
+    forgot_pin: 'ਪਿੰਨ ਭੁੱਲ ਗਏ?',
+    send_otp_btn: 'ਲਾਗਇਨ ਓ.ਟੀ.ਪੀ ਭੇਜੋ',
+    send_otp: 'ਓ.ਟੀ.ਪੀ ਭੇਜੋ',
+    quick_demo_btn: 'ਤੁਰੰਤ ਡੈਮੋ ਲਾਗਇਨ (ਰਾਮ ਸਿੰਘ)',
+    direct_demo: 'ਸਿੱਧਾ ਡੈਮੋ ਮੋਡ',
+    direct_demo_tag: 'ਤੁਰੰਤ ਪਹੁੰਚ',
+    no_account: 'ਖਾਤਾ ਨਹੀਂ ਹੈ?',
+    new_user: 'ਨਵੇਂ ਕਿਸਾਨ?',
+    register_here: 'ਨਵਾਂ ਕਿਸਾਨ ਰਜਿਸਟਰ ਕਰੋ',
+    register_farmer: 'ਕਿਸਾਨ ਰਜਿਸਟ੍ਰੇਸ਼ਨ',
+    otp_title: 'ਸੁਰੱਖਿਆ ਓ.ਟੀ.ਪੀ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ',
+    verify_otp_title: 'ਓ.ਟੀ.ਪੀ ਪ੍ਰਮਾਣੀਕਰਨ',
+    otp_sub: 'ਇਸ ਨੰਬਰ ਤੇ ਭੇਜਿਆ 6-ਅੰਕਾਂ ਦਾ ਕੋਡ ਦਾਖਲ ਕਰੋ',
+    verify_otp_sub: '6 ਅੰਕਾਂ ਦਾ ਕੋਡ ਦਾਖਲ ਕਰੋ',
+    verify_otp_btn: 'ਪੁਸ਼ਟੀ ਕਰੋ ਅਤੇ ਪੋਰਟਲ ਵਿੱਚ ਦਾਖਲ ਹੋਵੋ',
+    verify_login: 'ਪੁਸ਼ਟੀ ਕਰਕੇ ਲੌਗਇਨ ਕਰੋ',
+    autofill_demo_otp: 'ਡੈਮੋ ਓ.ਟੀ.ਪੀ ਆਟੋ-ਭਰੋ (482910)',
+    fill_demo_otp: 'ਡੈਮੋ ਓ.ਟੀ.ਪੀ ਭਰੋ',
+    resend_otp: 'ਓ.ਟੀ.ਪੀ ਦੁਬਾਰਾ ਭੇਜੋ',
+    didnt_get_otp: 'ਕੋਡ ਨਹੀਂ ਮਿਲਿਆ?',
+    reg_title: 'ਕਿਸਾਨ ਪੋਰਟਲ ਰਜਿਸਟ੍ਰੇਸ਼ਨ',
+    reg_sub: 'ਆਪਣੀ ਕਿਸਾਨ ਪ੍ਰੋਫਾਈਲ ਬਣਾਓ',
+    step1_badge: 'ਕਦਮ 1 / 4 • ਮੁੱਢਲੀ ਜਾਣਕਾਰੀ',
+    step2_badge: 'ਕਦਮ 2 / 4 • ਆਧਾਰ ਲਿੰਕਿੰਗ',
+    step3_badge: 'ਕਦਮ 3 / 4 • ਜ਼ਮੀਨ ਦਾ ਵੇਰਵਾ',
+    step4_badge: 'ਕਦਮ 4 / 4 • ਡੀ.ਬੀ.ਟੀ ਬੈਂਕ ਖਾਤਾ',
+    step1_title: 'ਮੁੱਢਲੇ ਵੇਰਵੇ',
+    step2_title: 'ਆਧਾਰ ਈ-ਕੇਵਾਈਸੀ',
+    step3_title: 'ਜ਼ਮੀਨੀ ਰਿਕਾਰਡ',
+    step4_title: 'ਡੀ.ਬੀ.ਟੀ ਬੈਂਕ',
+    current_step: 'ਮੌਜੂਦਾ ਕਦਮ',
+    next_step: 'ਅਗਲਾ ਕਦਮ',
+    full_name_label: 'ਪੂਰਾ ਨਾਮ (ਆਧਾਰ ਅਨੁਸਾਰ)',
+    full_name: 'ਪੂਰਾ ਨਾਮ',
+    farmer_id: 'ਕਿਸਾਨ ਆਈਡੀ',
+    farmer_id_hint: 'ਰਾਜ ਖੇਤੀਬਾੜੀ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਆਈਡੀ',
+    reg_btn: 'ਰਜਿਸਟਰ ਕਰੋ ਅਤੇ ਆਧਾਰ ਜੋੜੋ',
+    aadhaar_title: 'ਆਧਾਰ ਕਾਰਡ ਲਿੰਕ ਕਰੋ',
+    aadhaar_sub: 'ਸਿੱਧੇ ਲਾਭ ਟ੍ਰਾਂਸਫਰ (DBT) ਲਈ ਆਧਾਰ ਪ੍ਰਮਾਣੀਕਰਨ',
+    aadhaar_num_label: '12-ਅੰਕਾਂ ਦਾ ਆਧਾਰ ਨੰਬਰ',
+    aadhaar_hint: 'UIDAI ਦੁਆਰਾ ਸੁਰੱਖਿਅਤ',
+    aadhaar_consent: 'ਮੈਂ ਈ-ਕੇਵਾਈਸੀ ਅਤੇ ਜ਼ਮੀਨ ਦੇ ਵੇਰਵੇ ਲੈਣ ਦੀ ਸਹਿਮਤੀ ਦਿੰਦਾ ਹਾਂ',
+    send_aadhaar_otp_btn: 'UIDAI ਓ.ਟੀ.ਪੀ ਨਾਲ ਆਧਾਰ ਪ੍ਰਮਾਣਿਤ ਕਰੋ',
+    aadhaar_btn: 'ਆਧਾਰ ਪੁਸ਼ਟੀ ਕਰੋ',
+    skip_aadhaar: 'ਹੁਣ ਲਈ ਛੱਡੋ',
+    kyc_verified: 'ਈ-ਕੇਵਾਈਸੀ ਪ੍ਰਮਾਣਿਤ ✓',
+    land_title: 'ਕਿਸਾਨ ਜ਼ਮੀਨ ਦੇ ਰਿਕਾਰਡ',
+    land_sub: 'ਰਾਜ ਮਾਲੀਆ ਰਿਕਾਰਡ (ਭੂਮੀ ਪੋਰਟਲ) ਨਾਲ ਪ੍ਰਮਾਣਿਤ',
+    land_verified_banner: 'ਭੂਮੀ ਪੋਰਟਲ ਡਾਟਾ ਲਿੰਕ ਹੈ',
+    land_survey_synced: 'ਸਰਵੇਖਣ ਅਤੇ ਸੀਮਾਵਾਂ ਪ੍ਰਮਾਣਿਤ',
+    state_label: 'ਰਾਜ',
+    district_label: 'ਜ਼ਿਲ੍ਹਾ',
+    tehsil_label: 'ਤਹਿਸੀਲ',
+    village_label: 'ਪਿੰਡ / ਗ੍ਰਾਮ ਪੰਚਾਇਤ',
+    village_district: 'ਪਿੰਡ ਅਤੇ ਜ਼ਿਲ੍ਹਾ',
+    khasra_label: 'ਖਸਰਾ / ਮੁਰੱਬਾ / ਸਰਵੇ ਨੰਬਰ',
+    land_area_label: 'ਕਾਸ਼ਤਯੋਗ ਕੁੱਲ ਜ਼ਮੀਨ ਰਕਬਾ',
+    cultivable_area: 'ਖੇਤੀਬਾੜੀ ਰਕਬਾ',
+    unit_label: 'ਇਕਾਈ',
+    ownership_label: 'ਜ਼ਮੀਨ ਦੀ ਮਲਕੀਅਤ ਦੀ ਕਿਸਮ',
+    owner_opt: 'ਜ਼ਮੀਨ ਮਾਲਕ (ਖਾਤਾਧਾਰਕ)',
+    tenant_opt: 'ਕਾਸ਼ਤਕਾਰ',
+    sharecropper_opt: 'ਬਟਾਈਦਾਰ',
+    sown_crop_title: 'ਇਸ ਸੀਜ਼ਨ ਦੀਆਂ ਬੀਜੀਆਂ ਫਸਲਾਂ (ਗਿਰਦਾਵਰੀ)',
+    wheat_sown: 'ਕਣਕ • 3.5 ਏਕੜ ਬੀਜਿਆ ਰਕਬਾ',
+    mustard_sown: 'ਸਰ੍ਹੋਂ • 1.0 ਏਕੜ ਬੀਜਿਆ ਰਕਬਾ',
+    save_land_btn: 'ਜ਼ਮੀਨ ਦਾ ਵੇਰਵਾ ਸੁਰੱਖਿਅਤ ਕਰੋ ਅਤੇ ਅੱਗੇ ਵਧੋ',
+    dbt_title: 'ਡੀ.ਬੀ.ਟੀ ਬੈਂਕ ਖਾਤਾ ਸੈੱਟਅੱਪ',
+    dbt_acc_title: 'ਡੀ.ਬੀ.ਟੀ ਬੈਂਕ ਖਾਤਾ',
+    dbt_sub: 'ਸਰਕਾਰੀ ਸਬਸਿਡੀ ਅਤੇ ਐਮ.ਐਸ.ਪੀ ਭੁਗਤਾਨ ਸਿੱਧੇ ਖਾਤੇ ਵਿੱਚ',
+    dbt_desc: 'ਆਧਾਰ ਪੇਮੈਂਟ ਬ੍ਰਿਜ ਰਾਹੀਂ ਸਿੱਧਾ ਭੁਗਤਾਨ',
+    account_num_label: 'ਬੈਂਕ ਖਾਤਾ ਨੰਬਰ',
+    acc_num: 'ਖਾਤਾ ਨੰਬਰ',
+    confirm_acc_label: 'ਖਾਤਾ ਨੰਬਰ ਦੁਬਾਰਾ ਦਰਜ ਕਰੋ',
+    ifsc_label: 'ਬੈਂਕ IFSC ਕੋਡ',
+    ifsc_code: 'IFSC ਕੋਡ',
+    bank_name_label: 'ਬੈਂਕ ਦਾ ਨਾਮ',
+    bank_name: 'ਬੈਂਕ ਦਾ ਨਾਮ',
+    dbt_bank_hint: 'ਖਾਤਾ ਆਧਾਰ ਨਾਲ ਲਿੰਕ ਹੋਣਾ ਜ਼ਰੂਰੀ ਹੈ',
+    enable_dbt: 'ਡੀ.ਬੀ.ਟੀ ਭੁਗਤਾਨ ਸੂਚਨਾਵਾਂ ਚਾਲੂ ਕਰੋ',
+    dbt_consent: 'ਮੈਂ ਐਮ.ਐਸ.ਪੀ ਫੰਡ ਸਿੱਧੇ ਖਾਤੇ ਵਿੱਚ ਪਾਉਣ ਦੀ ਮਨਜ਼ੂਰੀ ਦਿੰਦਾ ਹਾਂ',
+    save_bank_btn: 'ਬੈਂਕ ਵੇਰਵਾ ਸੇਵ ਕਰੋ ਅਤੇ ਡੈਸ਼ਬੋਰਡ ਤੇ ਜਾਓ',
+    save_dbt_btn: 'ਬੈਂਕ ਖਾਤਾ ਸੁਰੱਖਿਅਤ ਕਰੋ',
+    dbt_step_title: 'ਡੀ.ਬੀ.ਟੀ ਬੈਂਕ ਪ੍ਰਮਾਣਿਤ ✓',
+    dbt_verified_msg: 'ਆਧਾਰ ਪੇਮੈਂਟ ਬ੍ਰਿਜ ਐਕਟਿਵ',
+    dash_welcome: 'ਜੀ ਆਇਆਂ ਨੂੰ,',
+    greeting: 'ਰਾਮ ਸਿੰਘ ਜੀ',
+    dash_sub: 'ਕਿਸਾਨ ਸੇਤੂ ਸਮਾਰਟ ਡੈਸ਼ਬੋਰਡ • ਸੀਜ਼ਨ 2026',
+    weather_desc: '28°C ਸਾਫ਼ ਮੌਸਮ • ਹਾੜ੍ਹੀ ਫਸਲ ਲਈ ਮੰਡੀਆਂ ਖੁੱਲ੍ਹੀਆਂ ਹਨ',
+    quick_actions_title: 'ਮੰਡੀ ਸੇਵਾਵਾਂ ਅਤੇ ਬੁਕਿੰਗ',
+    book_slot_action: 'ਸਮਾਰਟ ਸਲਾਟ ਬੁਕਿੰਗ',
+    book_slot_card: 'ਸਲਾਟ ਬੁੱਕ ਕਰੋ',
+    book_slot_desc: 'ਲੰਬੀਆਂ ਲਾਈਨਾਂ ਤੋਂ ਬਚੋ',
+    nearby_mandis_action: 'ਨੇੜਲੀਆਂ ਮੰਡੀਆਂ',
+    nearby_mandis_card: 'ਨੇੜਲੀਆਂ ਮੰਡੀਆਂ',
+    nearby_mandis_desc: 'ਲਾਈਵ ਉਡੀਕ ਸਮਾਂ ਅਤੇ ਭਾਵ',
+    live_queue_action: 'ਲਾਈਵ ਕਤਾਰ ਟਰੈਕਰ',
+    live_queue_card: 'ਲਾਈਵ ਕਤਾਰ',
+    live_queue_desc: 'ਗੇਟ ਰਡਾਰ ਅਤੇ ਵਾਹਨ ਟਰੈਕਿੰਗ',
+    quality_action: 'ਗੁਣਵੱਤਾ ਅਤੇ ਫਲੋ ਚਾਰਟ',
+    quality_card: 'ਗੁਣਵੱਤਾ ਫਲੋ ਚਾਰਟ',
+    quality_desc: '6-ਪੜਾਵੀ ਈ-ਖਰੀਦ ਪ੍ਰਕਿਰਿਆ',
+    payments_action: 'ਮੇਰੇ ਭੁਗਤਾਨ',
+    dbt_card: 'ਡੀ.ਬੀ.ਟੀ ਭੁਗਤਾਨ',
+    mandi_token_action: 'ਮੰਡੀ ਟੋਕਨ ਪਾਸ',
+    land_records_action: 'ਜ਼ਮੀਨ ਦੇ ਰਿਕਾਰਡ',
+    dbt_bank_action: 'ਡੀ.ਬੀ.ਟੀ ਬੈਂਕ ਸੈਟਅੱਪ',
+    msp_banner_title: 'ਸਰਕਾਰੀ ਐਮ.ਐਸ.ਪੀ ਰੇਟ (2026)',
+    current_msp_wheat: 'ਕਣਕ MSP: ₹2,425 / ਕੁਇੰਟਲ',
+    msp_wheat: 'ਕਣਕ: ₹2,425/ਕੁਇੰਟਲ',
+    msp_mustard: 'ਸਰ੍ਹੋਂ: ₹5,950/ਕੁਇੰਟਲ',
+    msp_paddy: 'ਝੋਨਾ: ₹2,320/ਕੁਇੰਟਲ',
+    msp_gram: 'ਛੋਲੇ: ₹5,650/ਕੁਇੰਟਲ',
+    msp_click_sub: 'ਵੇਰਵੇ ਲਈ ਕਲਿੱਕ ਕਰੋ',
+    mandis_dir_title: 'ਨੇੜਲੀਆਂ ਅਨਾਜ ਮੰਡੀਆਂ',
+    search_mandis_placeholder: 'ਮੰਡੀ ਦਾ ਨਾਮ, ਜ਼ਿਲ੍ਹਾ ਜਾਂ ਫਸਲ ਖੋਜੋ...',
+    slot_booking_title: 'ਸਮਾਰਟ ਸਲਾਟ ਬੁਕਿੰਗ',
+    slot_booking_sub: 'ਮੰਡੀ, ਮਿਤੀ ਅਤੇ ਸਮਾਂ ਸਲਾਟ ਚੁਣੋ',
+    book_step1_label: '1. ਮੰਡੀ ਕੇਂਦਰ ਚੁਣੋ',
+    book_step2_label: '2. ਪਹੁੰਚਣ ਦੀ ਮਿਤੀ ਚੁਣੋ',
+    book_step3_label: '3. ਫਸਲ ਅਤੇ ਮਾਤਰਾ ਚੁਣੋ',
+    book_step4_label: '4. ਸਮਾਂ ਸਲਾਟ ਚੁਣੋ',
+    select_mandi_label: 'ਮੰਜ਼ਿਲ ਅਨਾਜ ਮੰਡੀ ਚੁਣੋ',
+    select_crop_label: 'ਫਸਲ ਦੀ ਚੋਣ ਕਰੋ',
+    crop_qty_label: 'ਫਸਲ ਦੀ ਮਾਤਰਾ (ਕੁਇੰਟਲ ਵਿੱਚ)',
+    qty_label: 'ਮਾਤਰਾ (ਕੁਇੰਟਲ)',
+    select_slot_label: 'ਪਹੁੰਚਣ ਦਾ ਸਮਾਂ ਸਲਾਟ ਚੁਣੋ',
+    confirm_booking_btn: 'ਬੁਕਿੰਗ ਪੱਕੀ ਕਰੋ ਅਤੇ ਟੋਕਨ ਬਣਾਓ',
+    booking_confirmed_title: 'ਸਲਾਟ ਬੁਕਿੰਗ ਪੱਕੀ!',
+    mandi_pass_title: 'ਐਕਟਿਵ ਮੰਡੀ ਗੇਟ ਪਾਸ (ਟੋਕਨ)',
+    mandi_pass_sub: 'QR ਕੋਡ ਵਾਲਾ ਤੇਜ਼ ਵਾਹਨ ਐਂਟਰੀ ਪਾਸ',
+    token_pass_ready: 'ਡਿਜੀਟਲ ਮੰਡੀ ਗੇਟ ਪਾਸ ਤਿਆਰ ਹੈ',
+    token_num_label: 'ਟੋਕਨ ਨੰਬਰ',
+    farmer_name_label: 'ਕਿਸਾਨ ਦਾ ਨਾਮ',
+    mandi_name_label: 'ਮੰਜ਼ਿਲ ਮੰਡੀ ਕੇਂਦਰ',
+    entry_gate_label: 'ਨਿਰਧਾਰਤ ਐਂਟਰੀ ਗੇਟ',
+    mandi_yard_label: 'ਨਿਰਧਾਰਤ ਗੇਟ ਅਤੇ ਲੇਨ',
+    arrival_date_label: 'ਪਹੁੰਚਣ ਦੀ ਮਿਤੀ',
+    time_slot_label: 'ਸਮਾਂ ਸਲਾਟ',
+    reporting_slot_label: 'ਹਾਜ਼ਰੀ ਸਮਾਂ ਸਲਾਟ',
+    crop_label: 'ਫਸਲ ਅਤੇ ਮਾਤਰਾ',
+    est_payout_label: 'ਅਨੁਮਾਨਿਤ ਡੀ.ਬੀ.ਟੀ ਭੁਗਤਾਨ',
+    print_pass_btn: 'ਪ੍ਰਿੰਟ / ਡਾਊਨਲੋਡ ਪਰਚੀ (PDF)',
+    track_queue_btn: 'ਲਾਈਵ ਕਤਾਰ ਟ੍ਰੈਕ ਕਰੋ',
+    scan_gate_hint: 'ਗੇਟ 2 ਸਕੈਨਰ ਤੇ QR ਕੋਡ ਦਿਖਾਓ',
+    tracker_title: 'ਲਾਈਵ ਕਤਾਰ ਟਰੈਕਰ',
+    token_vehicle_pos: 'ਕਰਨਾਲ ਅਨਾਜ ਮੰਡੀ • ਗੇਟ 2 (ਕੰਡਾ WB-E04)',
+    queue_pos_label: 'ਤੁਹਾਡਾ ਨੰਬਰ',
+    ahead_label: 'ਅੱਗੇ ਗੱਡੀਆਂ',
+    wait_label: 'ਅਨੁਮਾਨਿਤ ਉਡੀਕ ਸਮਾਂ',
+    yard_cap_label: 'ਯਾਰਡ ਸਮਰੱਥਾ',
+    lane_g1: 'ਗੇਟ 1: ਭਾਰੇ ਟਰੱਕ',
+    lane_g2: 'ਗੇਟ 2: ਟਰੈਕਟਰ-ਟਰਾਲੀ (ਤੁਹਾਡੀ ਲੇਨ)',
+    lane_g3: 'ਗੇਟ 3: ਪਿਕਅੱਪ ਵਾਹਨ',
+    live_stream_title: 'ਰੀਅਲ-ਟਾਈਮ ਵਾਹਨ ਕਤਾਰ',
+    sim_advance_btn: 'ਸਿਮੂਲੇਸ਼ਨ ਅੱਗੇ ਵਧਾਓ',
+    print_gate_pass: 'ਗੇਟ ਪਾਸ ਦੇਖੋ ਅਤੇ ਪ੍ਰਿੰਟ ਕਰੋ',
+    view_route_map: 'ਨਕਸ਼ੇ ਤੇ ਗੇਟ 2 ਦਾ ਰਸਤਾ ਦੇਖੋ',
+    quality_title: 'ਖਰੀਦ ਲਾਟ ਨੰਬਰ #8902A',
+    quality_sub: 'ਕਣਕ ਦੀ ਖਰੀਦ • ਕਰਨਾਲ ਅਨਾਜ ਮੰਡੀ',
+    flow_chart_title: 'ਗੁਣਵੱਤਾ ਅਤੇ ਤੋਲ ਫਲੋ ਚਾਰਟ',
+    flow_chart_sub: 'ਮਿਆਰੀ 6-ਪੜਾਵੀ ਈ-ਖਰੀਦ ਪਾਈਪਲਾਈਨ',
+    stage1_title: 'ਵਾਹਨ ਐਂਟਰੀ ਅਤੇ ਕੁੱਲ ਤੋਲ',
+    stage1_desc: 'ਟਰੈਕਟਰ-ਟਰਾਲੀ ਦਾ ਧਰਮਕੰਡੇ WB-E04 ਤੇ ਤੋਲ',
+    stage2_title: 'ਡਿਜੀਟਲ ਲੈਬ ਸੈਂਪਲਿੰਗ ਅਤੇ ਗੁਣਵੱਤਾ ਜਾਂਚ',
+    stage2_desc: 'ਸਵੈਚਾਲਿਤ ਨਮੂਨਾ ਟੈਸਟ ਅਤੇ ਗ੍ਰੇਡ-ਏ ਪਾਸ',
+    stage3_title: 'ਫਸਲ ਅਨਲੋਡਿੰਗ ਅਤੇ ਖਾਲੀ ਵਾਹਨ ਤੋਲ',
+    stage3_desc: 'ਯਾਰਡ ਬੇ 4 ਤੇ ਖਾਲੀ ਵਾਹਨ ਦਾ ਵਜ਼ਨ: 12.10 ਕੁਇੰਟਲ',
+    stage4_title: 'ਮਿਆਰੀ ਬੋਰੀਆਂ ਅਤੇ ਸ਼ੁੱਧ ਵਜ਼ਨ',
+    stage4_desc: '125 ਮਿਆਰੀ ਬੋਰੀਆਂ (ਅੰਤਿਮ ਵਜ਼ਨ 50.00 ਕੁਇੰਟਲ)',
+    stage5_title: 'ਜੇ-ਫਾਰਮ (Form J) ਡਿਜੀਟਲ ਸਰਟੀਫਿਕੇਸ਼ਨ',
+    stage5_desc: 'ਮੰਡੀ ਕਮੇਟੀ ਗੁਣਵੱਤਾ ਇੰਸਪੈਕਟਰ ਵੱਲੋਂ ਪ੍ਰਮਾਣਿਤ',
+    stage6_title: 'PFMS ਡੀ.ਬੀ.ਟੀ ਸਿੱਧਾ ਬੈਂਕ ਭੁਗਤਾਨ',
+    stage6_desc: '₹ 1,21,250.00 ਸਿੱਧਾ ਐਸ.ਬੀ.ਆਈ ਖਾਤੇ ਵਿੱਚ ਭੇਜਿਆ ਜਾ ਰਿਹਾ ਹੈ',
+    view_jform_btn: 'ਜੇ-ਫਾਰਮ ਸਰਟੀਫਿਕੇਟ ਦੇਖੋ ਅਤੇ ਪ੍ਰਿੰਟ ਕਰੋ',
+    call_mandi_support: 'ਮੰਡੀ ਹੈਲਪਲਾਈਨ ਤੇ ਕਾਲ ਕਰੋ (1800-180-1551)',
+    payments_title: 'ਮੇਰੇ ਭੁਗਤਾਨ',
+    payments_sub: 'ਸਿੱਧਾ ਲਾਭ ਟ੍ਰਾਂਸਫਰ (DBT) ਅਤੇ ਮੰਡੀ ਭੁਗਤਾਨ',
+    total_received: 'ਕੁੱਲ ਪ੍ਰਾਪਤ ਰਕਮ',
+    pending_payout: 'ਪੈਂਡਿੰਗ ਭੁਗਤਾਨ',
+    recent_txns: 'ਹਾਲੀਆ ਲੈਣ-ਦੇਣ',
+    wheat_sale: 'ਕਣਕ ਦੀ ਵਿਕਰੀ (ਮੰਡੀ)',
+    mustard_procurement: 'ਝੋਨੇ ਦੀ ਖਰੀਦ (ਮੰਡੀ)',
+    download_voucher: 'ਰਸੀਦ / ਵਾਊਚਰ',
+    load_more_txns: 'ਪੁਰਾਣੇ ਰਿਕਾਰਡ ਦੇਖੋ',
+    completed_badge: 'ਮੁਕੰਮਲ ✓',
+    pending_badge: 'ਪ੍ਰਕਿਰਿਆ ਅਧੀਨ ⏳',
+    verified_badge: 'ਪ੍ਰਮਾਣਿਤ ਅਤੇ ਸਰਗਰਮ',    curr_stage_label: 'ਮੌਜੂਦਾ ਪੜਾਅ',
+    in_mandi_queue: 'ਮੰਡੀ ਕਤਾਰ ਵਿੱਚ',
+    in_mandi_queue_sub: 'ਕਤਾਰ ਸਥਿਤੀ ਸਰਗਰਮ',
+    vehicles_ahead_label: 'ਅੱਗੇ ਦੇ ਵਾਹਨ',
+    est_wait_label: 'ਅਨੁਮਾਨਿਤ ਉਡੀਕ',
+    assigned_gate_label: 'ਨਿਰਧਾਰਤ ਗੇਟ',
+    crop_lifecycle_title: 'ਫਸਲ ਚੱਕਰ ਅਤੇ ਤਰੱਕੀ',
+    step_slot_booked: 'ਸਲਾਟ ਬੁੱਕ (ਮੁਕੰਮਲ)',
+    step_gate_entry: 'ਗੇਟ ਐਂਟਰੀ (ਜਾਰੀ)',
+    step_quality_check: 'ਗੁਣਵੱਤਾ ਜਾਂਚ ਅਤੇ ਲੈਬ ਟੈਸਟਿੰਗ',
+    step_weighing_bagging: 'ਤੋਲ ਅਤੇ ਬੋਰੀ ਭਰਾਈ',
+    step_receipt_gen: 'ਰਸੀਦ ਉਤਪਾਦਨ',
+    step_payment_disb: 'ਡੀ.ਬੀ.ਟੀ ਭੁਗਤਾਨ ਵੰਡ',
+    vehicle_details_label: 'ਵਾਹਨ ਵੇਰਵਾ',
+
+  },
+  mr: {
+    app_title: '<span class="material-symbols-outlined mr-1 align-middle icon-fill">agriculture</span>किसान सेतू',
+    nav_home: 'होम',
+    nav_track: 'ट्रॅक',
+    nav_mandis: 'बाजार',
+    nav_quality: 'गुणवत्ता',
+    nav_payments: 'पेमेंट',
+    select_lang_modal: 'भाषा बदला',
+    sahayak_title: 'किसान सहाय्यक सोबत चॅट करा',
+    help_title: 'मदत केंद्र आणि विचारले जाणारे प्रश्न',
+    login_header_tag: 'अधिकृत ई-नाम व कृषी खरेदी पोर्टल',
+    login_title: 'किसान सेतू',
+    login_welcome: 'किसान सेतू मध्ये आपले स्वागत आहे',
+    login_sub: 'आपल्या नोंदणीकृत मोबाईल नंबरने लॉगिन करा',
+    login_subtitle: 'एकीकृत मंडी ई-पास आणि हमीभाव (MSP) खरेदी गेटवे',
+    login_phone_label: 'नोंदणीकृत मोबाईल नंबर',
+    mobile_label: 'मोबाईल नंबर',
+    login_pass_label: 'सुरक्षा पिन / पासवर्ड',
+    remember_me: 'मला लक्षात ठेवा',
+    forgot_pin: 'पिन विसरलात?',
+    send_otp_btn: 'लॉगिन ओटीपी पाठवा',
+    send_otp: 'ओटीपी पाठवा',
+    quick_demo_btn: 'त्वरित डेमो लॉगिन (राम सिंह)',
+    direct_demo: 'थेट डेमो मोड',
+    direct_demo_tag: 'झटपट प्रवेश',
+    no_account: 'खाते नाही का?',
+    new_user: 'नवीन शेतकरी?',
+    register_here: 'नवीन शेतकरी नोंदणी करा',
+    register_farmer: 'शेतकरी नोंदणी',
+    otp_title: 'सुरक्षा ओटीपी पडताळणी करा',
+    verify_otp_title: 'ओटीपी पडताळणी',
+    otp_sub: 'या क्रमांकावर पाठवलेला 6-अंकी कोड प्रविष्ट करा',
+    verify_otp_sub: '6 अंकी पडताळणी कोड टाका',
+    verify_otp_btn: 'पडताळणी करा आणि पोर्टलमध्ये प्रवेश करा',
+    verify_login: 'पडताळणी करून लॉगिन करा',
+    autofill_demo_otp: 'डेमो ओटीपी ऑटो भरा (482910)',
+    fill_demo_otp: 'डेमो ओटीपी भरा',
+    resend_otp: 'ओटीपी पुन्हा पाठवा',
+    didnt_get_otp: 'कोड मिळाला नाही का?',
+    reg_title: 'शेतकरी पोर्टल नोंदणी',
+    reg_sub: 'आपले शेतकरी प्रोफाइल तयार करा',
+    step1_badge: 'टप्पा 1 / 4 • मूलभूत माहिती',
+    step2_badge: 'टप्पा 2 / 4 • आधार जोडणी',
+    step3_badge: 'टप्पा 3 / 4 • जमीन महसूल तपशील',
+    step4_badge: 'टप्पा 4 / 4 • डीबीटी बँक तपशील',
+    step1_title: 'मूलभूत तपशील',
+    step2_title: 'आधार ई-केवायसी',
+    step3_title: 'जमीन महसूल',
+    step4_title: 'डीबीटी बँक',
+    current_step: 'सध्याचा टप्पा',
+    next_step: 'पुढील टप्पा',
+    full_name_label: 'पूर्ण नाव (आधारानुसार)',
+    full_name: 'पूर्ण नाव',
+    farmer_id: 'शेतकरी आयडी',
+    farmer_id_hint: 'राज्य कृषी नोंदणी क्रमांक',
+    reg_btn: 'नोंदणी करा आणि आधार जोडा',
+    aadhaar_title: 'आधार कार्ड लिंक करा',
+    aadhaar_sub: 'थेट लाभ हस्तांतरण (DBT) आणि ई-केवायसी पडताळणी',
+    aadhaar_num_label: '12-अंकी आधार क्रमांक',
+    aadhaar_hint: 'UIDAI द्वारे 256-बिट सुरक्षित',
+    aadhaar_consent: 'मी ई-केवायसी आणि जमीन मालकी तपशील मिळविण्यास संमती देतो',
+    send_aadhaar_otp_btn: 'UIDAI ओटीपी द्वारे आधार पडताळणी करा',
+    aadhaar_btn: 'आधार पडताळणी करा',
+    skip_aadhaar: 'आत्तासाठी वगळा',
+    kyc_verified: 'ई-केवायसी पडताळणी पूर्ण ✓',
+    land_title: 'शेतकरी जमीन महसूल अभिलेख',
+    land_sub: 'राज्य महसूल अभिलेख (भूमी पोर्टल) द्वारे पडताळणी',
+    land_verified_banner: 'भूमी पोर्टल डेटा थेट जोडलेला आहे',
+    land_survey_synced: 'सर्व्हे आणि सीमा पडताळणी पूर्ण',
+    state_label: 'राज्य',
+    district_label: 'जिल्हा',
+    tehsil_label: 'तालुका / उप-जिल्हा',
+    village_label: 'गाव / ग्रामपंचायत',
+    village_district: 'गाव आणि जिल्हा',
+    khasra_label: 'खसरा / गट क्रमांक / सर्व्हे क्र.',
+    land_area_label: 'लागवडीयोग्य एकूण शेतजमीन',
+    cultivable_area: 'शेती क्षेत्र',
+    unit_label: 'एकक',
+    ownership_label: 'जमीन मालकी प्रकार',
+    owner_opt: 'जमीन मालक (खातेदार)',
+    tenant_opt: 'कुळ / भाडेकरू शेतकरी',
+    sharecropper_opt: 'हिस्सेदार शेतकरी',
+    sown_crop_title: 'या हंगामात पेरलेली पिके (पाहणी नोंद)',
+    wheat_sown: 'गहू • 3.5 एकर पेरणी क्षेत्र',
+    mustard_sown: 'मोहरी • 1.0 एकर पेरणी क्षेत्र',
+    save_land_btn: 'जमीन तपशील सेव्ह करा आणि पुढे जा',
+    dbt_title: 'डीबीटी बँक खाते तपशील जोडा',
+    dbt_acc_title: 'डीबीटी बँक खाते',
+    dbt_sub: 'शासकीय अनुदान आणि हमीभाव थेट बँक खात्यात',
+    dbt_desc: 'आधार पेमेंट ब्रिज द्वारे थेट वितरण',
+    account_num_label: 'बँक खाते क्रमांक',
+    acc_num: 'खाते क्रमांक',
+    confirm_acc_label: 'खाते क्रमांक पुन्हा प्रविष्ट करा',
+    ifsc_label: 'बँक IFSC कोड',
+    ifsc_code: 'IFSC कोड',
+    bank_name_label: 'बँकेचे नाव',
+    bank_name: 'बँकेचे नाव',
+    dbt_bank_hint: 'खाते आधारशी जोडलेले असणे आवश्यक आहे',
+    enable_dbt: 'डीबीटी पेमेंट सूचना चालू करा',
+    dbt_consent: 'मी हमीभाव थेट खात्यात जमा करण्यास अधिकृत करतो',
+    save_bank_btn: 'बँक तपशील सेव्ह करा आणि डॅशबोर्डवर जा',
+    save_dbt_btn: 'बँक खाते सेव्ह करा',
+    dbt_step_title: 'डीबीटी बँक पडताळणी पूर्ण ✓',
+    dbt_verified_msg: 'आधार पेमेंट ब्रिज सक्रिय',
+    dash_welcome: 'स्वागत आहे,',
+    greeting: 'राम सिंह जी',
+    dash_sub: 'किसान सेतू स्मार्ट डॅशबोर्ड • हंगाम 2026',
+    weather_desc: '28°C स्वच्छ हवामान • रब्बी हंगाम खरेदीसाठी मंड्या सुरू',
+    quick_actions_title: 'मंडी सेवा आणि स्लॉट बुकिंग',
+    book_slot_action: 'स्मार्ट स्लॉट बुकिंग',
+    book_slot_card: 'स्लॉट बुक करा',
+    book_slot_desc: 'लांब रांगा टाळा',
+    nearby_mandis_action: 'जवळपासच्या बाजार समित्या',
+    nearby_mandis_card: 'जवळपासच्या मंड्या',
+    nearby_mandis_desc: 'थेट वेळ आणि दर',
+    live_queue_action: 'थेट रांग ट्रॅकर',
+    live_queue_card: 'थेट रांग',
+    live_queue_desc: 'गेट रडार व वाहन ट्रॅकिंग',
+    quality_action: 'गुणवत्ता आणि फ्लो चार्ट',
+    quality_card: 'गुणवत्ता फ्लो चार्ट',
+    quality_desc: '6-टप्प्यांची ई-खरेदी प्रक्रिया',
+    payments_action: 'माझे पेमेंट',
+    dbt_card: 'डीबीटी पेमेंट',
+    mandi_token_action: 'मंडी टोकन पास',
+    land_records_action: 'जमीन महसूल अभिलेख',
+    dbt_bank_action: 'डीबीटी बँक तपशील',
+    msp_banner_title: 'शासकीय हमीभाव दर (MSP 2026)',
+    current_msp_wheat: 'गहू MSP: ₹2,425 / क्विंटल',
+    msp_wheat: 'गहू: ₹2,425/क्विंटल',
+    msp_mustard: 'मोहरी: ₹5,950/क्विंटल',
+    msp_paddy: 'भात: ₹2,320/क्विंटल',
+    msp_gram: 'हरभरा: ₹5,650/क्विंटल',
+    msp_click_sub: 'तपशीलासाठी क्लिक करा',
+    mandis_dir_title: 'जवळपासच्या कृषी उत्पन्न बाजार समित्या',
+    search_mandis_placeholder: 'मंडीचे नाव, जिल्हा किंवा पीक शोधा...',
+    slot_booking_title: 'स्मार्ट स्लॉट बुकिंग',
+    slot_booking_sub: 'मंडी, पसंतीची तारीख आणि वेळ स्लॉट निवडा',
+    book_step1_label: '1. बाजार समिती निवडा',
+    book_step2_label: '2. आगमन तारीख निवडा',
+    book_step3_label: '3. पीक आणि प्रमाण निवडा',
+    book_step4_label: '4. वेळ स्लॉट निवडा',
+    select_mandi_label: 'गंतव्य बाजार समिती निवडा',
+    select_crop_label: 'पीक निवडा',
+    crop_qty_label: 'पिकाचे प्रमाण (क्विंटलमध्ये)',
+    qty_label: 'प्रमाण (क्विंटल)',
+    select_slot_label: 'आगमन वेळ स्लॉट निवडा',
+    confirm_booking_btn: 'बुकिंग निश्चित करा आणि गेट पास तयार करा',
+    booking_confirmed_title: 'स्लॉट निश्चित झाला!',
+    mandi_pass_title: 'सक्रिय मंडी गेट पास',
+    mandi_pass_sub: 'QR कोडसह वेगवान वाहन प्रवेश पास',
+    token_pass_ready: 'डिजिटल मंडी गेट पास तयार आहे',
+    token_num_label: 'टोकन क्रमांक',
+    farmer_name_label: 'शेतकऱ्याचे नाव',
+    mandi_name_label: 'गंतव्य बाजार समिती',
+    entry_gate_label: 'नियुक्त प्रवेश गेट',
+    mandi_yard_label: 'नियुक्त गेट आणि लेन',
+    arrival_date_label: 'आगमन तारीख',
+    time_slot_label: 'वेळ स्लॉट',
+    reporting_slot_label: 'उपस्थिती वेळ स्लॉट',
+    crop_label: 'पीक आणि प्रमाण',
+    est_payout_label: 'अंदाजे डीबीटी पेमेंट',
+    print_pass_btn: 'प्रिंट / डाउनलोड पावती (PDF)',
+    track_queue_btn: 'थेट रांग ट्रॅक करा',
+    scan_gate_hint: 'गेट 2 स्कॅनरवर QR कोड दाखवा',
+    tracker_title: 'थेट रांग ट्रॅकर',
+    token_vehicle_pos: 'कर्नाल धान्य बाजार • गेट 2 (काटा WB-E04)',
+    queue_pos_label: 'तुमची स्थिती',
+    ahead_label: 'पुढील वाहने',
+    wait_label: 'अंदाजे प्रतीक्षा वेळ',
+    yard_cap_label: 'यार्ड क्षमता',
+    lane_g1: 'गेट 1: मोठे ट्रक',
+    lane_g2: 'गेट 2: ट्रॅक्टर-ट्रॉली (तुमची लेन)',
+    lane_g3: 'गेट 3: पिकअप व लहान वाहने',
+    live_stream_title: 'थेट वाहन रांग प्रवाह',
+    sim_advance_btn: 'सिम्युलेशन पुढे ढकला',
+    print_gate_pass: 'गेट पास पहा आणि प्रिंट करा',
+    view_route_map: 'नकाशावर गेट 2 चा मार्ग पहा',
+    quality_title: 'खरेदी लॉट क्र. #8902A',
+    quality_sub: 'गहू खरेदी • कर्नाल धान्य बाजार',
+    flow_chart_title: 'गुणवत्ता आणि वजन फ्लो चार्ट',
+    flow_chart_sub: 'मानक 6-टप्प्यांची ई-खरेदी प्रक्रिया',
+    stage1_title: 'वाहन प्रवेश आणि एकूण वजन',
+    stage1_desc: 'काटा WB-E04 वर ट्रॅक्टर-ट्रॉलीचे वजन',
+    stage2_title: 'डिजिटल लॅब धान्य नमुना व गुणवत्ता तपासणी',
+    stage2_desc: 'स्वयंचलित नमुना तपासणी व ग्रेड-ए प्रमाणित',
+    stage3_title: 'माल खाली करणे व रिकाम्या वाहनाचे वजन',
+    stage3_desc: 'यार्ड बे 4 वर रिकाम्या वाहनाचे वजन: 12.10 क्विंटल',
+    stage4_title: 'मानकीकृत पोती व अंतिम देय वजन',
+    stage4_desc: '125 मानक पोती (अंतिम वजन 50.00 क्विंटल)',
+    stage5_title: 'जे-फॉर्म (Form J) डिजिटल प्रमाणपत्र व स्वाक्षरी',
+    stage5_desc: 'कृषी उत्पन्न बाजार समिती निरीक्षकाद्वारे प्रमाणित',
+    stage6_title: 'पीएफएमएस डीबीटी थेट बँक खाते वितरण',
+    stage6_desc: '₹ 1,21,250.00 थेट एसबीआय बँक खात्यात वितरित',
+    view_jform_btn: 'जे-फॉर्म प्रमाणपत्र पहा आणि प्रिंट करा',
+    call_mandi_support: 'मंडी हेल्पलाइनवर कॉल करा (1800-180-1551)',
+    payments_title: 'माझे पेमेंट',
+    payments_sub: 'थेट लाभ हस्तांतरण (DBT) आणि खरेदी वितरण',
+    total_received: 'एकूण प्राप्त रक्कम',
+    pending_payout: 'प्रलंबित देयक',
+    recent_txns: 'अलीकडील व्यवहार',
+    wheat_sale: 'गहू विक्री (मंडी)',
+    mustard_procurement: 'भात खरेदी (मंडी)',
+    download_voucher: 'पावती / व्हाउचर',
+    load_more_txns: 'मागील नोंदी पहा',
+    completed_badge: 'पूर्ण ✓',
+    pending_badge: 'प्रक्रियेत ⏳',
+    verified_badge: 'पडताळणी पूर्ण व सक्रिय',    curr_stage_label: 'सध्याचा टप्पा',
+    in_mandi_queue: 'मंडी रांगेत',
+    in_mandi_queue_sub: 'रांग स्थिती सक्रिय',
+    vehicles_ahead_label: 'पुढील वाहने',
+    est_wait_label: 'अंदाजे प्रतीक्षा',
+    assigned_gate_label: 'नियुक्त गेट',
+    crop_lifecycle_title: 'पीक चक्र आणि प्रगती',
+    step_slot_booked: 'स्लॉट बुक (पूर्ण)',
+    step_gate_entry: 'गेट एंट्री (प्रक्रियेत)',
+    step_quality_check: 'गुणवत्ता तपासणी व लॅब टेस्ट',
+    step_weighing_bagging: 'वजन आणि पोती भरणे',
+    step_receipt_gen: 'पावती निर्मिती',
+    step_payment_disb: 'डीबीटी पेमेंट वाटप',
+    vehicle_details_label: 'वाहन तपशील',
+
+  },
+};
 
 // Global Toast Notification
 function showToast(msg, icon = 'check_circle') {
@@ -1566,14 +2743,79 @@ function toggleLanguageModal() {
   modal.classList.toggle('flex');
 }
 
+// Dynamic Language Switcher with Full Real-Time DOM Translation
 function setAppLanguage(lang) {
-  appLanguage = lang;
-  toggleLanguageModal();
-  const labelMap = { en: 'EN', hi: 'हिन्दी', pa: 'ਪੰਜਾਬੀ', mr: 'मराठी' };
+  appLanguage = lang || 'hi';
+  try {
+    localStorage.setItem('kisan_setu_lang', appLanguage);
+  } catch(e){}
+
+  const labelMap = {
+    en: { short: '🌐 English (EN)', name: 'English', sub: 'Default' },
+    hi: { short: '🌐 हिन्दी (HI)', name: 'हिन्दी', sub: 'Hindi' },
+    pa: { short: '🌐 ਪੰਜਾਬੀ (PA)', name: 'ਪੰਜਾਬੀ', sub: 'Punjabi' },
+    mr: { short: '🌐 मराठी (MR)', name: 'मराठी', sub: 'Marathi' }
+  };
+
+  const selected = labelMap[appLanguage] || labelMap.hi;
+  const dict = i18nData[appLanguage] || i18nData.hi;
+
+  // 1. Update all header language badges
   document.querySelectorAll('.curr-lang-label').forEach(el => {
-    el.textContent = labelMap[lang] || 'EN/हि';
+    el.textContent = selected.short;
   });
-  showToast(`Language switched to ${labelMap[lang]}!`, 'language');
+
+  // 2. Translate all [data-i18n] text elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (key && dict[key] !== undefined) {
+      el.innerHTML = dict[key];
+    }
+  });
+
+  // 3. Translate all [data-i18n-placeholder] input fields
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (key && dict[key] !== undefined) {
+      el.placeholder = dict[key];
+    }
+  });
+
+  // 4. Update Language Modal Button Highlights
+  ['en', 'hi', 'pa', 'mr'].forEach(code => {
+    const btn = document.getElementById(`lang-btn-${code}`);
+    if (btn) {
+      if (code === appLanguage) {
+        btn.className = 'lang-option-btn p-3 border-2 border-primary bg-primary-container text-on-primary-container font-black rounded-xl text-center shadow-md transition-all ring-2 ring-primary scale-105';
+        btn.innerHTML = `<span class="block text-base text-white">${labelMap[code].name}</span><span class="text-xs text-[#8bf7db] font-bold">✓ Selected / चुना गया</span>`;
+      } else {
+        btn.className = 'lang-option-btn p-3 border-2 border-outline-variant rounded-xl font-bold text-primary hover:border-primary text-center transition-all';
+        btn.innerHTML = `<span class="block text-base">${labelMap[code].name}</span><span class="text-xs text-gray-500 font-normal">${labelMap[code].sub}</span>`;
+      }
+    }
+  });
+
+  // 5. Update Help screen language buttons if present
+  const helpLangEn = document.getElementById('help-lang-en');
+  const helpLangHi = document.getElementById('help-lang-hi');
+  const helpLangPa = document.getElementById('help-lang-pa');
+  const helpLangMr = document.getElementById('help-lang-mr');
+  if (helpLangEn && helpLangHi && helpLangPa && helpLangMr) {
+    [
+      { el: helpLangEn, c: 'en' },
+      { el: helpLangHi, c: 'hi' },
+      { el: helpLangPa, c: 'pa' },
+      { el: helpLangMr, c: 'mr' }
+    ].forEach(item => {
+      if (item.c === appLanguage) {
+        item.el.className = 'h-[50px] bg-primary-container border-2 border-primary text-white font-black rounded-xl flex items-center justify-center shadow-sm';
+      } else {
+        item.el.className = 'h-[50px] bg-surface border-2 border-outline-variant text-on-surface text-label-md font-bold rounded-xl flex items-center justify-center active:bg-surface-variant transition-colors hover:border-primary';
+      }
+    });
+  }
+
+  showToast(`Language set to ${selected.name} (${selected.short})!`, 'language');
 }
 
 // AI Sahayak Modal
@@ -1753,16 +2995,30 @@ function handleRegistrationSubmit(){
   if (name) {
     bookingState.farmerName = name;
   }
-  showToast('Registration successful! Linking Aadhaar...', 'check_circle');
+  showToast('Registration successful! Proceeding to Step 2: Aadhaar Linking...', 'check_circle');
   nav('screen-link-aadhaar');
 }
 
 function simulateAadhaarVerify() {
   showToast('Verifying Aadhaar Biometrics with UIDAI...', 'fingerprint');
   setTimeout(() => {
-    showToast('Aadhaar **3942 Verified Successfully ✓', 'verified');
-    nav('screen-dbt-setup');
-  }, 900);
+    showToast('Aadhaar **3942 Verified ✓ Proceeding to Step 3: Land Details', 'verified');
+    nav('screen-land-details');
+  }, 800);
+}
+
+function handleLandDetailsSubmit() {
+  const state = document.getElementById('land-state')?.value || 'Haryana';
+  const district = document.getElementById('land-district')?.value || 'Karnal';
+  const tehsil = document.getElementById('land-tehsil')?.value || 'Nilokheri';
+  const village = document.getElementById('land-village')?.value || 'Taraori';
+  const khasra = document.getElementById('land-khasra')?.value || '42//18/2, 42//19';
+  const area = document.getElementById('land-area')?.value || '4.5';
+  const unit = document.getElementById('land-unit')?.value || 'Acres';
+
+  bookingState.landDetails = { state, district, tehsil, village, khasra, area, unit };
+  showToast(`Land Records Saved (${area} ${unit}, ${village}, ${district}) ✓ Proceeding to Step 4: Bank Setup`, 'verified');
+  nav('screen-dbt-setup');
 }
 
 function togglePasswordVisibility(inputId) {
@@ -2632,6 +3888,12 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCalendar();
   updatePayoutCalculation();
   startTimer();
+  try {
+    const saved = localStorage.getItem('kisan_setu_lang') || 'hi';
+    setAppLanguage(saved);
+  } catch(e) {
+    setAppLanguage('hi');
+  }
 });
 </script>
 </body>
