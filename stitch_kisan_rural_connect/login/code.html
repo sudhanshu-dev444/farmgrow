@@ -1,11 +1,10 @@
-<!DOCTYPE html><html class="h-full" lang="en" style=""><head>
+﻿<!DOCTYPE html><html class="h-full" lang="en"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Authentication - Kisan Setu</title>
+<title>Authentication - Kisan Setu | किसान सेतु</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script id="tailwind-config">
         tailwind.config = {
           darkMode: "class",
@@ -104,71 +103,230 @@
             font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
         body {
-            background-color: #fcf9f8; /* surface */
-            color: #1c1b1b; /* on-surface */
+            background-color: #fcf9f8;
+            color: #1c1b1b;
+            min-height: max(884px, 100dvh);
         }
-      </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="h-full w-full font-body-md antialiased flex flex-col justify-center items-center bg-surface px-margin-mobile">
-<!-- Top Navigation for Language Selection (Not using the full top app bar as this is a transactional screen, but keeping a header element) -->
-<header class="bg-surface border-b border-outline-variant w-full top-0 flex items-center px-margin-mobile fixed z-40 transition-colors duration-200 py-2"><div class="flex items-center justify-between w-full h-14">
-  <div class="flex items-center gap-2">
-    <span class="material-symbols-outlined text-primary" data-icon="agriculture">agriculture</span>
-    <h1 class="font-headline-md text-primary">Kisan Setu | किसान सेतु</h1>
+</style>
+</head>
+<body class="h-full w-full font-body-md antialiased flex flex-col justify-center items-center bg-surface px-margin-mobile py-8">
+<!-- Top Navigation Header -->
+<header class="bg-surface border-b border-outline-variant w-full top-0 flex items-center px-margin-mobile fixed z-40 transition-colors duration-200 py-2">
+  <div class="flex items-center justify-between w-full h-14 max-w-md mx-auto">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary text-2xl" data-weight="fill">agriculture</span>
+      <h1 class="font-headline-md text-primary text-lg sm:text-xl font-bold">Kisan Setu | किसान सेतु</h1>
+    </div>
+    <div class="flex items-center gap-2">
+      <button aria-label="Select Language" class="flex items-center gap-1 px-3 py-1 rounded-full border border-outline text-primary hover:bg-surface-container-low transition-colors">
+        <span class="material-symbols-outlined text-sm">language</span>
+        <span class="font-label-md text-xs">EN / हि</span>
+      </button>
+      <div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+        <span class="material-symbols-outlined text-base">person</span>
+      </div>
+    </div>
   </div>
-  <div class="flex items-center gap-2">
-    <button aria-label="Select Language" class="flex items-center gap-1 px-3 py-1 rounded-full border border-outline text-primary hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-body-md" data-icon="language">language</span><span class="font-label-md text-xs">EN/हि</span></button>
-    <button class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
-      <span class="material-symbols-outlined" data-icon="person">person</span>
+</header>
+
+<main class="w-full max-w-md bg-surface-container-lowest p-6 sm:p-stack-gap-lg rounded-2xl border border-outline-variant shadow-lg mt-14 mb-8">
+  <!-- Role Segmented Controller (Farmer Login vs Mandi Officer) -->
+  <div class="p-1.5 bg-surface-container-low rounded-xl mb-6 border border-outline-variant/60 flex items-center gap-1">
+    <button type="button" id="tabFarmer" onclick="switchLoginRole('farmer')" class="flex-1 py-2.5 px-3 rounded-lg font-label-lg text-sm flex items-center justify-center gap-2 transition-all duration-200 bg-primary-container text-on-primary shadow-sm font-semibold">
+      <span class="material-symbols-outlined text-[18px]">agriculture</span>
+      <span>Farmer Login</span>
+    </button>
+    <button type="button" id="tabOfficer" onclick="switchLoginRole('officer')" class="flex-1 py-2.5 px-3 rounded-lg font-label-lg text-sm flex items-center justify-center gap-2 transition-all duration-200 text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-medium">
+      <span class="material-symbols-outlined text-[18px]">shield_person</span>
+      <span>Mandi Officer</span>
     </button>
   </div>
-</div></header>
-<main class="w-full max-w-md bg-surface-container-lowest p-stack-gap-lg rounded-xl border border-outline-variant shadow-sm mt-8">
-<!-- Branding / Hero Graphic -->
-<div class="flex justify-center mb-stack-gap-lg">
-<div class="w-24 h-24 bg-tertiary-fixed rounded-full flex items-center justify-center border-4 border-primary-container">
-<span class="material-symbols-outlined text-[48px] text-primary" data-icon="agriculture" data-weight="fill">agriculture</span>
-</div>
-</div>
-<div class="text-center mb-stack-gap-lg">
-<h1 class="font-headline-lg text-headline-lg text-primary mb-2">Welcome Back / स्वागत है</h1>
-<p class="font-body-md text-body-md text-on-surface-variant">Enter your 10-digit mobile number to login.<br class="">लॉगिन करने के लिए अपना 10 अंकों का मोबाइल नंबर दर्ज करें।</p>
-</div>
-<form class="flex flex-col gap-stack-gap-md" onsubmit="event.preventDefault();">
-<div class="flex flex-col gap-1">
-<label class="font-label-lg text-label-lg text-on-surface" for="mobile-number">Mobile Number</label>
-<div class="relative flex items-center">
-<span class="absolute left-4 font-body-lg text-body-lg text-on-surface-variant">+91</span>
-<input class="w-full h-touch-target-min pl-14 pr-4 bg-surface-bright border-2 border-outline rounded-lg font-body-lg text-body-lg text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors duration-200" id="mobile-number" name="mobile-number" pattern="[0-9]{10}" placeholder="00000 00000" required="" type="tel">
-</div>
-<span class="font-label-md text-label-md text-on-surface-variant mt-1">We will send an OTP for verification.</span>
-</div>
-<button class="w-full h-touch-target-min mt-4 bg-primary-container hover:bg-on-primary-fixed-variant text-on-primary-container font-label-lg text-label-lg rounded-lg flex items-center justify-center gap-2 transition-colors duration-200 active:scale-95" type="submit">
-                Send OTP
-                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
-</button>
-</form>
 
+  <!-- SECTION 1: FARMER LOGIN -->
+  <div id="farmerLoginSection" class="transition-opacity duration-200">
+    <div class="text-center mb-6">
+      <h1 class="font-headline-lg text-xl sm:text-2xl text-primary font-bold mb-1.5">Welcome Back / स्वागत है</h1>
+      <p class="font-body-md text-sm text-on-surface-variant">Enter your 10-digit mobile number to login.<br>लॉगिन करने के लिए अपना 10 अंकों का मोबाइल नंबर दर्ज करें।</p>
+    </div>
+
+    <form class="flex flex-col gap-4" onsubmit="handleFarmerSubmit(event)">
+      <div class="flex flex-col gap-1.5">
+        <label class="font-label-lg text-sm font-semibold text-on-surface" for="mobile-number">Farmer Mobile Number / मोबाइल नंबर</label>
+        <div class="relative flex items-center">
+          <span class="absolute left-4 font-body-lg text-base text-on-surface-variant font-medium">+91</span>
+          <input class="w-full h-touch-target-min pl-14 pr-4 bg-surface-bright border-2 border-outline rounded-xl font-body-lg text-base text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors duration-200" id="mobile-number" name="mobile-number" pattern="[0-9]{10}" placeholder="98765 43210" required="" type="tel" value="9876543210">
+        </div>
+        <span class="font-label-md text-xs text-on-surface-variant mt-0.5">We will send a 6-digit OTP for instant verification.</span>
+      </div>
+
+      <button class="w-full h-touch-target-min mt-2 bg-primary-container hover:bg-on-primary-fixed-variant text-on-primary font-label-lg text-base rounded-xl flex items-center justify-center gap-2 transition-colors duration-200 active:scale-95 shadow-md font-semibold" type="submit">
+        <span>Send OTP / ओटीपी प्राप्त करें</span>
+        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+      </button>
+    </form>
+
+    <!-- Prominent Farmer Registration CTA -->
+    <div class="mt-6 pt-5 border-t border-outline-variant/60 text-center">
+      <p class="text-xs sm:text-sm text-on-surface-variant mb-2.5 font-medium">New to Kisan Setu portal? / क्या आप नए किसान हैं?</p>
+      <a href="../registration/code.html" class="w-full h-12 rounded-xl border-2 border-primary text-primary hover:bg-primary/5 font-label-lg text-sm flex items-center justify-center gap-2 transition-colors duration-150 font-bold active:scale-95">
+        <span class="material-symbols-outlined text-[20px]">person_add</span>
+        <span>Farmer Registration / नया किसान पंजीकरण</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- SECTION 2: MANDI OFFICER LOGIN -->
+  <div id="officerLoginSection" class="hidden transition-opacity duration-200">
+    <div class="text-center mb-5">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">
+        <span class="material-symbols-outlined text-[16px]">verified</span>
+        <span>Official Government Terminal</span>
+      </div>
+      <h1 class="font-headline-lg text-xl sm:text-2xl text-primary font-bold mb-1">Mandi Officer Login</h1>
+      <p class="font-body-md text-sm text-on-surface-variant">मंडी अधिकारी लॉगिन - खरीद एवं सत्यापन पोर्टल</p>
+    </div>
+
+    <!-- Official Statutory Notice Banner -->
+    <div class="bg-surface-container-low border border-outline-variant/60 rounded-xl p-3 mb-4 text-xs text-on-surface-variant flex items-start gap-2.5">
+      <span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">policy</span>
+      <span>Authorized APMC yard personnel, assayers, and weighing supervisors only. Protected under e-NAM Statutory Norms.</span>
+    </div>
+
+    <form class="flex flex-col gap-3.5" onsubmit="handleOfficerSubmit(event)">
+      <div class="flex flex-col gap-1">
+        <label class="font-label-lg text-sm font-semibold text-on-surface" for="officer-id">Officer ID / Employee Code</label>
+        <div class="relative flex items-center">
+          <span class="absolute left-3.5 material-symbols-outlined text-on-surface-variant text-[20px]">badge</span>
+          <input class="w-full h-12 pl-11 pr-4 bg-surface-bright border-2 border-outline rounded-xl font-body-md text-sm text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" id="officer-id" name="officer-id" placeholder="e.g. MO-2026-KHN-01" required="" type="text" value="MO-2026-KHN-01">
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label class="font-label-lg text-sm font-semibold text-on-surface" for="mandi-yard">Assigned Mandi Yard</label>
+        <div class="relative flex items-center">
+          <span class="absolute left-3.5 material-symbols-outlined text-on-surface-variant text-[20px]">storefront</span>
+          <select class="w-full h-12 pl-11 pr-8 bg-surface-bright border-2 border-outline rounded-xl font-body-md text-sm text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none appearance-none" id="mandi-yard" name="mandi-yard" required="">
+            <option value="khanna" selected>Khanna APMC Yard (Punjab) - Yard #02</option>
+            <option value="karnal">Karnal APMC Yard (Haryana)</option>
+            <option value="ludhiana">Ludhiana Grain Market (Punjab)</option>
+            <option value="pune">Pune APMC Mandi (Maharashtra)</option>
+            <option value="nagpur">Nagpur APMC Market (Maharashtra)</option>
+          </select>
+          <span class="absolute right-3.5 material-symbols-outlined text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label class="font-label-lg text-sm font-semibold text-on-surface" for="officer-pin">Security PIN / Access Password</label>
+        <div class="relative flex items-center">
+          <span class="absolute left-3.5 material-symbols-outlined text-on-surface-variant text-[20px]">lock</span>
+          <input class="w-full h-12 pl-11 pr-11 bg-surface-bright border-2 border-outline rounded-xl font-body-md text-sm text-on-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" id="officer-pin" name="officer-pin" placeholder="Enter 6-digit PIN" required="" type="password" value="123456">
+          <button type="button" onclick="togglePinVisibility()" class="absolute right-3.5 text-on-surface-variant hover:text-on-surface">
+            <span class="material-symbols-outlined text-[20px]" id="pinEyeIcon">visibility</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between text-xs text-on-surface-variant px-0.5">
+        <label class="flex items-center gap-1.5 cursor-pointer">
+          <input type="checkbox" checked class="rounded border-outline text-primary focus:ring-primary">
+          <span>Remember Officer Session</span>
+        </label>
+        <span class="text-secondary font-semibold">NIC 2FA Active</span>
+      </div>
+
+      <button class="w-full h-touch-target-min mt-2 bg-primary hover:bg-primary-container text-on-primary font-label-lg text-base rounded-xl flex items-center justify-center gap-2 transition-colors duration-200 active:scale-95 shadow-md font-bold" type="submit">
+        <span class="material-symbols-outlined text-[20px]">dashboard</span>
+        <span>Enter Mandi Officer Console</span>
+      </button>
+
+      <!-- Quick 1-Tap Demo Officer Login Button -->
+      <button type="button" onclick="quickOfficerLogin()" class="w-full py-2.5 px-3 rounded-xl bg-secondary-container/40 hover:bg-secondary-container/60 text-on-secondary-container font-label-md text-xs flex items-center justify-center gap-1.5 border border-secondary/20 transition-all font-semibold active:scale-95 mt-1">
+        <span class="material-symbols-outlined text-[16px]">bolt</span>
+        <span>Demo: 1-Tap Login as Dr. V. Sharma (Khanna Mandi)</span>
+      </button>
+    </form>
+
+    <!-- Officer Help & Farmer Switch Link -->
+    <div class="mt-5 pt-4 border-t border-outline-variant/60 text-center">
+      <button type="button" onclick="switchLoginRole('farmer')" class="text-xs text-primary font-semibold hover:underline inline-flex items-center gap-1">
+        <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+        <span>Return to Farmer Portal / किसान पोर्टल पर वापस जाएं</span>
+      </button>
+    </div>
+  </div>
 </main>
 
+<!-- Footer Regulatory Tagline -->
+<footer class="text-center text-xs text-on-surface-variant max-w-md pb-4">
+  <p class="font-medium text-primary">Department of Agriculture & Farmers Welfare</p>
+  <p class="text-[11px] text-outline mt-0.5">Integrated with National Agriculture Market (e-NAM) & PFMS DBT Network</p>
+</footer>
 
+<script>
+function switchLoginRole(role) {
+  const farmerSection = document.getElementById('farmerLoginSection');
+  const officerSection = document.getElementById('officerLoginSection');
+  const tabFarmer = document.getElementById('tabFarmer');
+  const tabOfficer = document.getElementById('tabOfficer');
+  const roleIcon = document.getElementById('portalRoleIcon');
 
+  if (role === 'officer') {
+    farmerSection.classList.add('hidden');
+    officerSection.classList.remove('hidden');
 
+    tabOfficer.className = "flex-1 py-2.5 px-3 rounded-lg font-label-lg text-sm flex items-center justify-center gap-2 transition-all duration-200 bg-primary-container text-on-primary shadow-sm font-semibold";
+    tabFarmer.className = "flex-1 py-2.5 px-3 rounded-lg font-label-lg text-sm flex items-center justify-center gap-2 transition-all duration-200 text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-medium";
+    
+    roleIcon.textContent = 'shield_person';
+  } else {
+    officerSection.classList.add('hidden');
+    farmerSection.classList.remove('hidden');
 
+    tabFarmer.className = "flex-1 py-2.5 px-3 rounded-lg font-label-lg text-sm flex items-center justify-center gap-2 transition-all duration-200 bg-primary-container text-on-primary shadow-sm font-semibold";
+    tabOfficer.className = "flex-1 py-2.5 px-3 rounded-lg font-label-lg text-sm flex items-center justify-center gap-2 transition-all duration-200 text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-medium";
 
+    roleIcon.textContent = 'agriculture';
+  }
+}
 
+function handleFarmerSubmit(e) {
+  e.preventDefault();
+  const phone = document.getElementById('mobile-number').value.trim();
+  if (phone.length === 10) {
+    localStorage.setItem('kisan_farmer_phone', phone);
+    window.location.href = '../verify_otp/code.html';
+  } else {
+    alert('Please enter a valid 10-digit mobile number.');
+  }
+}
 
+function handleOfficerSubmit(e) {
+  e.preventDefault();
+  const officerId = document.getElementById('officer-id').value.trim();
+  const yard = document.getElementById('mandi-yard').value;
+  localStorage.setItem('kisan_officer_id', officerId || 'MO-2026-KHN-01');
+  localStorage.setItem('kisan_officer_yard', yard);
+  window.location.href = '../mandi_officer_mobile_dashboard/code.html';
+}
 
+function quickOfficerLogin() {
+  document.getElementById('officer-id').value = 'MO-2026-KHN-01';
+  document.getElementById('mandi-yard').value = 'khanna';
+  document.getElementById('officer-pin').value = '123456';
+  handleOfficerSubmit(new Event('submit'));
+}
 
-
-
-
-
-
-
+function togglePinVisibility() {
+  const pinInput = document.getElementById('officer-pin');
+  const eyeIcon = document.getElementById('pinEyeIcon');
+  if (pinInput.type === 'password') {
+    pinInput.type = 'text';
+    eyeIcon.textContent = 'visibility_off';
+  } else {
+    pinInput.type = 'password';
+    eyeIcon.textContent = 'visibility';
+  }
+}
+</script>
 </body></html>
